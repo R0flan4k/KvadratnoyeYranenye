@@ -41,7 +41,12 @@ coefs get_coefs(void)
 int show_ans(const coefs * inp)
 {
     printf("Your equation: %.3g*x^2 + %.3g*x + %.3g = 0\n",inp->a,inp->b,inp->c);
-    if (DISCR(inp->a,inp->b,inp->c)<0)
+    if (inp->a==0 && inp->b==0 && inp->c==0)
+    {
+        puts("This equation has an infinite number of roots");
+        return -1;
+    }
+    else if (DISCR(inp->a,inp->b,inp->c)<0 || (inp->a==0 && inp->b==0 && inp->c!=0))
     {
         puts("This equation hasn't real roots.");
         return 0;
@@ -49,13 +54,19 @@ int show_ans(const coefs * inp)
     else if (DISCR(inp->a,inp->b,inp->c)==0)
     {
         puts("This equation has only one root (discriminant == 0)");
-        printf("This root: %5.3g\n",FIRST_ROOT(inp->a,inp->b,inp->c));
+        printf("This root: %5.5g\n",FIRST_ROOT(inp->a,inp->b,inp->c));
+        return 1;
+    }
+    else if (inp->a==0 && inp->b!=0)
+    {
+        puts("This equation has only one root (a==0)");
+        printf("This root: %5.5g\n",-(inp->c/inp->b));
         return 1;
     }
     else
     {
         puts("This equation has 2 roots");
-        printf("first root: %5.3g\nsecond root: %5.3g\n",FIRST_ROOT(inp->a,inp->b,inp->c),
+        printf("first root: %5.5g\nsecond root: %5.5g\n",FIRST_ROOT(inp->a,inp->b,inp->c),
         SECOND_ROOT(inp->a,inp->b,inp->c));
         return 2;
     }
