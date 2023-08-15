@@ -46,6 +46,12 @@ int show_ans(const coefs * inp)
         puts("This equation has an infinite number of roots");
         return -1;
     }
+    else if (inp->a==0 && inp->b!=0)
+    {
+        puts("This equation has only one root (a==0)");
+        printf("This root: %5.5g\n",-(inp->c/inp->b));
+        return 1;
+    }
     else if (DISCR(inp->a,inp->b,inp->c)<0 || (inp->a==0 && inp->b==0 && inp->c!=0))
     {
         puts("This equation hasn't real roots.");
@@ -55,12 +61,6 @@ int show_ans(const coefs * inp)
     {
         puts("This equation has only one root (discriminant == 0)");
         printf("This root: %5.5g\n",FIRST_ROOT(inp->a,inp->b,inp->c));
-        return 1;
-    }
-    else if (inp->a==0 && inp->b!=0)
-    {
-        puts("This equation has only one root (a==0)");
-        printf("This root: %5.5g\n",-(inp->c/inp->b));
         return 1;
     }
     else
