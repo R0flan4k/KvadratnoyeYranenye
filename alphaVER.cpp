@@ -10,14 +10,14 @@ typedef struct {
 } coefs;
 void show_menu(void);
 coefs get_coefs(void);
-void show_ans(const coefs *);
+int show_ans(const coefs *);
 int main(void)
 {
     coefs input;
     show_menu();
     input=get_coefs();
-    printf("%3.3g %3.3g %3.3g\n",DISCR(input.a,input.b,input.c),FIRST_ROOT(input.a,input.b,input.c),
-    SECOND_ROOT(input.a,input.b,input.c));
+    show_ans(&input);
+    puts("Vsego dobrogo! Programma zavershena.");
     return 0;
 }
 void show_menu(void)
@@ -38,7 +38,25 @@ coefs get_coefs(void)
     }
     return input;
 }
-void show_ans(const coefs * inp)
+int show_ans(const coefs * inp)
 {
-    
+    printf("Vvedennye uravneniye: %.3g*x^2 + %.3g*x + %.3g = 0\n",inp->a,inp->b,inp->c);
+    if (DISCR(inp->a,inp->b,inp->c)<0)
+    {
+        puts("Dannoye yravneniye ne imeet veshestvennih korney.");
+        return 0;
+    }
+    else if (DISCR(inp->a,inp->b,inp->c)==0)
+    {
+        puts("Dannoue yravneniye yavlayetca polnim kvadratom (discriminant = 0)");
+        printf("koren yravneniya: %5.3g\n",FIRST_ROOT(inp->a,inp->b,inp->c));
+        return 1;
+    }
+    else
+    {
+        puts("Dannoye yravneniye imeet 2 kornya");
+        printf("perviy koren: %5.3g\nvtoroy koren: %5.3g\n",FIRST_ROOT(inp->a,inp->b,inp->c),
+        SECOND_ROOT(inp->a,inp->b,inp->c));
+        return 2;
+    }
 }
