@@ -142,11 +142,11 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
     EquationRoots solution = {0, 0.0, 0.0};
     float discriminant = calculate_discriminant(coeffs);
 
-    if (coeffs->a < FLT_EPSILON)
+    if (abs(coeffs->a) < FLT_EPSILON)
     {
-        if (coeffs->b < FLT_EPSILON)
+        if (abs(coeffs->b) < FLT_EPSILON)
         {
-            if (coeffs->c < FLT_EPSILON)
+            if (abs(coeffs->c) < FLT_EPSILON)
             solution.count = -1;
             else 
             solution.count = 0;
@@ -161,7 +161,7 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
     {
         solution.count = 0;
     }
-    else if (discriminant < FLT_EPSILON)
+    else if (abs(discriminant) < FLT_EPSILON)
     {
         solution.count = 1;
         solution.first_root = calculate_root1(coeffs, discriminant);
