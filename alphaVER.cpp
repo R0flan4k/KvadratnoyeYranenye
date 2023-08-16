@@ -52,7 +52,7 @@ void show_menu(void)
 
 EquationCoefficients get_coefficients(void)
 {
-    EquationCoefficients coefficients = {0.0,0.0,0.0};
+    EquationCoefficients coefficients = {0.0, 0.0, 0.0};
     puts("Enter coeficients a,b,c:");
     while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c)!=3)
     {
