@@ -1,121 +1,148 @@
 #include <stdio.h>
 #include <math.h>
-#define DISCR(A,B,C) (powf(B,2.0)-4*(A)*(C))
-#define FIRST_ROOT(A,B,C) ((-(B)-sqrtf((powf(B,2.0))-4*(A)*(C)))/(2*(A)))
-#define SECOND_ROOT(A,B,C) ((-(B)+sqrtf((powf(B,2.0))-4*(A)*(C)))/(2*(A)))
+
 
 typedef struct {
     float a;
     float b;
     float c;
-} coefs;
+} EquationCoefficients;
+
 
 typedef struct {
     int count;
-    float first;
-    float second;
-} ans;
+    float first_root;
+    float second_root;
+} EquationRoots;
+
 
 void show_menu(void);
-coefs get_coefs(void);
-ans solve_ans(const coefs * );
-void show_equation(const coefs *);
-void show_ans(const ans *);
+EquationCoefficients get_coefficients(void);
+EquationRoots solve_roots(const EquationCoefficients * );
+void show_equation(const EquationCoefficients *);
+void show_solution(const EquationRoots *);
+float discriminant(const EquationCoefficients * );
+float root1(const EquationCoefficients * );
+float root2(const EquationCoefficients *);
+
 
 int main(void)
 {
-    ans answer = {0, 0.0, 0.0};
-    coefs input = {0.0,0.0,0.0};
+    EquationRoots solution = {0, 0.0, 0.0};
+    EquationCoefficients coefficients = {0.0,0.0,0.0};
 
     show_menu();
-    input=get_coefs();
-    answer=solve_ans(&input);
-    show_equation(&input);
-    show_ans(&answer);
+    coefficients = get_coefficients();
+    solution = solve_roots(&coefficients);
+    show_equation(&coefficients);
+    show_solution(&solution);
     puts("Have a good day! End.");
-    
+
     return 0;
 }
+
 
 void show_menu(void)
 {
     puts("Hello, Ruslan Alekseyevich.");
-    puts("This program can solve quadratic equation");
+    puts("This program can solve quadratic equation.");
     puts("Equation must looks like: ax^2 + bx + c = 0.");
 }
 
-coefs get_coefs(void)
+
+EquationCoefficients get_coefficients(void)
 {
-    coefs input = {0.0,0.0,0.0};
+    EquationCoefficients coefficients = {0.0,0.0,0.0};
     puts("Enter coeficients a,b,c:");
-    while (scanf("%f%f%f",&input.a,&input.b,&input.c)!=3)
+    while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c)!=3)
     {
         puts("Error. Enter 3 real numbers");
-        puts("like 12, -1.5, 3.14 or 1.618");
+        puts("like 12, -1.5, 3.14 or 1.618.");
         scanf("%*s");
     }
-    return input;
+    return coefficients;
 }
 
-ans solve_ans(const coefs * inp)
+
+EquationRoots solve_roots(const EquationCoefficients * coeffs)
 {
-    ans answer = {0,0.0,0.0};
-    if (inp->a==0)
+    EquationRoots solution = {0,0.0,0.0};
+    if (coeffs->a == 0)
     {
-        if (inp->b==0)
+        if (coeffs->b == 0)
         {
-            if (inp->c==0)
-            answer.count = -1;
-            else answer.count = 0;
+            if (coeffs->c == 0)
+            solution.count = -1;
+            else solution.count = 0;
         }    
         else 
         {
-            answer.count = 1;
-            answer.first = -(inp->c/inp->b);
+            solution.count = 1;
+            solution.first_root = -(coeffs->c / coeffs->b);
         }       
     }
-    else if (DISCR(inp->a,inp->b,inp->c)<0)
+    else if (discriminant(coeffs)< 0)
     {
-        answer.count = 0;
+        solution.count = 0;
     }
-    else if (DISCR(inp->a,inp->b,inp->c)==0)
+    else if (discriminant(coeffs) == 0)
     {
-        answer.count = 1;
-        answer.first = FIRST_ROOT(inp->a,inp->b,inp->c);
+        solution.count = 1;
+        solution.first_root = root1(coeffs);
     }
     else 
     {
-        answer.count = 2;
-        answer.first = FIRST_ROOT(inp->a,inp->b,inp->c);
-        answer.second = SECOND_ROOT(inp->a,inp->b,inp->c);
+        solution.count = 2;
+        solution.first_root = root1(coeffs);
+        solution.second_root = root2(coeffs);
     }
-    return answer;
+    return solution;
 }
 
-void show_equation(const coefs * inp)
+
+void show_equation(const EquationCoefficients * coeffs)
 {
-    printf("Your equation: %.3g*x^2 + %.3g*x + %.3g = 0\n",inp->a,inp->b,inp->c);
+    printf("Your equation: %.3g*x^2 + %.3g*x + %.3g = 0.\n", coeffs->a, coeffs->b, coeffs->c);
 }
 
-void show_ans(const ans * answer)
+
+void show_solution(const EquationRoots * solution)
 {
-    if (answer->count == -1)
+    if (solution->count == -1)
     {
-        puts("This equation has infinite number of roots");
+        puts("This equation has infinite number of roots.");
     }
-    else if (answer->count == 0)
+    else if (solution->count == 0)
     {
-        puts("This equation hasn't roots");
+        puts("This equation hasn't roots.");
     }
-    else if (answer->count ==1)
+    else if (solution->count ==1)
     {
-        puts("This equation has one root");
-        printf("This root: %5.5g\n",answer->first);
+        puts("This equation has one root.");
+        printf("This root: %5.5g\n", solution->first_root);
     }
     else
     {
-        puts("This equation has two roots");
-        printf("First root: %5.5g\n",answer->first);
-        printf("Second root: %5.5g\n",answer->second);
+        puts("This equation has two roots.");
+        printf("First root: %5.5g\n", solution->first_root);
+        printf("Second root: %5.5g\n", solution->second_root);
     }
+}
+
+
+float discriminant(const EquationCoefficients * coefficients )
+{
+    return ( powf(coefficients->b, 2.0) - 4 * (coefficients->a) * (coefficients->c) );
+}
+
+
+float root1(const EquationCoefficients * coefficients)
+{
+    return ( (-coefficients->b - sqrtf( discriminant(coefficients) ) ) / ( 2 * coefficients->a ) );
+}
+
+
+float root2(const EquationCoefficients * coefficients)
+{
+    return ( (-coefficients->b + sqrtf( discriminant(coefficients) ) ) / ( 2 * coefficients->a ) );
 }
