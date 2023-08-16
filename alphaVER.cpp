@@ -21,9 +21,9 @@ EquationCoefficients get_coefficients(void);
 EquationRoots solve_equation(const EquationCoefficients * );
 void show_equation(const EquationCoefficients *);
 void show_solution(const EquationRoots *);
-float discriminant(const EquationCoefficients * );
-float root1(const EquationCoefficients * );
-float root2(const EquationCoefficients *);
+float calculate_discriminant(const EquationCoefficients * );
+float calculate_root1(const EquationCoefficients * );
+float calculate_root2(const EquationCoefficients *);
 
 
 int main(void)
@@ -67,7 +67,7 @@ EquationCoefficients get_coefficients(void)
 EquationRoots solve_equation(const EquationCoefficients * coeffs)
 {
     EquationRoots solution = {0,0.0,0.0};
-    float Discriminant = discriminant(coeffs);
+    float discriminant = calculate_discriminant(coeffs);
 
     if (coeffs->a == 0)
     {
@@ -75,7 +75,8 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
         {
             if (coeffs->c == 0)
             solution.count = -1;
-            else solution.count = 0;
+            else 
+            solution.count = 0;
         }    
         else 
         {
@@ -83,20 +84,20 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
             solution.first_root = -(coeffs->c / coeffs->b);
         }       
     }
-    else if (Discriminant< 0)
+    else if (discriminant< 0)
     {
         solution.count = 0;
     }
-    else if (Discriminant == 0)
+    else if (discriminant == 0)
     {
         solution.count = 1;
-        solution.first_root = root1(coeffs);
+        solution.first_root = calculate_root1(coeffs);
     }
     else 
     {
         solution.count = 2;
-        solution.first_root = root1(coeffs);
-        solution.second_root = root2(coeffs);
+        solution.first_root = calculate_root1(coeffs);
+        solution.second_root = calculate_root2(coeffs);
     }
     return solution;
 }
@@ -132,19 +133,19 @@ void show_solution(const EquationRoots * solution)
 }
 
 
-float discriminant(const EquationCoefficients * coefficients )
+float calculate_discriminant(const EquationCoefficients * coefficients )
 {
     return ( coefficients->b * coefficients->b - 4 * (coefficients->a) * (coefficients->c) );
 }
 
 
-float root1(const EquationCoefficients * coefficients)
+float calculate_root1(const EquationCoefficients * coefficients)
 {
-    return ( (-coefficients->b - sqrtf( discriminant(coefficients) ) ) / ( 2 * coefficients->a ) );
+    return ( (-coefficients->b - sqrtf( calculate_discriminant(coefficients) ) ) / ( 2 * coefficients->a ) );
 }
 
 
-float root2(const EquationCoefficients * coefficients)
+float calculate_root2(const EquationCoefficients * coefficients)
 {
-    return ( (-coefficients->b + sqrtf( discriminant(coefficients) ) ) / ( 2 * coefficients->a ) );
+    return ( (-coefficients->b + sqrtf( calculate_discriminant(coefficients) ) ) / ( 2 * coefficients->a ) );
 }
