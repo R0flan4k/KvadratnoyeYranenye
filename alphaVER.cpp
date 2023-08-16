@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <ctype.h>
+#include <float.h>
 
 
 typedef struct {
@@ -24,8 +25,8 @@ EquationRoots solve_equation(const EquationCoefficients *);
 void show_equation(const EquationCoefficients *, const char);
 void show_solution(const EquationRoots *, const char);
 float calculate_discriminant(const EquationCoefficients *);
-float calculate_root1(const EquationCoefficients *);
-float calculte_root2(const EquationCoefficients *);
+float calculate_root1(const EquationCoefficients *, const float);
+float calculate_root2(const EquationCoefficients *, const float);
 void show_goodbye(const char);
 
 
@@ -73,6 +74,10 @@ void show_menu(const char language)
         puts("你好，鲁斯兰·阿列克谢耶维奇。");
         puts("该程序旨在求解二次方程。");
         puts("等式应如下所示： ax^2 + bx + c = 0.");
+        break;
+
+        default:
+        puts("ERROR");
         break;
     }
 }
@@ -123,6 +128,10 @@ EquationCoefficients get_coefficients(const char language)
             scanf("%*s");
         }
         break;
+
+        default:
+        puts("ERROR");
+        break;
     }
     return coefficients;
 }
@@ -133,13 +142,14 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
     EquationRoots solution = {0, 0.0, 0.0};
     float discriminant = calculate_discriminant(coeffs);
 
-    if (coeffs->a == 0)
+    if (coeffs->a < FLT_EPSILON)
     {
-        if (coeffs->b == 0)
+        if (coeffs->b < FLT_EPSILON)
         {
-            if (coeffs->c == 0)
+            if (coeffs->c < FLT_EPSILON)
             solution.count = -1;
-            else solution.count = 0;
+            else 
+            solution.count = 0;
         }    
         else 
         {
@@ -151,7 +161,7 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
     {
         solution.count = 0;
     }
-    else if (discriminant == 0)
+    else if (discriminant < FLT_EPSILON)
     {
         solution.count = 1;
         solution.first_root = calculate_root1(coeffs, discriminant);
@@ -184,6 +194,10 @@ void show_equation(const EquationCoefficients * coeffs, const char language)
 
         case 'c':
         printf("这是你的等式： %.3g*x^2 + %.3g*x + %.3g = 0.\n", coeffs->a, coeffs->b, coeffs->c);
+        break;
+
+        default:
+        puts("ERROR");
         break;
     }
 }
@@ -280,6 +294,10 @@ void show_solution(const EquationRoots * solution, const char language)
             printf("第二根： %5.5g\n", solution->second_root);
         }
         break;
+
+        default:
+        puts("ERROR");
+        break;
     }
 }
 
@@ -319,7 +337,7 @@ char get_language(void)
         puts("Error. Enter language again (\"R\", \"E\", \"G\" or \"C\".)");
     } while (ch != 'r' && ch != 'e' && ch != 'g' && ch != 'c');
 
-    return ch;
+    return (char) ch;
 }
 
 
@@ -341,6 +359,10 @@ void show_goodbye(const char language)
 
         case 'c':
         puts("再见！结尾。");
+        break;
+
+        default:
+        puts("ERROR");
         break;
     }
 }
