@@ -3,14 +3,17 @@
 #define DISCR(A,B,C) (pow(B,2.0)-4*(A)*(C))
 #define FIRST_ROOT(A,B,C) ((-(B)-sqrt((pow(B,2.0))-4*(A)*(C)))/(2*(A)))
 #define SECOND_ROOT(A,B,C) ((-(B)+sqrt((pow(B,2.0))-4*(A)*(C)))/(2*(A)))
+
 typedef struct {
     float a;
     float b;
     float c;
 } coefs;
+
 void show_menu(void);
 coefs get_coefs(void);
 int show_ans(const coefs *);
+
 int main(void)
 {
     coefs input = {0,0,0};
@@ -20,12 +23,14 @@ int main(void)
     puts("Have a good day! End.");
     return 0;
 }
+
 void show_menu(void)
 {
     puts("Hello, Ruslan Alekseyevich.");
     puts("This program can solve quadratic equation");
     puts("Equation must looks like: ax^2 + bx + c = 0.");
 }
+
 coefs get_coefs(void)
 {
     coefs input = {0,0,0};
@@ -38,26 +43,27 @@ coefs get_coefs(void)
     }
     return input;
 }
+
 int show_ans(const coefs * inp)
 {
     printf("Your equation: %.3g*x^2 + %.3g*x + %.3g = 0\n",inp->a,inp->b,inp->c);
-    if (inp->a==0 && inp->b==0 && inp->c==0)
+    if (inp->a==0 && inp->b==0 && inp->c==0)                                         // case 0=0
     {
         puts("This equation has an infinite number of roots");
         return -1;
     }
-    else if (inp->a==0 && inp->b!=0)
+    else if (inp->a==0 && inp->b!=0)                                                 // case bx + c = 0
     {
         puts("This equation has only one root (a==0)");
         printf("This root: %5.5g\n",-(inp->c/inp->b));
         return 1;
     }
-    else if (DISCR(inp->a,inp->b,inp->c)<0 || (inp->a==0 && inp->b==0 && inp->c!=0))
+    else if (DISCR(inp->a,inp->b,inp->c)<0 || (inp->a==0 && inp->b==0 && inp->c!=0)) // case DISCR<0 or const = 0
     {
         puts("This equation hasn't real roots.");
         return 0;
     }
-    else if (DISCR(inp->a,inp->b,inp->c)==0)
+    else if (DISCR(inp->a,inp->b,inp->c)==0)                                         // case DISCR = 0
     {
         puts("This equation has only one root (discriminant == 0)");
         printf("This root: %5.5g\n",FIRST_ROOT(inp->a,inp->b,inp->c));
@@ -65,7 +71,7 @@ int show_ans(const coefs * inp)
     }
     else
     {
-        puts("This equation has 2 roots");
+        puts("This equation has 2 roots");                                            // case DISCR > 0
         printf("first root: %5.5g\nsecond root: %5.5g\n",FIRST_ROOT(inp->a,inp->b,inp->c),
         SECOND_ROOT(inp->a,inp->b,inp->c));
         return 2;
