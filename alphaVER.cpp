@@ -18,7 +18,7 @@ typedef struct {
 
 void show_menu(void);
 EquationCoefficients get_coefficients(void);
-EquationRoots solve_solution(const EquationCoefficients * );
+EquationRoots solve_equation(const EquationCoefficients * );
 void show_equation(const EquationCoefficients *);
 void show_solution(const EquationRoots *);
 float discriminant(const EquationCoefficients * );
@@ -29,11 +29,11 @@ float root2(const EquationCoefficients *);
 int main(void)
 {
     EquationRoots solution = {0, 0.0, 0.0};
-    EquationCoefficients coefficients = {0.0,0.0,0.0};
+    EquationCoefficients coefficients = {0.0, 0.0, 0.0};
 
     show_menu();
     coefficients = get_coefficients();
-    solution = solve_solution(&coefficients);
+    solution = solve_equation(&coefficients);
     show_equation(&coefficients);
     show_solution(&solution);
     puts("Have a good day! End.");
@@ -64,7 +64,7 @@ EquationCoefficients get_coefficients(void)
 }
 
 
-EquationRoots solve_solution(const EquationCoefficients * coeffs)
+EquationRoots solve_equation(const EquationCoefficients * coeffs)
 {
     EquationRoots solution = {0,0.0,0.0};
     float Discriminant = discriminant(coeffs);
