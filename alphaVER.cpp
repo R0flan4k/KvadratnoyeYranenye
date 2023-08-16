@@ -24,8 +24,8 @@ void show_ans(const ans *);
 
 int main(void)
 {
-    ans answer;
-    coefs input = {0,0,0};
+    ans answer = {0, 0.0, 0.0};
+    coefs input = {0.0,0.0,0.0};
     show_menu();
     input=get_coefs();
     answer=solve_ans(&input);
@@ -44,7 +44,7 @@ void show_menu(void)
 
 coefs get_coefs(void)
 {
-    coefs input = {0,0,0};
+    coefs input = {0.0,0.0,0.0};
     puts("Enter coeficients a,b,c:");
     while (scanf("%f%f%f",&input.a,&input.b,&input.c)!=3)
     {
