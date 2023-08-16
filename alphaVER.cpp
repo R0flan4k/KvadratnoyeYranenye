@@ -10,16 +10,27 @@ typedef struct {
     float c;
 } coefs;
 
+typedef struct {
+    int count;
+    float first;
+    float second;
+} ans;
+
 void show_menu(void);
 coefs get_coefs(void);
-int show_ans(const coefs *);
+ans solve_ans(const coefs * );
+void show_equation(const coefs *);
+void show_ans(const ans *);
 
 int main(void)
 {
+    ans answer;
     coefs input = {0,0,0};
     show_menu();
     input=get_coefs();
-    show_ans(&input);
+    answer=solve_ans(&input);
+    show_equation(&input);
+    show_ans(&answer);
     puts("Have a good day! End.");
     return 0;
 }
@@ -44,36 +55,65 @@ coefs get_coefs(void)
     return input;
 }
 
-int show_ans(const coefs * inp)
+ans solve_ans(const coefs * inp)
+{
+    ans answer = {0,0.0,0.0};
+    if (inp->a==0)
+    {
+        if (inp->b==0)
+        {
+            if (inp->c==0)
+            answer.count = -1;
+            else answer.count = 0;
+        }    
+        else 
+        {
+            answer.count = 1;
+            answer.first = -(inp->c/inp->b);
+        }       
+    }
+    else if (DISCR(inp->a,inp->b,inp->c)<0)
+    {
+        answer.count = 0;
+    }
+    else if (DISCR(inp->a,inp->b,inp->c)==0)
+    {
+        answer.count = 1;
+        answer.first = FIRST_ROOT(inp->a,inp->b,inp->c);
+    }
+    else 
+    {
+        answer.count = 2;
+        answer.first = FIRST_ROOT(inp->a,inp->b,inp->c);
+        answer.second = SECOND_ROOT(inp->a,inp->b,inp->c);
+    }
+    return answer;
+}
+
+void show_equation(const coefs * inp)
 {
     printf("Your equation: %.3g*x^2 + %.3g*x + %.3g = 0\n",inp->a,inp->b,inp->c);
-    if (inp->a==0 && inp->b==0 && inp->c==0)                                         // case 0=0
+}
+
+void show_ans(const ans * answer)
+{
+    if (answer->count == -1)
     {
-        puts("This equation has an infinite number of roots");
-        return -1;
+        puts("This equation has infinite number of roots");
     }
-    else if (inp->a==0 && inp->b!=0)                                                 // case bx + c = 0
+    else if (answer->count == 0)
     {
-        puts("This equation has only one root (a==0)");
-        printf("This root: %5.5g\n",-(inp->c/inp->b));
-        return 1;
+        puts("This equation hasn't roots");
     }
-    else if (DISCR(inp->a,inp->b,inp->c)<0 || (inp->a==0 && inp->b==0 && inp->c!=0)) // case DISCR<0 or const = 0
+    else if (answer->count ==1)
     {
-        puts("This equation hasn't real roots.");
-        return 0;
-    }
-    else if (DISCR(inp->a,inp->b,inp->c)==0)                                         // case DISCR = 0
-    {
-        puts("This equation has only one root (discriminant == 0)");
-        printf("This root: %5.5g\n",FIRST_ROOT(inp->a,inp->b,inp->c));
-        return 1;
+        puts("This equation has one root");
+        printf("This root: %5.5g\n",answer->first);
     }
     else
     {
-        puts("This equation has 2 roots");                                            // case DISCR > 0
-        printf("first root: %5.5g\nsecond root: %5.5g\n",FIRST_ROOT(inp->a,inp->b,inp->c),
-        SECOND_ROOT(inp->a,inp->b,inp->c));
-        return 2;
+        puts("This equation has two roots");
+        printf("First root: %5.5g\n",answer->first);
+        printf("Second root: %5.5g\n",answer->second);
     }
 }
