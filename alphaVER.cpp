@@ -26,12 +26,14 @@ int main(void)
 {
     ans answer = {0, 0.0, 0.0};
     coefs input = {0.0,0.0,0.0};
+
     show_menu();
     input=get_coefs();
     answer=solve_ans(&input);
     show_equation(&input);
     show_ans(&answer);
     puts("Have a good day! End.");
+    
     return 0;
 }
 
