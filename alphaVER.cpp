@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include <tgmath.h>
-#define DISCR(A,B,C) (pow(B,2.0)-4*(A)*(C))
-#define FIRST_ROOT(A,B,C) ((-(B)-sqrt((pow(B,2.0))-4*(A)*(C)))/(2*(A)))
-#define SECOND_ROOT(A,B,C) ((-(B)+sqrt((pow(B,2.0))-4*(A)*(C)))/(2*(A)))
+#include <math.h>
+#define DISCR(A,B,C) (powf(B,2.0)-4*(A)*(C))
+#define FIRST_ROOT(A,B,C) ((-(B)-sqrtf((powf(B,2.0))-4*(A)*(C)))/(2*(A)))
+#define SECOND_ROOT(A,B,C) ((-(B)+sqrtf((powf(B,2.0))-4*(A)*(C)))/(2*(A)))
 
 typedef struct {
     float a;
