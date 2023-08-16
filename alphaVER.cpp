@@ -18,7 +18,7 @@ typedef struct {
 
 void show_menu(void);
 EquationCoefficients get_coefficients(void);
-EquationRoots solve_roots(const EquationCoefficients * );
+EquationRoots solve_solution(const EquationCoefficients * );
 void show_equation(const EquationCoefficients *);
 void show_solution(const EquationRoots *);
 float discriminant(const EquationCoefficients * );
@@ -33,7 +33,7 @@ int main(void)
 
     show_menu();
     coefficients = get_coefficients();
-    solution = solve_roots(&coefficients);
+    solution = solve_solution(&coefficients);
     show_equation(&coefficients);
     show_solution(&solution);
     puts("Have a good day! End.");
@@ -64,9 +64,11 @@ EquationCoefficients get_coefficients(void)
 }
 
 
-EquationRoots solve_roots(const EquationCoefficients * coeffs)
+EquationRoots solve_solution(const EquationCoefficients * coeffs)
 {
     EquationRoots solution = {0,0.0,0.0};
+    float Discriminant = discriminant(coeffs);
+
     if (coeffs->a == 0)
     {
         if (coeffs->b == 0)
@@ -81,11 +83,11 @@ EquationRoots solve_roots(const EquationCoefficients * coeffs)
             solution.first_root = -(coeffs->c / coeffs->b);
         }       
     }
-    else if (discriminant(coeffs)< 0)
+    else if (Discriminant< 0)
     {
         solution.count = 0;
     }
-    else if (discriminant(coeffs) == 0)
+    else if (Discriminant == 0)
     {
         solution.count = 1;
         solution.first_root = root1(coeffs);
@@ -132,7 +134,7 @@ void show_solution(const EquationRoots * solution)
 
 float discriminant(const EquationCoefficients * coefficients )
 {
-    return ( powf(coefficients->b, 2.0) - 4 * (coefficients->a) * (coefficients->c) );
+    return ( coefficients->b * coefficients->b - 4 * (coefficients->a) * (coefficients->c) );
 }
 
 
