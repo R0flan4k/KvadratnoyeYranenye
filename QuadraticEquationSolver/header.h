@@ -1,7 +1,4 @@
-#include <windows.h>
-#define EQUATION_COLOR 11
-#define ROOTS_COLOR 10
-#define DEFAULT_COLOR 15
+typedef enum {infinity = -1, zero, one, two} RootsCount;
 
 typedef struct {
     float a;
@@ -11,13 +8,12 @@ typedef struct {
 
 
 typedef struct {
-    int count;
+    RootsCount count;
     float first_root;
     float second_root;
 } EquationRoots;
 
 
-BOOL setcolor(WORD);
 char get_language(void);                       
 void show_menu(const char);
 void show_equation_format(void);
@@ -30,5 +26,5 @@ void show_solution(const EquationRoots *, const char);
 float calculate_discriminant(const EquationCoefficients *);
 float calculate_root1(const EquationCoefficients *, const float);
 float calculate_root2(const EquationCoefficients *, const float);
-int check_equality_float(const float, const float);
+bool check_equality_float(const float, const float);
 void show_goodbye(const char);

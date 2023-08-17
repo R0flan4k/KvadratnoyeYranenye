@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include "QuadraticEquation.h"
+#include "header.h"
 
 
 int main(void)
 {
-    EquationRoots solution = {0, 0.0, 0.0};
+    EquationRoots solution = {zero, 0.0, 0.0};
     EquationCoefficients coefficients = {0.0, 0.0, 0.0};
     char language = 0;
 
