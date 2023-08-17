@@ -1,4 +1,7 @@
 #include <windows.h>
+#define EQUATION_COLOR 11
+#define ROOTS_COLOR 10
+#define DEFAULT_COLOR 15
 
 typedef struct {
     float a;

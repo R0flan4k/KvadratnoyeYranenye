@@ -20,14 +20,15 @@ BOOL setcolor(WORD color)
 
 void show_equation_format(void)
 {
-    setcolor(10);
+    setcolor(EQUATION_COLOR);
     puts("ax^2 + bx + c = 0.");
-    setcolor(15);
+    setcolor(DEFAULT_COLOR);
 }
 
 
 void show_menu(const char language)
 {
+    setcolor(DEFAULT_COLOR);
     switch(language)
     {
         case 'e':
@@ -160,9 +161,9 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
 
 void show_user_equation(const EquationCoefficients * coeffs)
 {
-    setcolor(10);
+    setcolor(EQUATION_COLOR);
     printf("%.3g*x^2 + %.3g*x + %.3g = 0.\n", coeffs->a, coeffs->b, coeffs->c);
-    setcolor(15);
+    setcolor(DEFAULT_COLOR);
 }
 
 
@@ -199,9 +200,9 @@ void show_equation(const EquationCoefficients * coeffs, const char language)
 
 void show_one_root(const float root)
 {
-    setcolor(14);
+    setcolor(ROOTS_COLOR);
     printf("%5.5g\n", root);
-    setcolor(15);
+    setcolor(DEFAULT_COLOR);
 }
 
 
