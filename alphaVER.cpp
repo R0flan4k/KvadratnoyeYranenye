@@ -27,6 +27,7 @@ void show_solution(const EquationRoots *, const char);
 float calculate_discriminant(const EquationCoefficients *);
 float calculate_root1(const EquationCoefficients *, const float);
 float calculate_root2(const EquationCoefficients *, const float);
+int check_equality_float(const float, const float);
 void show_goodbye(const char);
 
 
@@ -40,8 +41,8 @@ int main(void)
     show_menu(language);
     coefficients = get_coefficients(language);
     solution = solve_equation(&coefficients);
-    show_equation(&coefficients,language);
-    show_solution(&solution,language);
+    show_equation(&coefficients, language);
+    show_solution(&solution, language);
     show_goodbye(language);
 
     return 0;
@@ -77,7 +78,7 @@ void show_menu(const char language)
         break;
 
         default:
-        puts("ERROR");
+        puts("LANGUAGE ERROR");
         break;
     }
 }
@@ -91,7 +92,7 @@ EquationCoefficients get_coefficients(const char language)
     {
         case 'e':
         puts("Enter coeficients a, b, c:");
-        while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c)!=3)
+        while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) != 3)
         {
             puts("Error. Enter 3 real numbers");
             puts("like 12, -1.5, 3.14 or 1.618.");
@@ -101,7 +102,7 @@ EquationCoefficients get_coefficients(const char language)
 
         case 'r':
         puts ("Введите коэффициенты a, b и c:");
-        while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c)!=3)
+        while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) != 3)
         {
             puts("Ошибка. Введите 3 вещественных числа");
             puts("таких как 12, -1.5, 3.14 или 1.618.");
@@ -111,7 +112,7 @@ EquationCoefficients get_coefficients(const char language)
 
         case 'g':
         puts ("Geben Sie die Quoten ein a, b, c:");
-        while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c)!=3)
+        while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) != 3)
         {
             puts("Fehler. Geben Sie 3 reelle Zahlen ein");
             puts("Zum Beispiel 12, -1.5, 3.14, 1.618.");
@@ -121,7 +122,7 @@ EquationCoefficients get_coefficients(const char language)
 
         case 'c':
         puts ("输入赔率 a, b, c:");
-        while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c)!=3)
+        while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) != 3)
         {
             puts("错误。输入三个实数");
             puts("例如 12, -1.5, 3.14, 1.618.");
@@ -130,7 +131,7 @@ EquationCoefficients get_coefficients(const char language)
         break;
 
         default:
-        puts("ERROR");
+        puts("LANGUAGE ERROR");
         break;
     }
     return coefficients;
@@ -142,11 +143,11 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
     EquationRoots solution = {0, 0.0, 0.0};
     float discriminant = calculate_discriminant(coeffs);
 
-    if (abs(coeffs->a) < FLT_EPSILON)
+    if (check_equality_float(coeffs->a, 0.0))
     {
-        if (abs(coeffs->b) < FLT_EPSILON)
+        if (check_equality_float(coeffs->b, 0.0))
         {
-            if (abs(coeffs->c) < FLT_EPSILON)
+            if (check_equality_float(coeffs->c, 0.0))
             solution.count = -1;
             else 
             solution.count = 0;
@@ -154,10 +155,10 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
         else 
         {
             solution.count = 1;
-            solution.first_root = -(coeffs->c / coeffs->b);
+            solution.first_root = - (coeffs->c / coeffs->b);
         }       
     }
-    else if (discriminant< 0)
+    else if (discriminant < 0)
     {
         solution.count = 0;
     }
@@ -197,7 +198,7 @@ void show_equation(const EquationCoefficients * coeffs, const char language)
         break;
 
         default:
-        puts("ERROR");
+        puts("LANGUAGE ERROR");
         break;
     }
 }
@@ -296,7 +297,7 @@ void show_solution(const EquationRoots * solution, const char language)
         break;
 
         default:
-        puts("ERROR");
+        puts("LANGUAGE ERROR");
         break;
     }
 }
@@ -304,19 +305,19 @@ void show_solution(const EquationRoots * solution, const char language)
 
 float calculate_discriminant(const EquationCoefficients * coefficients)
 {
-    return ( coefficients->b * coefficients->b - 4 * (coefficients->a) * (coefficients->c) );
+    return coefficients->b * coefficients->b - 4 * (coefficients->a) * (coefficients->c);
 }
 
 
 float calculate_root1(const EquationCoefficients * coefficients, const float discriminant)
 {
-    return ( (-coefficients->b - sqrtf( discriminant ) ) / ( 2 * coefficients->a ) );
+    return (-coefficients->b - sqrtf( discriminant ) ) / ( 2 * coefficients->a );
 }
 
 
 float calculate_root2(const EquationCoefficients * coefficients, const float discriminant)
 {
-    return ( (-coefficients->b + sqrtf( discriminant ) ) / ( 2 * coefficients->a ) );
+    return (-coefficients->b + sqrtf( discriminant ) ) / ( 2 * coefficients->a );
 }
 
 
@@ -362,7 +363,16 @@ void show_goodbye(const char language)
         break;
 
         default:
-        puts("ERROR");
+        puts("LANGUAGE ERROR");
         break;
     }
+}
+
+
+int check_equality_float(const float num1, const float num2)
+{
+    if (abs(num1 - num2) < FLT_EPSILON)
+    return 1;
+    else
+    return 0;
 }
