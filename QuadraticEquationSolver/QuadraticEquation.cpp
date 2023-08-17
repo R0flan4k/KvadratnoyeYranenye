@@ -2,7 +2,28 @@
 #include <math.h>
 #include <ctype.h>
 #include <float.h>
+#include <windows.h>
 #include "QuadraticEquation.h"
+
+BOOL setcolor(WORD color)
+{
+   static HANDLE handle = NULL;
+ 
+   if (handle == NULL)
+   {
+      handle = GetStdHandle(STD_OUTPUT_HANDLE);
+   }
+ 
+   return SetConsoleTextAttribute(handle, color);
+}
+
+
+void show_equation_format(void)
+{
+    setcolor(10);
+    puts("ax^2 + bx + c = 0.");
+    setcolor(15);
+}
 
 
 void show_menu(const char language)
@@ -12,25 +33,29 @@ void show_menu(const char language)
         case 'e':
         puts("Hello, Ruslan Alekseyevich.");
         puts("This program can solve quadratic equation.");
-        puts("Equation must looks like: ax^2 + bx + c = 0.");
+        printf("Equation must looks like: ");
+        show_equation_format();
         break;
 
         case 'r':
         puts("Здравствуйте, Руслан Алексеевич.");
         puts("Эта программа преднозначена для решения квадратных уравнений.");
-        puts("Уравнение должно выглядеть следующим образом: ax^2 + bx + c = 0.");
+        printf("Уравнение должно выглядеть следующим образом: ");
+        show_equation_format();
         break;
 
         case 'g':
         puts("Hallo, Ruslan Alekseevich.");
         puts("Dieses Programm dient zur Lösung quadratischer Gleichungen.");
-        puts("Die Gleichung sollte so aussehen: ax^2 + bx + c = 0.");
+        printf("Die Gleichung sollte so aussehen: ");
+        show_equation_format();
         break;
 
         case 'c':
         puts("你好，鲁斯兰·阿列克谢耶维奇。");
         puts("该程序旨在求解二次方程。");
-        puts("等式应如下所示： ax^2 + bx + c = 0.");
+        printf("等式应如下所示： ");
+        show_equation_format();
         break;
 
         default:
@@ -133,30 +158,50 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
 }
 
 
+void show_user_equation(const EquationCoefficients * coeffs)
+{
+    setcolor(10);
+    printf("%.3g*x^2 + %.3g*x + %.3g = 0.\n", coeffs->a, coeffs->b, coeffs->c);
+    setcolor(15);
+}
+
+
 void show_equation(const EquationCoefficients * coeffs, const char language)
 {
     switch (language)
     {
         case 'e':
-        printf("Your equation: %.3g*x^2 + %.3g*x + %.3g = 0.\n", coeffs->a, coeffs->b, coeffs->c);
+        printf("Your equation: ");
+        show_user_equation(coeffs);
         break;
 
         case 'r':
-        printf("Ваше уравнение: %.3g*x^2 + %.3g*x + %.3g = 0.\n", coeffs->a, coeffs->b, coeffs->c);
+        printf("Ваше уравнение: ");
+        show_user_equation(coeffs);
         break;
 
         case 'g':
-        printf("Hier ist deine Gleichung: %.3g*x^2 + %.3g*x + %.3g = 0.\n", coeffs->a, coeffs->b, coeffs->c);
+        printf("Hier ist deine Gleichung: ");
+        show_user_equation(coeffs);
         break;
 
         case 'c':
-        printf("这是你的等式： %.3g*x^2 + %.3g*x + %.3g = 0.\n", coeffs->a, coeffs->b, coeffs->c);
+        printf("这是你的等式： ");
+        show_user_equation(coeffs);
         break;
 
         default:
         puts("LANGUAGE ERROR");
         break;
     }
+}
+
+
+void show_one_root(const float root)
+{
+    setcolor(14);
+    printf("%5.5g\n", root);
+    setcolor(15);
 }
 
 
@@ -176,13 +221,16 @@ void show_solution(const EquationRoots * solution, const char language)
         else if (solution->count == 1)
         {
             puts("This equation has one root.");
-            printf("This root: %5.5g\n", solution->first_root);
+            printf("This root: ");
+            show_one_root(solution->first_root);
         }
         else
         {
             puts("This equation has two roots.");
-            printf("First root: %5.5g\n", solution->first_root);
-            printf("Second root: %5.5g\n", solution->second_root);
+            printf("First root: ");
+            show_one_root(solution->first_root);
+            printf("Second root: ");
+            show_one_root(solution->second_root);
         }
         break;
 
@@ -198,13 +246,16 @@ void show_solution(const EquationRoots * solution, const char language)
         else if (solution->count == 1)
         {
             puts("Это уравнение имеет всего один корень.");
-            printf("Этот корень: %5.5g\n", solution->first_root);
+            printf("Этот корень: ");
+            show_one_root(solution->first_root);
         }
         else
         {
             puts("Это уравнение имеет два корня.");
-            printf("Первый корень: %5.5g\n", solution->first_root);
-            printf("Второй корень: %5.5g\n", solution->second_root);
+            printf("Первый корень: ");
+            show_one_root(solution->first_root);
+            printf("Второй корень: ");
+            show_one_root(solution->second_root);
         }
         break;
 
@@ -220,13 +271,16 @@ void show_solution(const EquationRoots * solution, const char language)
         else if (solution->count == 1)
         {
             puts("Diese Gleichung hat nur eine Wurzel.");
-            printf("das ist die Wurzel: %5.5g\n", solution->first_root);
+            printf("das ist die Wurzel: ");
+            show_one_root(solution->first_root);
         }
         else
         {
             puts("Diese Gleichung hat zwei Wurzeln.");
-            printf("erste Wurzel: %5.5g\n", solution->first_root);
-            printf("zweite Wurzel: %5.5g\n", solution->second_root);
+            printf("erste Wurzel: ");
+            show_one_root(solution->first_root);
+            printf("zweite Wurzel: ");
+            show_one_root(solution->second_root);
         }
         break;
 
@@ -242,13 +296,16 @@ void show_solution(const EquationRoots * solution, const char language)
         else if (solution->count == 1)
         {
             puts("这个方程只有一个根。");
-            printf("这是根 %5.5g\n", solution->first_root);
+            printf("这是根 ");
+            show_one_root(solution->first_root);
         }
         else
         {
             puts("这个方程有两个根。");
-            printf("第一个根：  %5.5g\n", solution->first_root);
-            printf("第二根： %5.5g\n", solution->second_root);
+            printf("第一个根：  ");
+            show_one_root(solution->first_root);
+            printf("第二根： ");
+            show_one_root(solution->second_root);
         }
         break;
 
