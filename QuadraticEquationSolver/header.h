@@ -1,21 +1,21 @@
-enum RootsCount {
-    infinity = -1,
-    zero, 
-    one, 
-    two
+enum ROOTS_COUNT {
+    ROOTS_COUNT_INFINITY = -1,
+    ROOTS_COUNT_ZERO, 
+    ROOTS_COUNT_ONE, 
+    ROOTS_COUNT_TWO
 };
 
 
-enum Languages {
-    russian = 'r',
-    english = 'e',
-    germany = 'g',
-    chinese = 'c'
+enum LANGUAGES {
+    RUSSIAN,
+    ENGLISH,
+    GERMANY,
+    CHINESE
 };
 
 
 typedef struct {
-    Languages language_indentification;
+    LANGUAGES language_indentification;
     const char * language_menu;
     const char * language_request;
     const char * language_error;
@@ -39,13 +39,13 @@ typedef struct {
 
 
 typedef struct {
-    RootsCount count;
+    ROOTS_COUNT count;
     float first_root;
     float second_root;
 } EquationRoots;
 
 
-OutputLanguages get_language(void);                       
+OutputLanguages * get_language(void);                       
 void show_menu(const OutputLanguages *);
 void show_equation_format(void);
 void show_user_equation(const EquationCoefficients *);

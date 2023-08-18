@@ -2,8 +2,8 @@
 #include "header.h"
 
 
-OutputLanguages eng = {
-    english,
+OutputLanguages LANG_ENGLISH = {
+    ENGLISH,
 
     "Hello, Ruslan Alekseyevich.\n\
     \rThis program can solve quadratic equation.\n\
@@ -34,8 +34,8 @@ OutputLanguages eng = {
 };
 
 
-OutputLanguages rus = {
-    russian,
+OutputLanguages LANG_RUSSIAN = {
+    RUSSIAN,
 
     "Здравствуйте, Руслан Алексеевич.\n\
     \rЭта программа преднозначена для решения квадратных уравнений.\n\
@@ -66,8 +66,8 @@ OutputLanguages rus = {
 };
 
 
-OutputLanguages ger = {
-    germany,
+OutputLanguages LANG_GERMANY = {
+    GERMANY,
 
     "Hallo, Ruslan Alekseevich.\n\
     \rDieses Programm dient zur Lösung quadratischer Gleichungen.\n\
@@ -98,8 +98,8 @@ OutputLanguages ger = {
 };
 
 
-OutputLanguages chi = {
-    chinese,
+OutputLanguages LANG_CHINESE = {
+    CHINESE,
 
     "你好，鲁斯兰·阿列克谢耶维奇。\n\
     \r该程序旨在求解二次方程。\n\

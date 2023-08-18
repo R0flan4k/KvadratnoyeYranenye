@@ -7,7 +7,7 @@
 
 EquationRoots solve_equation(const EquationCoefficients * coeffs)
 {
-    EquationRoots solution = {zero, 0.0, 0.0};
+    EquationRoots solution = {ROOTS_COUNT_ZERO, 0.0, 0.0};
     float discriminant = calculate_discriminant(coeffs);
     float sqrtf_discriminant = sqrtf(discriminant);
 
@@ -16,28 +16,28 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
         if (check_equality_float(coeffs->b, 0.0))
         {
             if (check_equality_float(coeffs->c, 0.0))
-                solution.count = infinity;
+                solution.count = ROOTS_COUNT_INFINITY;
             else 
-                solution.count = zero;
+                solution.count = ROOTS_COUNT_ZERO;
         }    
         else 
         { 
-            solution.count = one;
+            solution.count = ROOTS_COUNT_ONE;
             solution.first_root = - (coeffs->c / coeffs->b);
         }       
     }
     else if (discriminant < 0)
     {
-        solution.count = zero;
+        solution.count = ROOTS_COUNT_ZERO;
     }
     else if (check_equality_float(discriminant, 0))
     {
-        solution.count = one;
+        solution.count = ROOTS_COUNT_ONE;
         solution.first_root = calculate_root1(coeffs, sqrtf_discriminant);
     }
     else 
     {
-        solution.count = two;
+        solution.count = ROOTS_COUNT_TWO;
         solution.first_root = calculate_root1(coeffs, sqrtf_discriminant);
         solution.second_root = calculate_root2(coeffs, sqrtf_discriminant);
     }

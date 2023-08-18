@@ -3,10 +3,10 @@
 #include <ctype.h>
 #include "header.h"
 
-extern OutputLanguages rus;
-extern OutputLanguages eng;
-extern OutputLanguages ger;
-extern OutputLanguages chi;
+extern OutputLanguages LANG_RUSSIAN;
+extern OutputLanguages LANG_ENGLISH;
+extern OutputLanguages LANG_GERMANY;
+extern OutputLanguages LANG_CHINESE;
 
 
 void show_equation_format(void)
@@ -67,21 +67,21 @@ void show_solution(const EquationRoots * solution, const OutputLanguages * langu
 {
     switch (solution->count)
     {
-        case infinity:
+        case ROOTS_COUNT_INFINITY:
             printf("%s", language->language_inf_roots);
             break;
 
-        case zero:
+        case ROOTS_COUNT_ZERO:
             printf("%s", language->language_no_roots);
             break;
 
-        case one: 
+        case ROOTS_COUNT_ONE: 
             printf("%s", language->language_one_root);
             printf("%s", language->language_this_root);
             show_one_root(solution->first_root);
             break;
 
-        case two:
+        case ROOTS_COUNT_TWO:
             printf("%s", language->language_two_roots);
             printf("%s", language->language_first_root);
             show_one_root(solution->first_root);
@@ -103,9 +103,9 @@ void show_goodbye(const OutputLanguages * language)
 }
 
 
-OutputLanguages get_language(void)
+OutputLanguages * get_language(void)
 {
-    int ch = english;
+    int ch = 0;
     puts("Enter language:");
     puts("\"R\" - Russian,      \"E\" - English,");
     puts("\"G\" - Germany,      \"C\" - Chinese.");
@@ -123,16 +123,16 @@ OutputLanguages get_language(void)
     switch (ch)
     {
         case 'r':
-            return (OutputLanguages) rus;
+            return (OutputLanguages *) &LANG_RUSSIAN;
             break;
         case 'e':
-            return (OutputLanguages) eng;
+            return (OutputLanguages *) &LANG_ENGLISH;
             break;
         case 'g':
-            return (OutputLanguages) ger;
+            return (OutputLanguages *) &LANG_GERMANY;
             break;
         case 'c':
-            return (OutputLanguages) chi;
+            return (OutputLanguages *) &LANG_CHINESE;
             break;
         default:
             puts("GET_LANG ERROR");
