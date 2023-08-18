@@ -27,6 +27,7 @@ typedef struct {
     const char * language_this_root;
     const char * language_first_root;
     const char * language_second_root;
+    const char * language_goodbye;
 } OutputLanguages;
 
 
@@ -44,17 +45,17 @@ typedef struct {
 } EquationRoots;
 
 
-Languages get_language(void);                       
-void show_menu(const Languages);
+OutputLanguages get_language(void);                       
+void show_menu(const OutputLanguages *);
 void show_equation_format(void);
 void show_user_equation(const EquationCoefficients *);
-EquationCoefficients get_coefficients(const Languages);
+EquationCoefficients get_coefficients(const OutputLanguages *);
 EquationRoots solve_equation(const EquationCoefficients *);
-void show_equation(const EquationCoefficients *, const Languages);
+void show_equation(const EquationCoefficients *, const OutputLanguages *);
 void show_one_root(const float);
-void show_solution(const EquationRoots *, const Languages);
+void show_solution(const EquationRoots *, const OutputLanguages *);
 float calculate_discriminant(const EquationCoefficients *);
 float calculate_root1(const EquationCoefficients *, const float);
 float calculate_root2(const EquationCoefficients *, const float);
 bool check_equality_float(const float, const float);
-void show_goodbye(const Languages);
+void show_goodbye(const OutputLanguages *);
