@@ -1,9 +1,6 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <assert.h>
-#include <math.h>
 #include <ctype.h>
-#include <float.h>
 #include "header.h"
 
 
@@ -15,30 +12,30 @@ void show_equation_format(void)
 }
 
 
-void show_menu(const char language)
+void show_menu(const Languages language)
 {
     //setcolor(DEFAULT_COLOR);
     switch(language)
     {
-        case 'e':
+        case english:
             puts("Hello, Ruslan Alekseyevich.");
             puts("This program can solve quadratic equation.");
             printf("Equation must looks like: ");
             break;
 
-        case 'r':
+        case russian:
             puts("Здравствуйте, Руслан Алексеевич.");
             puts("Эта программа преднозначена для решения квадратных уравнений.");
             printf("Уравнение должно выглядеть следующим образом: ");
             break;
 
-        case 'g':
+        case germany:
             puts("Hallo, Ruslan Alekseevich.");
             puts("Dieses Programm dient zur Lösung quadratischer Gleichungen.");
             printf("Die Gleichung sollte so aussehen: ");
             break;
 
-        case 'c':
+        case chinese:
             puts("你好，鲁斯兰·阿列克谢耶维奇。");
             puts("该程序旨在求解二次方程。");
             printf("等式应如下所示： ");
@@ -53,13 +50,13 @@ void show_menu(const char language)
 }
 
 
-EquationCoefficients get_coefficients(const char language)
+EquationCoefficients get_coefficients(const Languages language)
 {
     EquationCoefficients coefficients = {0.0, 0.0, 0.0};
     
     switch(language)
     {
-        case 'e':
+        case english:
             puts("Enter coeficients a, b, c:");
             while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) != 3)
             {
@@ -69,7 +66,7 @@ EquationCoefficients get_coefficients(const char language)
             }
             break;
 
-        case 'r':
+        case russian:
             puts ("Введите коэффициенты a, b и c:");
             while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) != 3)
             {
@@ -79,7 +76,7 @@ EquationCoefficients get_coefficients(const char language)
             }
             break;
 
-        case 'g':
+        case germany:
             puts ("Geben Sie die Quoten ein a, b, c:");
             while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) != 3)
             {
@@ -89,7 +86,7 @@ EquationCoefficients get_coefficients(const char language)
             }
             break;
 
-        case 'c':
+        case chinese:
             puts ("输入赔率 a, b, c:");
             while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) != 3)
             {
@@ -108,45 +105,6 @@ EquationCoefficients get_coefficients(const char language)
 }
 
 
-EquationRoots solve_equation(const EquationCoefficients * coeffs)
-{
-    EquationRoots solution = {zero, 0.0, 0.0};
-    float discriminant = calculate_discriminant(coeffs);
-
-    if (check_equality_float(coeffs->a, 0.0))
-    {
-        if (check_equality_float(coeffs->b, 0.0))
-        {
-            if (check_equality_float(coeffs->c, 0.0))
-                solution.count = infinity;
-            else 
-                solution.count = zero;
-        }    
-        else 
-        { 
-            solution.count = one;
-            solution.first_root = - (coeffs->c / coeffs->b);
-        }       
-    }
-    else if (discriminant < 0)
-    {
-        solution.count = zero;
-    }
-    else if (check_equality_float(discriminant, 0))
-    {
-        solution.count = one;
-        solution.first_root = calculate_root1(coeffs, discriminant);
-    }
-    else 
-    {
-        solution.count = two;
-        solution.first_root = calculate_root1(coeffs, discriminant);
-        solution.second_root = calculate_root2(coeffs, discriminant);
-    }
-    return solution;
-}
-
-
 void show_user_equation(const EquationCoefficients * coeffs)
 {
     // setcolor(EQUATION_COLOR);
@@ -155,23 +113,23 @@ void show_user_equation(const EquationCoefficients * coeffs)
 }
 
 
-void show_equation(const EquationCoefficients * coeffs, const char language)
+void show_equation(const EquationCoefficients * coeffs, const Languages language)
 {
     switch (language)
     {
-        case 'e':
+        case english:
             printf("Your equation: ");
             break;
 
-        case 'r':
+        case russian:
             printf("Ваше уравнение: ");
             break;
 
-        case 'g':
+        case germany:
             printf("Hier ist deine Gleichung: ");
             break;
 
-        case 'c':
+        case chinese:
             printf("这是你的等式： ");
             break;
 
@@ -192,11 +150,11 @@ void show_one_root(const float root)
 }
 
 
-void show_solution(const EquationRoots * solution, const char language)
+void show_solution(const EquationRoots * solution, const Languages language)
 {
     switch (language)
     {
-        case 'e':
+        case english:
             switch (solution->count)
             {
                 case infinity:
@@ -228,7 +186,7 @@ void show_solution(const EquationRoots * solution, const char language)
             }
             break;
 
-        case 'r':
+        case russian:
             switch (solution->count)
             {
                 case infinity:
@@ -260,7 +218,7 @@ void show_solution(const EquationRoots * solution, const char language)
             }
             break;        
 
-        case 'g':
+        case germany:
             switch (solution->count)
             {
                 case infinity:
@@ -292,7 +250,7 @@ void show_solution(const EquationRoots * solution, const char language)
             }
             break;   
 
-        case 'c':
+        case chinese:
             switch (solution->count)
             {
                 case infinity:
@@ -332,27 +290,37 @@ void show_solution(const EquationRoots * solution, const char language)
 }
 
 
-float calculate_discriminant(const EquationCoefficients * coefficients)
+void show_goodbye(const Languages language)
 {
-    return coefficients->b * coefficients->b - 4 * (coefficients->a) * (coefficients->c);
+    switch (language)
+    {
+        case english:
+            puts("Have a good day! End.");
+            break;
+
+        case russian:
+            puts("Всего доброго! Конец.");
+            break;
+
+        case germany:
+            puts("Auf Wiedersehen! Ende.");
+            break;
+
+        case chinese:
+            puts("再见！结尾。");
+            break;
+
+        default:
+            puts("LANGUAGE ERROR");
+            assert(0);
+            break;
+    }
 }
 
 
-float calculate_root1(const EquationCoefficients * coefficients, const float discriminant)
+Languages get_language(void)
 {
-    return (- coefficients->b - sqrtf( discriminant ) ) / ( 2 * coefficients->a );
-}
-
-
-float calculate_root2(const EquationCoefficients * coefficients, const float discriminant)
-{
-    return (- coefficients->b + sqrtf( discriminant ) ) / ( 2 * coefficients->a );
-}
-
-
-char get_language(void)
-{
-    int ch = 0;
+    int ch = english;
     puts("Enter language:");
     puts("\"R\" - Russian,      \"E\" - English,");
     puts("\"G\" - Germany,      \"C\" - Chinese.");
@@ -367,39 +335,5 @@ char get_language(void)
             puts("Error. Enter language again (\"R\", \"E\", \"G\" or \"C\".)");
     } while (ch != 'r' && ch != 'e' && ch != 'g' && ch != 'c');
 
-    return (char) ch;
-}
-
-
-void show_goodbye(const char language)
-{
-    switch (language)
-    {
-        case 'e':
-            puts("Have a good day! End.");
-            break;
-
-        case 'r':
-            puts("Всего доброго! Конец.");
-            break;
-
-        case 'g':
-            puts("Auf Wiedersehen! Ende.");
-            break;
-
-        case 'c':
-            puts("再见！结尾。");
-            break;
-
-        default:
-            puts("LANGUAGE ERROR");
-            assert(0);
-            break;
-    }
-}
-
-
-bool check_equality_float(const float num1, const float num2)
-{
-    return (fabs(num1 - num2) < 0);
+    return (Languages) ch;
 }

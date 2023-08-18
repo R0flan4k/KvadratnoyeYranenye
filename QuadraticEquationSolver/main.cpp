@@ -6,7 +6,7 @@ int main(void)
 {
     EquationRoots solution = {zero, 0.0, 0.0};
     EquationCoefficients coefficients = {0.0, 0.0, 0.0};
-    char language = 0;
+    Languages language = english;
 
     language = get_language();
     show_menu(language);
