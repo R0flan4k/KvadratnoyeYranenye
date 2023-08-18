@@ -29,7 +29,7 @@ EquationCoefficients get_coefficients(const OutputLanguages * language)
 {
     EquationCoefficients coefficients = {0.0, 0.0, 0.0};
     
-    printf("%s",language->language_request);
+    printf("%s", language->language_request);
     while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) != 3)
     {
         printf("%s", language->language_error);
