@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <ctype.h>
-#include "header.h"
+#include "input-output.h"
 
 extern OutputLanguages LANG_RUSSIAN;
 extern OutputLanguages LANG_ENGLISH;
@@ -106,19 +106,43 @@ void show_goodbye(const OutputLanguages * language)
 OutputLanguages * get_language(void)
 {
     int ch = 0;
+    int checker = 0;
+    bool extra_characters_marker = true;
+    bool wrong_character_marker = true;
+
     puts("Enter language:");
     puts("\"R\" - Russian,      \"E\" - English,");
     puts("\"G\" - Germany,      \"C\" - Chinese.");
 
     do
     {
+        extra_characters_marker = true;
+        wrong_character_marker = true;
         ch = getchar();
         ch = tolower(ch);
-        while (getchar() != '\n') 
-            continue;
-        if (ch != 'r' && ch != 'e' && ch != 'g' && ch != 'c')
+
+        if ((ch != 'r' && ch != 'e' && ch != 'g' && ch != 'c'))
+        {
             puts("Error. Enter language again (\"R\", \"E\", \"G\" or \"C\".)");
-    } while (ch != 'r' && ch != 'e' && ch != 'g' && ch != 'c');
+            
+            while (getchar() != '\n')
+                continue;
+            
+            wrong_character_marker = false;
+        }
+        else
+        {
+            do
+            {
+                checker = getchar();
+                if (!(isspace(checker)) && extra_characters_marker == true)
+                {
+                    puts("Error. Enter language again (\"R\", \"E\", \"G\" or \"C\".)");
+                    extra_characters_marker = false;
+                }
+            }  while (checker != '\n');
+        }
+    } while ((ch != 'r' && ch != 'e' && ch != 'g' && ch != 'c') || extra_characters_marker == false || wrong_character_marker == false);
 
     switch (ch)
     {

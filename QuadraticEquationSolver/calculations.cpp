@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <math.h>
 #include <float.h>
-#include "header.h"
+#include "calculations.h"
 
 
 EquationRoots solve_equation(const EquationCoefficients * coeffs)
