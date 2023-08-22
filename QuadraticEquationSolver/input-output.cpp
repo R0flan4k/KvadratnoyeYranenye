@@ -30,13 +30,32 @@ void show_menu(const OutputLanguages * language)
 EquationCoefficients get_coefficients(const OutputLanguages * language)
 {
     EquationCoefficients coefficients = {0.0, 0.0, 0.0};
+    int checker = 0;
+    bool marker = true;
     
     printf("%s", language->language_request);
-    while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) != 3)
+
+    start:
+    marker = true;
+    while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) < 3)
     {
         printf("%s", language->language_error);
-        scanf("%*s");
+        
+        while (getchar() != '\n')
+            continue;
     }
+
+    while ((checker = getchar()) != '\n')
+    {
+        if (!(isspace(checker)) && marker == true)
+        {
+            printf("%s", language->language_error);
+            marker = false;
+        }
+    }
+
+    if (marker == false)
+        goto start;
 
     return coefficients;
 }
@@ -97,7 +116,7 @@ void show_solution(const EquationRoots * solution, const OutputLanguages * langu
 
 void show_goodbye(const OutputLanguages * language)
 {
-    printf("\x1b[31m%s\x1b[0m", language->language_goodbye);
+    printf("%s", language->language_goodbye);
 }
 
 
