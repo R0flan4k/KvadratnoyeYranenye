@@ -6,8 +6,8 @@ int main(void)
 {
     EquationRoots solution = {ROOTS_COUNT_ZERO, 0.0, 0.0};
     EquationCoefficients coefficients = {0.0, 0.0, 0.0};
-    extern OutputLanguages LANG_ENGLISH;
-    OutputLanguages * language = &LANG_ENGLISH;
+    extern const OutputLanguages LANG_ENGLISH;
+    const OutputLanguages * language = &LANG_ENGLISH;
 
     language = get_language();
     show_menu(language);

@@ -1,19 +1,21 @@
 #include <stdio.h>
 #include <assert.h>
 #include <ctype.h>
-#include "input-output.h"
 
-extern OutputLanguages LANG_RUSSIAN;
-extern OutputLanguages LANG_ENGLISH;
-extern OutputLanguages LANG_GERMANY;
-extern OutputLanguages LANG_CHINESE;
+
+#include "input-output.h"
+#include "languages.h"
+
+
+extern const OutputLanguages LANG_RUSSIAN;
+extern const OutputLanguages LANG_ENGLISH;
+extern const OutputLanguages LANG_GERMANY;
+extern const OutputLanguages LANG_CHINESE;
 
 
 void show_equation_format(void)
 {
-    // setcolor(EQUATION_COLOR);
-    puts("ax^2 + bx + c = 0.");
-    // setcolor(DEFAULT_COLOR);
+    puts("\x1b[31max^2 + bx + c = 0.\x1b[0m");
 }
 
 
@@ -42,9 +44,7 @@ EquationCoefficients get_coefficients(const OutputLanguages * language)
 
 void show_user_equation(const EquationCoefficients * coeffs)
 {
-    // setcolor(EQUATION_COLOR);
-    printf("%.3g*x^2 + %.3g*x + %.3g = 0.\n", coeffs->a, coeffs->b, coeffs->c);
-    // setcolor(DEFAULT_COLOR);
+    printf("\x1b[31m%.3g*x^2 + %.3g*x + %.3g = 0.\x1b[0m\n", coeffs->a, coeffs->b, coeffs->c);
 }
 
 
@@ -57,9 +57,7 @@ void show_equation(const EquationCoefficients * coeffs, const OutputLanguages * 
 
 void show_one_root(const float root)
 {
-    // setcolor(ROOTS_COLOR);
-    printf("%5.5g\n", root);
-    // setcolor(DEFAULT_COLOR);
+    printf("\x1b[31m%5.5g\x1b[0m\n", root);
 }
 
 
@@ -99,11 +97,11 @@ void show_solution(const EquationRoots * solution, const OutputLanguages * langu
 
 void show_goodbye(const OutputLanguages * language)
 {
-    printf("%s", language->language_goodbye);
+    printf("\x1b[31m%s\x1b[0m", language->language_goodbye);
 }
 
 
-OutputLanguages * get_language(void)
+const OutputLanguages * get_language(void)
 {
     int ch = 0;
     int checker = 0;
@@ -147,16 +145,16 @@ OutputLanguages * get_language(void)
     switch (ch)
     {
         case 'r':
-            return (OutputLanguages *) &LANG_RUSSIAN;
+            return &LANG_RUSSIAN;
             break;
         case 'e':
-            return (OutputLanguages *) &LANG_ENGLISH;
+            return &LANG_ENGLISH;
             break;
         case 'g':
-            return (OutputLanguages *) &LANG_GERMANY;
+            return &LANG_GERMANY;
             break;
         case 'c':
-            return (OutputLanguages *) &LANG_CHINESE;
+            return &LANG_CHINESE;
             break;
         default:
             puts("GET_LANG ERROR");

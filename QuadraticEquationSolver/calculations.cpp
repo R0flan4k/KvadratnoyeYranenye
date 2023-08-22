@@ -11,11 +11,11 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
     float discriminant = calculate_discriminant(coeffs);
     float sqrtf_discriminant = sqrtf(discriminant);
 
-    if (check_equality_float(coeffs->a, 0.0))
+    if (is_equal_float(coeffs->a, 0.0))
     {
-        if (check_equality_float(coeffs->b, 0.0))
+        if (is_equal_float(coeffs->b, 0.0))
         {
-            if (check_equality_float(coeffs->c, 0.0))
+            if (is_equal_float(coeffs->c, 0.0))
                 solution.count = ROOTS_COUNT_INFINITY;
             else 
                 solution.count = ROOTS_COUNT_ZERO;
@@ -30,7 +30,7 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
     {
         solution.count = ROOTS_COUNT_ZERO;
     }
-    else if (check_equality_float(discriminant, 0))
+    else if (is_equal_float(discriminant, 0))
     {
         solution.count = ROOTS_COUNT_ONE;
         solution.first_root = calculate_root1(coeffs, sqrtf_discriminant);
@@ -63,7 +63,7 @@ float calculate_root2(const EquationCoefficients * coefficients, const float sqr
 }
 
 
-bool check_equality_float(const float num1, const float num2)
+bool is_equal_float(const float num1, const float num2)
 {
     return (fabs(num1 - num2) < FLT_EPSILON);
 }

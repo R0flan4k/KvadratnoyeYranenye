@@ -2,129 +2,129 @@
 #include "languages.h"
 
 
-OutputLanguages LANG_ENGLISH = {
-    ENGLISH,
+extern const OutputLanguages LANG_ENGLISH = {
+    .language_indentification = ENGLISH,
 
-    "Hello, Ruslan Alekseyevich.\n\
-    \rThis program can solve quadratic equation.\n\
-    \rEquation must looks like: ",
+    .language_menu =            "Hello, Ruslan Alekseyevich.\n\
+                                \rThis program can solve quadratic equation.\n\
+                                \rEquation must looks like: ",
 
-    "Enter coeficients a, b, c:\n",
+    .language_request =         "Enter coeficients a, b, c:\n",
 
-    "Error. Enter 3 real numbers\n\
-    \rlike 12, -1.5, 3.14 or 1.618.\n",
+    .language_error =           "Error. Enter 3 real numbers\n\
+                                \rlike 12, -1.5, 3.14 or 1.618.\n",
 
-    "Your equation: ",
+    .language_show_equation =   "Your equation: ",
 
-    "This equation has infinite number of roots.\n",
+    .language_inf_roots =       "This equation has infinite number of roots.\n",
 
-    "This equation hasn't roots.\n",
+    .language_no_roots =        "This equation hasn't roots.\n",
 
-    "This equation has one root.\n",
+    .language_one_root =        "This equation has one root.\n",
 
-    "This equation has two roots.\n",
+    .language_two_roots =       "This equation has two roots.\n",
 
-    "This root: ",
+    .language_this_root =       "This root: ",
 
-    "First root: ",
+    .language_first_root =      "First root: ",
 
-    "Second root: ",
+    .language_second_root =     "Second root: ",
 
-    "Have a good day! End."
+    .language_goodbye =         "Have a good day! End."
 };
 
 
-OutputLanguages LANG_RUSSIAN = {
-    RUSSIAN,
+extern const OutputLanguages LANG_RUSSIAN = {
+    .language_indentification = RUSSIAN,
 
-    "Здравствуйте, Руслан Алексеевич.\n\
-    \rЭта программа преднозначена для решения квадратных уравнений.\n\
-    \rУравнение должно выглядеть следующим образом: ",
+    .language_menu =            "Здравствуйте, Руслан Алексеевич.\n\
+                                \rЭта программа преднозначена для решения квадратных уравнений.\n\
+                                \rУравнение должно выглядеть следующим образом: ",
 
-    "Введите коэффициенты a, b и c:\n",
+    .language_request =         "Введите коэффициенты a, b и c:\n",
 
-    "Ошибка. Введите 3 вещественных числа\n\
-    \rтаких как 12, -1.5, 3.14 или 1.618.\n",
+    .language_error =           "Ошибка. Введите 3 вещественных числа\n\
+                                \rтаких как 12, -1.5, 3.14 или 1.618.\n",
 
-    "Ваше уравнение: ",
+    .language_show_equation =   "Ваше уравнение: ",
 
-    "Это уравнение имеет бесконечное количество корней.\n",
+    .language_inf_roots =       "Это уравнение имеет бесконечное количество корней.\n",
 
-    "Это уравнение не имеет корней.\n",
+    .language_no_roots =        "Это уравнение не имеет корней.\n",
+    
+    .language_one_root =        "Это уравнение имеет всего один корень.\n",
 
-    "Это уравнение имеет всего один корень.\n",
+    .language_two_roots =       "Это уравнение имеет два корня.\n",
 
-    "Это уравнение имеет два корня.\n",
+    .language_this_root =       "Этот корень: ",
 
-    "Этот корень: ",
+    .language_first_root =      "Первый корень: ",
 
-    "Первый корень: ",
+    .language_second_root =     "Второй корень: ",
 
-    "Второй корень: ",
-
-    "Всего доброго! Конец."
+    .language_goodbye =         "Всего доброго! Конец."
 };
 
 
-OutputLanguages LANG_GERMANY = {
-    GERMANY,
+extern const OutputLanguages LANG_GERMANY = {
+    .language_indentification = GERMANY,
 
-    "Hallo, Ruslan Alekseevich.\n\
-    \rDieses Programm dient zur Lösung quadratischer Gleichungen.\n\
-    \rDie Gleichung sollte so aussehen: ",
+    .language_menu =            "Hallo, Ruslan Alekseevich.\n\
+                                \rDieses Programm dient zur Lösung quadratischer Gleichungen.\n\
+                                \rDie Gleichung sollte so aussehen: ",
 
-    "Geben Sie die Quoten ein a, b, c:\n",
+    .language_request =         "Geben Sie die Quoten ein a, b, c:\n",
 
-    "Fehler. Geben Sie 3 reelle Zahlen ein\n\
-    \rZum Beispiel 12, -1.5, 3.14, 1.618.\n",
+    .language_error =           "Fehler. Geben Sie 3 reelle Zahlen ein\n\
+                                \rZum Beispiel 12, -1.5, 3.14, 1.618.\n",
 
-    "Hier ist deine Gleichung: ",
+    .language_show_equation =   "Hier ist deine Gleichung: ",
 
-    "Diese Gleichung hat unendlich viele Wurzeln.\n",
+    .language_inf_roots =       "Diese Gleichung hat unendlich viele Wurzeln.\n",
 
-    "Diese Gleichung hat keine Wurzeln.\n",
+    .language_no_roots =        "Diese Gleichung hat keine Wurzeln.\n",
 
-    "Diese Gleichung hat nur eine Wurzel.\n",
+    .language_one_root =        "Diese Gleichung hat nur eine Wurzel.\n",
 
-    "Diese Gleichung hat zwei Wurzeln.\n",
+    .language_two_roots =       "Diese Gleichung hat zwei Wurzeln.\n",
 
-    "das ist die Wurzel: ",
+    .language_this_root =       "das ist die Wurzel: ",
 
-    "erste Wurzel: ",
+    .language_first_root =      "erste Wurzel: ",
 
-    "zweite Wurzel: ",
+    .language_second_root =     "zweite Wurzel: ",
 
-    "Auf Wiedersehen! Ende."
+    .language_goodbye =         "Auf Wiedersehen! Ende."
 };
 
 
-OutputLanguages LANG_CHINESE = {
-    CHINESE,
+extern const OutputLanguages LANG_CHINESE = {
+    .language_indentification = CHINESE,
 
-    "你好，鲁斯兰·阿列克谢耶维奇。\n\
-    \r该程序旨在求解二次方程。\n\
-    \r等式应如下所示： ",
+    .language_menu =            "你好，鲁斯兰·阿列克谢耶维奇。\n\
+                                \r该程序旨在求解二次方程。\n\
+                                \r等式应如下所示： ",
 
-    "输入赔率 a, b, c:\n",
+    .language_request =         "输入赔率 a, b, c:\n",
 
-    "О错误。输入三个实数\n\
-    \r例如 12, -1.5, 3.14, 1.618.\n",
+    .language_error =           "О错误。输入三个实数\n\
+                                \r例如 12, -1.5, 3.14, 1.618.\n",
 
-    "这是你的等式： ",
+    .language_show_equation =   "这是你的等式： ",
 
-    "这个方程有无数个根。\n",
+    .language_inf_roots =       "这个方程有无数个根。\n",
 
-    "该方程没有实根。\n",
+    .language_no_roots =        "该方程没有实根。\n",
 
-    "这个方程只有一个根。\n",
+    .language_one_root =        "这个方程只有一个根。\n",
 
-    "这个方程有两个根。\n",
+    .language_two_roots =       "这个方程有两个根。\n",
 
-    "这是根: ",
+    .language_this_root =       "这是根: ",
 
-    "第一个根： ",
+    .language_first_root =      "第一个根： ",
 
-    "第二根： ",
+    .language_second_root =     "第二根： ",
 
-    "再见！结尾。"
+    .language_goodbye =         "再见！结尾。"
 };
