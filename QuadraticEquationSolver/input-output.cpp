@@ -61,16 +61,10 @@ EquationCoefficients get_coefficients(const OutputLanguages * language)
 }
 
 
-void show_user_equation(const EquationCoefficients * coeffs)
-{
-    printf("\x1b[31m%.3g*x^2 + %.3g*x + %.3g = 0.\x1b[0m\n", coeffs->a, coeffs->b, coeffs->c);
-}
-
-
 void show_equation(const EquationCoefficients * coeffs, const OutputLanguages * language)
 {
     printf("%s", language->language_show_equation);
-    show_user_equation(coeffs);
+    printf("\x1b[31m%.3g*x^2 + %.3g*x + %.3g = 0.\x1b[0m\n", coeffs->a, coeffs->b, coeffs->c);
 }
 
 
@@ -107,8 +101,7 @@ void show_solution(const EquationRoots * solution, const OutputLanguages * langu
             break;
 
         default:
-            puts("ROOTS COUNT ERROR");
-            assert(0);
+            assert(0 && "ROOTS COUNT ERROR");
             break;
     }
 }
@@ -176,8 +169,7 @@ const OutputLanguages * get_language(void)
             return &LANG_CHINESE;
             break;
         default:
-            puts("GET_LANG ERROR");
-            assert(0);
+            assert(0 && "GET_LANG ERROR");
             break;
     }
 }
