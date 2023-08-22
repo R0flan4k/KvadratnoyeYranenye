@@ -2,7 +2,6 @@
 #include <assert.h>
 #include <ctype.h>
 
-
 #include "input-output.h"
 #include "languages.h"
 
@@ -31,6 +30,7 @@ EquationCoefficients get_coefficients(const OutputLanguages * language)
 {
     EquationCoefficients coefficients = {0.0, 0.0, 0.0};
     int checker = 0;
+    int EOF_checker = 0;
     bool marker = true;
     
     printf("%s", language->language_request);
@@ -39,22 +39,28 @@ EquationCoefficients get_coefficients(const OutputLanguages * language)
     marker = true;
     while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) < 3)
     {
+        while ((EOF_checker = getchar()) != '\n')
+        {
+            if (EOF_checker == EOF)
+                exit(EXIT_SUCCESS);
+        }
+        
         printf("%s", language->language_error);
         
-        while (getchar() != '\n')
-            continue;
     }
 
     while ((checker = getchar()) != '\n')
     {
-        if (!(isspace(checker)) && marker == true)
+        if (!(isspace(checker)) && marker)
         {
+            if (checker == EOF)
+                exit(EXIT_SUCCESS);
             printf("%s", language->language_error);
             marker = false;
         }
     }
 
-    if (marker == false)
+    if (!marker)
         goto start;
 
     return coefficients;
@@ -131,6 +137,8 @@ const OutputLanguages * get_language(void)
         ch = getchar();
         ch = tolower(ch);
 
+        if (ch == EOF)
+            return EXIT_SUCCESS;
         if ((ch != 'r' && ch != 'e' && ch != 'g' && ch != 'c'))
         {
             puts("Error. Enter language again (\"R\", \"E\", \"G\" or \"C\".)");
