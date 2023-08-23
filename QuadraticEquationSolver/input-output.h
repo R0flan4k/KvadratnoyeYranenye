@@ -1,8 +1,12 @@
 #ifndef INPUT_OUTPUT_H
     #define INPUT_OUTPUT_H
-    
+
     #include "languages.h"
     #include "calculations.h"
+
+    const int WRONG_CMD_INPUT = 1;
+    const int RIGHT_CMD_INPUT = 0;
+    const int TRIVIAL_CMD_INPUT = 2;
                        
     void show_menu(const OutputLanguages *);
     void show_equation_format(void);
@@ -13,8 +17,9 @@
 
     EquationCoefficients get_coefficients(const OutputLanguages *);
     char get_test_necessity(void);
-    
-    void my_assert(bool);
+
+    int check_cmd_input(int, char * *);
+    void show_instruction(char * *);
 
 
 #endif

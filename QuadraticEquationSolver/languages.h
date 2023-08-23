@@ -3,7 +3,7 @@
 
     enum language {
         RUSSIAN,
-        ENGLISH,
+        ENGLISH, // ID
         GERMANY,
         CHINESE
     };

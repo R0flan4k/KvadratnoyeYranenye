@@ -33,7 +33,7 @@ EquationCoefficients get_coefficients(const OutputLanguages * language)
     int EOF_checker = 0;
     bool marker = true;
     
-    printf("%s", language->language_request);
+    printf("%s", language->language_request); //
 
     start:
     marker = true;
@@ -42,10 +42,10 @@ EquationCoefficients get_coefficients(const OutputLanguages * language)
         while ((EOF_checker = getchar()) != '\n')
         {
             if (EOF_checker == EOF)
-                exit(EXIT_SUCCESS);
+                exit(EXIT_SUCCESS); // ubrat
         }
         
-        printf("%s", language->language_error);
+        printf("%s", language->language_error); //
         
     }
 
@@ -119,7 +119,7 @@ void show_goodbye(const OutputLanguages * language)
 }
 
 
-const OutputLanguages * get_language(void)
+const OutputLanguages * get_language(void) // na 3 func
 {
     int ch = 0;
     int checker = 0;
@@ -191,7 +191,7 @@ char get_test_necessity(void)
     bool wrong_character_marker = true;
 
     puts("Run the test?:");
-    puts("\"Y\" - yes,      \"N\" - no.");
+    puts("\"Y\" - yes,      \"N\" - no."); // flag --test
 
     do
     {

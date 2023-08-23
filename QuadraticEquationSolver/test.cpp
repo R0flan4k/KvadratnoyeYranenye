@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h>      // --test 
 #include <assert.h>
 
 #include "calculations.h"
@@ -7,7 +7,7 @@
 
 static bool is_equal_equation_roots(const float program_root1, const float program_root2, const float right_root1, const float right_root2);
 
-test_results test_program(void)
+test_results test_program(const char * test_file)
 {
     EquationCoefficients test_coeffs = {0.0, 0.0, 0.0};
     EquationRoots right_solution = {ROOTS_COUNT_ZERO, 0.0, 0.0};
@@ -16,10 +16,10 @@ test_results test_program(void)
     int test_string_number = 1;
 
 
-    if ((fp = fopen(TEST_FILE, "r")) == NULL)
+    if ((fp = fopen(test_file, "r")) == NULL)
     {
         puts("Can't open the file");
-        exit(EXIT_FAILURE);
+        return TEST_CANT_OPEN_FILE; // return
     }
 
     while (fscanf(fp, "%f %f %f %d %f %f", &test_coeffs.a, &test_coeffs.b, &test_coeffs.c, 
@@ -33,7 +33,7 @@ test_results test_program(void)
             fclose(fp);
 
             show_test_results(TEST_COUNT_FAILURE, &program_solution, &right_solution);
-            printf("%s: string %d\n", TEST_FILE, test_string_number);
+            printf("%s: string %d\n", test_file, test_string_number);
 
             return TEST_COUNT_FAILURE;
         }
@@ -42,7 +42,7 @@ test_results test_program(void)
             fclose(fp);
 
             show_test_results(TEST_ROOTS_FAILURE, &program_solution, &right_solution);
-            printf("%s: string %d\n", TEST_FILE, test_string_number);
+            printf("%s: string %d\n", test_file, test_string_number);
             return TEST_ROOTS_FAILURE;
         }
 
@@ -88,6 +88,10 @@ void show_test_results(test_results test_result, const EquationRoots * program_s
             printf("Expected roots: %f and %f\n", right_solution->first_root, right_solution->second_root);
             printf("Program roots: %f and %f\n", program_solution->first_root, program_solution->second_root);
             break;
+
+        case TEST_CANT_OPEN_FILE:
+            break;
+
         default:
             assert(0 && "TEST RESULT OUTPUT ERROR");
             break;
