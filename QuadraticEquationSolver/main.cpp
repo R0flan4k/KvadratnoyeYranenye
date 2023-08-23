@@ -5,24 +5,20 @@
 #include "calculations.h"
 #include "test.h"
 
+
+#define MY_ASSERT(X) if (!(X)) { printf("Assertion failed: " #X ", line %d, file" __FILE__ ", date " __DATE__ "\n", __LINE__); exit(EXIT_FAILURE); }
+
+
 int main(void)
 {
     EquationRoots solution = {ROOTS_COUNT_ZERO, 0.0, 0.0};
     EquationCoefficients coefficients = {0.0, 0.0, 0.0};
 
-    extern const OutputLanguages LANG_ENGLISH;
-    const OutputLanguages * language = &LANG_ENGLISH;
+    extern const OutputLanguages LANGUAGE_ENGLISH;
+    const OutputLanguages * language = &LANGUAGE_ENGLISH;
 
-    TEST_RESULTS test = TEST_SUCCES;
-
-    puts("Running the test");
-
-    if (test == TEST_COUNT_FAILURE)
-        assert (0 && "TEST ERROR: WRONG COUNT OF ROOTS");
-    else if (test == TEST_ROOTS_FAILURE)
-        assert (0 && "TEST ERROR: WRONG ROOTS");
-    else 
-        puts("The test succesfully passed");
+    if (get_test_necessity() == 'y')
+        MY_ASSERT(test_program() == TEST_SUCCESS);
 
     language = get_language();
     show_menu(language);
@@ -34,3 +30,4 @@ int main(void)
 
     return 0;
 }
+

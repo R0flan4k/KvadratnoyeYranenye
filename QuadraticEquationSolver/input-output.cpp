@@ -6,10 +6,10 @@
 #include "languages.h"
 
 
-extern const OutputLanguages LANG_RUSSIAN;
-extern const OutputLanguages LANG_ENGLISH;
-extern const OutputLanguages LANG_GERMANY;
-extern const OutputLanguages LANG_CHINESE;
+extern const OutputLanguages LANGUAGE_RUSSIAN;
+extern const OutputLanguages LANGUAGE_ENGLISH;
+extern const OutputLanguages LANGUAGE_GERMANY;
+extern const OutputLanguages LANGUAGE_CHINESE;
 
 
 void show_equation_format(void)
@@ -165,19 +165,65 @@ const OutputLanguages * get_language(void)
     switch (ch)
     {
         case 'r':
-            return &LANG_RUSSIAN;
+            return &LANGUAGE_RUSSIAN;
             break;
         case 'e':
-            return &LANG_ENGLISH;
+            return &LANGUAGE_ENGLISH;
             break;
         case 'g':
-            return &LANG_GERMANY;
+            return &LANGUAGE_GERMANY;
             break;
         case 'c':
-            return &LANG_CHINESE;
+            return &LANGUAGE_CHINESE;
             break;
         default:
             assert(0 && "GET_LANG ERROR");
             break;
     }
+}
+
+
+char get_test_necessity(void)
+{
+    int ch = 0;
+    int checker = 0;
+    bool extra_characters_marker = true;
+    bool wrong_character_marker = true;
+
+    puts("Run the test?:");
+    puts("\"Y\" - yes,      \"N\" - no.");
+
+    do
+    {
+        extra_characters_marker = true;
+        wrong_character_marker = true;
+        ch = getchar();
+        ch = tolower(ch);
+
+        if (ch == EOF)
+            return EXIT_SUCCESS;
+        if ((ch != 'y' && ch != 'n'))
+        {
+            puts("Error. Enter your choice again (\"Y\" or \"N\".)");
+            
+            while (getchar() != '\n')
+                continue;
+            
+            wrong_character_marker = false;
+        }
+        else
+        {
+            do
+            {
+                checker = getchar();
+                if (!(isspace(checker)) && extra_characters_marker == true)
+                {
+                    puts("Error. Enter language again (\"Y\" or \"N\".)");
+                    extra_characters_marker = false;
+                }
+            }  while (checker != '\n');
+        }
+    } while ((ch != 'y' && ch != 'n') || extra_characters_marker == false || wrong_character_marker == false);
+
+    return (char) ch;
 }

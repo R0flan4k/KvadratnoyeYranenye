@@ -10,6 +10,9 @@
     void show_goodbye(const OutputLanguages *);
 
     EquationCoefficients get_coefficients(const OutputLanguages *);
+    char get_test_necessity(void);
+    
+    void my_assert(bool);
 
     #define INPUT_OUTPUT_H
 
