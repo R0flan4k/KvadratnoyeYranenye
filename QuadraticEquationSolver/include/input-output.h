@@ -1,6 +1,8 @@
 #ifndef INPUT_OUTPUT_H
-#   include "languages.h"
-#   include "calculations.h"
+    #define INPUT_OUTPUT_H
+    
+    #include "languages.h"
+    #include "calculations.h"
                        
     void show_menu(const OutputLanguages *);
     void show_equation_format(void);
@@ -14,6 +16,5 @@
     
     void my_assert(bool);
 
-    #define INPUT_OUTPUT_H
 
 #endif

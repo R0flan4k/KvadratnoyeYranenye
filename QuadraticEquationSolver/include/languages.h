@@ -1,6 +1,7 @@
 #ifndef LANGUAGES_H 
+    #define LANGUAGES_H
 
-    enum LANGUAGE {
+    enum language {
         RUSSIAN,
         ENGLISH,
         GERMANY,
@@ -9,7 +10,7 @@
 
 
     typedef struct {
-        LANGUAGE language_indentification;
+        language language_indentification;
         const char * language_menu;
         const char * language_request;
         const char * language_error;
@@ -27,6 +28,5 @@
 
     const OutputLanguages * get_language(void);
 
-    #define LANGUAGES_H
 
 #endif

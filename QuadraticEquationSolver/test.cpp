@@ -7,7 +7,7 @@
 
 static bool is_equal_equation_roots(const float program_root1, const float program_root2, const float right_root1, const float right_root2);
 
-TEST_RESULTS test_program(void)
+test_results test_program(void)
 {
     EquationCoefficients test_coeffs = {0.0, 0.0, 0.0};
     EquationRoots right_solution = {ROOTS_COUNT_ZERO, 0.0, 0.0};
@@ -52,7 +52,7 @@ TEST_RESULTS test_program(void)
     fclose(fp);
 
     puts("Test successfully passed");
-    
+
     return TEST_SUCCESS;
 }
 
@@ -69,7 +69,7 @@ static bool is_equal_equation_roots(const float program_root1, const float progr
 }
 
 
-void show_test_results(TEST_RESULTS test_result, const EquationRoots * program_solution, const EquationRoots * right_solution)
+void show_test_results(test_results test_result, const EquationRoots * program_solution, const EquationRoots * right_solution)
 {
     switch (test_result)
     {

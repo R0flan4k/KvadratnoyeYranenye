@@ -1,6 +1,7 @@
 #ifndef CALCULATIONS_H
+    #define CALCULATIONS_H
 
-    enum ROOTS_COUNT {
+    enum roots_count {
         ROOTS_COUNT_INFINITY = -1,
         ROOTS_COUNT_ZERO, 
         ROOTS_COUNT_ONE, 
@@ -16,7 +17,7 @@
 
 
     typedef struct {
-        ROOTS_COUNT count;
+        roots_count count;
         float first_root;
         float second_root;
     } EquationRoots;
@@ -28,6 +29,5 @@
     float calculate_root2(const EquationCoefficients *, const float);
     bool is_equal_float(const float, const float);
 
-    #define CALCULATIONS_H
 
 #endif
