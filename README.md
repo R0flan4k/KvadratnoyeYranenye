@@ -13,8 +13,10 @@ This program is designed to solve a quadratic equation, but it can do more than 
 
 ## Flags
 This program supports the following flags (the list will be extended in the future)
-- Start tests according to the test_arguments.txt file (--test test_arguments.txt). The list of files with tested input data can be expanded.
+- Start tests according to the test_arguments.txt file. The list of files with tested input data can be expanded.
 
 ~~~
 qSolver.exe --test test_arguments.txt
 ~~~
+
+- Get the coefficients of an equation from the command line.
