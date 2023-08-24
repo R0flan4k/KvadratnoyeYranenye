@@ -4,9 +4,10 @@ var indexSectionsWithContent =
   1: "eo",
   2: "cilmt",
   3: "cgist",
-  4: "ew",
+  4: "ertw",
   5: "lrt",
-  6: "m"
+  6: "t",
+  7: "m"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "enums",
-  6: "defines"
+  6: "enumvalues",
+  7: "defines"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "Functions",
   4: "Variables",
   5: "Enumerations",
-  6: "Macros"
+  6: "Enumerator",
+  7: "Macros"
 };
 

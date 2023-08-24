@@ -20,8 +20,7 @@ void \mbox{\hyperlink{input-output_8h_a0481090766818f9dae58182e983ecab9}{show\+\
 void \mbox{\hyperlink{input-output_8h_a2057984fb86fe06f168416d3939ff607}{show\+\_\+goodbye}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
 \begin{DoxyCompactList}\small\item\em Say goodebye to user. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{input-output_8h_afac1e64a683c11464c97e12472a8614d}{get\+\_\+coefficients}} (\mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coefficients)
-\begin{DoxyCompactList}\small\item\em Let user input coefficients of equation and check if input valid. ~\newline
- \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Let user input coefficients of equation. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{input-output_8h_a8a4c7ccd5bed224dd0b06f5ca297de05}{get\+\_\+one\+\_\+char}} (const char $\ast$str, int n)
 \begin{DoxyCompactList}\small\item\em Get from stdin first non-\/space allowed character, and then skip anything after the character. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{input-output_8h_ad21ac6160c1f9a367be8ce7ee69dd216}{check\+\_\+cmd\+\_\+input}} (int argc, char $\ast$$\ast$argv)
@@ -31,15 +30,14 @@ bool \mbox{\hyperlink{input-output_8h_a2d4df57ae6f72824d786267b374cf038}{is\+\_\
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{input-output_8h_a561da360eae327ecc4bb368752715307}\label{input-output_8h_a561da360eae327ecc4bb368752715307}} 
 const int \mbox{\hyperlink{input-output_8h_a561da360eae327ecc4bb368752715307}{WRONG\+\_\+\+CMD\+\_\+\+INPUT}} = 1
 \begin{DoxyCompactList}\small\item\em Constatnts for cmd input result return. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input-output_8h_af69a30a47d2796a66fb3eea14904be43}\label{input-output_8h_af69a30a47d2796a66fb3eea14904be43}} 
-const int {\bfseries RIGHT\+\_\+\+CMD\+\_\+\+INPUT} = 0
-\item 
+const int \mbox{\hyperlink{input-output_8h_af69a30a47d2796a66fb3eea14904be43}{RIGHT\+\_\+\+CMD\+\_\+\+INPUT}} = 0
+\begin{DoxyCompactList}\small\item\em If user correctly using flags. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input-output_8h_a8c049d3424358209390f4f03474309ef}\label{input-output_8h_a8c049d3424358209390f4f03474309ef}} 
-const int {\bfseries TRIVIAL\+\_\+\+CMD\+\_\+\+INPUT} = 2
-\item 
+const int \mbox{\hyperlink{input-output_8h_a8c049d3424358209390f4f03474309ef}{TRIVIAL\+\_\+\+CMD\+\_\+\+INPUT}} = 2
+\begin{DoxyCompactList}\small\item\em If user dont using flags. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input-output_8h_ad701a3bdba89d4b7f62024ed8378da89}\label{input-output_8h_ad701a3bdba89d4b7f62024ed8378da89}} 
 const int \mbox{\hyperlink{input-output_8h_ad701a3bdba89d4b7f62024ed8378da89}{EXTRA\+\_\+\+CHARACTERS}} = -\/2
 \begin{DoxyCompactList}\small\item\em Constants for \mbox{\hyperlink{input-output_8h_a8a4c7ccd5bed224dd0b06f5ca297de05}{get\+\_\+one\+\_\+char()}} return. \end{DoxyCompactList}\item 
@@ -77,16 +75,17 @@ Is cmd inputs was right or is it there.
 
 
 
-Let user input coefficients of equation and check if input valid. ~\newline
- 
+Let user input coefficients of equation. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em language} & language that program using @@@@@@@@@@@@@ \\
+\mbox{\texttt{ out}}  & {\em coefficients} & Memory cell where the coefficients of the equation will be placed. ~\newline
+ \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Coefficients of equation that user inputed. @@@@@@@@@@@@@ 
+Number of readed numbers. ~\newline
+ 
 \end{DoxyReturn}
 \mbox{\Hypertarget{input-output_8h_a8a4c7ccd5bed224dd0b06f5ca297de05}\label{input-output_8h_a8a4c7ccd5bed224dd0b06f5ca297de05}} 
 \index{input-\/output.h@{input-\/output.h}!get\_one\_char@{get\_one\_char}}
@@ -190,3 +189,17 @@ Show user solution of inputed equatiin.
 \mbox{\texttt{ in}}  & {\em language} & Language that program using. \\
 \hline
 \end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{input-output_8h_a561da360eae327ecc4bb368752715307}\label{input-output_8h_a561da360eae327ecc4bb368752715307}} 
+\index{input-\/output.h@{input-\/output.h}!WRONG\_CMD\_INPUT@{WRONG\_CMD\_INPUT}}
+\index{WRONG\_CMD\_INPUT@{WRONG\_CMD\_INPUT}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{WRONG\_CMD\_INPUT}{WRONG\_CMD\_INPUT}}
+{\footnotesize\ttfamily const int WRONG\+\_\+\+CMD\+\_\+\+INPUT = 1}
+
+
+
+Constatnts for cmd input result return. 
+
+If user incorrectly using flags. 

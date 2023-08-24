@@ -10,10 +10,10 @@
 /// \brief All kind of test results.
 /////////////////////////////////////////////////////////////////////////
     enum test_results {
-        TEST_CANT_OPEN_FILE, ///< 
-        TEST_SUCCESS,
-        TEST_COUNT_FAILURE,
-        TEST_ROOTS_FAILURE
+        TEST_CANT_OPEN_FILE, ///< If file not found.
+        TEST_SUCCESS,        ///< If file successfully tested.
+        TEST_COUNT_FAILURE,  ///< If calculated wrong number of roots.
+        TEST_ROOTS_FAILURE   ///< If calculated wrong roots.
     };
 
 /////////////////////////////////////////////////////////////////////////

@@ -9,9 +9,9 @@
 /////////////////////////////////////////////////////////////////////////
 /// \brief Constatnts for cmd input result return.
 /////////////////////////////////////////////////////////////////////////
-    const int WRONG_CMD_INPUT = 1;
-    const int RIGHT_CMD_INPUT = 0;
-    const int TRIVIAL_CMD_INPUT = 2;
+    const int WRONG_CMD_INPUT = 1;    ///< If user incorrectly using flags.
+    const int RIGHT_CMD_INPUT = 0;    ///< If user correctly using flags.
+    const int TRIVIAL_CMD_INPUT = 2;  ///< If user dont using flags.
     
 /////////////////////////////////////////////////////////////////////////
 /// \brief Constants for get_one_char() return.
@@ -57,9 +57,9 @@
     
 
 /////////////////////////////////////////////////////////////////////////
-/// \brief Let user input coefficients of equation and check if input valid.  
-/// \param[in] language language that program using                               @@@@@@@@@@@@@@@@@@@@@@@@@@
-/// \return Coefficients of equation that user inputed.                      @@@@@@@@@@@@@@@@@@@@@@@@@@
+/// \brief Let user input coefficients of equation. 
+/// \param[out] coefficients Memory cell where the coefficients of the equation will be placed.                     
+/// \return Number of readed numbers.                      
 /////////////////////////////////////////////////////////////////////////
     int get_coefficients(EquationCoefficients * coefficients);
 

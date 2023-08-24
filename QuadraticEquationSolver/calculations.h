@@ -28,7 +28,7 @@
 /// \brief Roots and number of roots storage.
 /////////////////////////////////////////////////////////////////////////
     struct EquationRoots {                    
-        roots_count count;
+        roots_count count; 
         float first_root;
         float second_root;
     };

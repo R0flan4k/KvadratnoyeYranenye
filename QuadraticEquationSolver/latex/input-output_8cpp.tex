@@ -14,8 +14,7 @@ void \mbox{\hyperlink{input-output_8cpp_a00c814cb3ca5dbded70f7d09eddef4a0}{show\
 void \mbox{\hyperlink{input-output_8cpp_a04b89361e9538dafdad143383adb44b9}{show\+\_\+menu}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
 \begin{DoxyCompactList}\small\item\em User greeting and telling program abillity. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{input-output_8cpp_afac1e64a683c11464c97e12472a8614d}{get\+\_\+coefficients}} (\mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coefficients)
-\begin{DoxyCompactList}\small\item\em Let user input coefficients of equation and check if input valid. ~\newline
- \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Let user input coefficients of equation. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{input-output_8cpp_a2d4df57ae6f72824d786267b374cf038}{is\+\_\+valid\+\_\+coefficients\+\_\+input}} (\mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coefficients)
 \begin{DoxyCompactList}\small\item\em Check if inputed coefficients are valid. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{input-output_8cpp_abd7888375a0b0f280b757d0e5a39f889}{show\+\_\+equation}} (const \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coeffs, const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
@@ -57,16 +56,17 @@ const \mbox{\hyperlink{struct_output_language}{Output\+Language}} {\bfseries LAN
 
 
 
-Let user input coefficients of equation and check if input valid. ~\newline
- 
+Let user input coefficients of equation. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em language} & language that program using @@@@@@@@@@@@@ \\
+\mbox{\texttt{ out}}  & {\em coefficients} & Memory cell where the coefficients of the equation will be placed. ~\newline
+ \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Coefficients of equation that user inputed. @@@@@@@@@@@@@ 
+Number of readed numbers. ~\newline
+ 
 \end{DoxyReturn}
 \mbox{\Hypertarget{input-output_8cpp_a8a4c7ccd5bed224dd0b06f5ca297de05}\label{input-output_8cpp_a8a4c7ccd5bed224dd0b06f5ca297de05}} 
 \index{input-\/output.cpp@{input-\/output.cpp}!get\_one\_char@{get\_one\_char}}
