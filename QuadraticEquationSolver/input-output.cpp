@@ -9,20 +9,20 @@
 #include "languages.h"
 
 /////////////////////////////////////////////////////////////////////////
-/// \brief skip all characters in the string and check if it has non-space characters
-/// \return is all characters in this string are spaces
+/// \brief Skip all characters in the string and check if it has non-space characters.
+/// \return Is all characters in this string are spaces.
 /////////////////////////////////////////////////////////////////////////
 static bool isspace_extra_characters (void);
 
 /////////////////////////////////////////////////////////////////////////
-/// \brief skip all characters until a non-space character is encountered
-/// \return first non-space character
+/// \brief Skip all characters until a non-space character is encountered.
+/// \return First non-space character.
 /////////////////////////////////////////////////////////////////////////
 static int skip_spaces_and_getchar(void);
 
 /**//////////////////////////////////////////////////////////////////////
-/// \brief show one calculated root
-/// \param[in] root this root
+/// \brief Show one calculated root.
+/// \param[in] root This root.
 ////////////////////////////////////////////////////////////////////////*/
 static void show_one_root(const float root);
 

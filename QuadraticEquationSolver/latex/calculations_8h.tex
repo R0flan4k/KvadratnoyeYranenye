@@ -4,40 +4,28 @@
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}}
-\begin{DoxyCompactList}\small\item\em struct for coefficients of quadratic equation \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Coefficients of quadratic equation. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}}
-\begin{DoxyCompactList}\small\item\em structure for roots and roots count storage \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Roots and number of roots storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}\label{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}} 
 enum \mbox{\hyperlink{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}{roots\+\_\+count}} \{ {\bfseries ROOTS\+\_\+\+COUNT\+\_\+\+INFINITY} = -\/1
 , {\bfseries ROOTS\+\_\+\+COUNT\+\_\+\+ZERO}
 , {\bfseries ROOTS\+\_\+\+COUNT\+\_\+\+ONE}
 , {\bfseries ROOTS\+\_\+\+COUNT\+\_\+\+TWO}
  \}
-\begin{DoxyCompactList}\small\item\em enumeration of roots count \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Equation roots count. ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}} \mbox{\hyperlink{calculations_8h_a99d50baa55e0af0c73e4e76621f74261}{solve\+\_\+equation}} (const \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coeffs)
-\begin{DoxyCompactList}\small\item\em solving equation using input data \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Solving equation using input data. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{calculations_8h_a700925380ca8260df0e44152c3a60e9c}{is\+\_\+equal\+\_\+float}} (const float num1, const float num2)
-\begin{DoxyCompactList}\small\item\em check if two of float numbers are equal \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Check if two of float numbers are equal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-
-\doxysubsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}\label{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}} 
-\index{calculations.h@{calculations.h}!roots\_count@{roots\_count}}
-\index{roots\_count@{roots\_count}!calculations.h@{calculations.h}}
-\doxysubsubsection{\texorpdfstring{roots\_count}{roots\_count}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}{roots\+\_\+count}}}
-
-
-
-enumeration of roots count 
-
-from -\/1 to 2 ~\newline
- 
 
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{calculations_8h_a700925380ca8260df0e44152c3a60e9c}\label{calculations_8h_a700925380ca8260df0e44152c3a60e9c}} 
@@ -48,17 +36,17 @@ from -\/1 to 2 ~\newline
 
 
 
-check if two of float numbers are equal 
+Check if two of float numbers are equal. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em num1} & first number of comparing \\
+\mbox{\texttt{ in}}  & {\em num1} & First number of comparing. \\
 \hline
-\mbox{\texttt{ in}}  & {\em num2} & second number of comparing \\
+\mbox{\texttt{ in}}  & {\em num2} & Second number of comparing. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-is first number equal to second number 
+Is first number equal to second number. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{calculations_8h_a99d50baa55e0af0c73e4e76621f74261}\label{calculations_8h_a99d50baa55e0af0c73e4e76621f74261}} 
 \index{calculations.h@{calculations.h}!solve\_equation@{solve\_equation}}
@@ -68,13 +56,13 @@ is first number equal to second number
 
 
 
-solving equation using input data 
+Solving equation using input data. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em coeffs} & coefficients of equation \\
+\mbox{\texttt{ in}}  & {\em coeffs} & Coefficients of equation \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-equation roots and count 
+Equation roots and number of roots. 
 \end{DoxyReturn}

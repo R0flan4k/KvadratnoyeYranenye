@@ -5,7 +5,7 @@
     #define LANGUAGES_H
 
 /////////////////////////////////////////////////////////////////////////
-/// \brief enumiration of languages from 0 to 3
+/// \brief Languages.
 /////////////////////////////////////////////////////////////////////////
     enum language {
         RUSSIAN,
@@ -15,7 +15,7 @@
     };
 
 /////////////////////////////////////////////////////////////////////////
-/// \brief structure of output messages on different languages
+/// \brief User interface messages on different languages.
 /////////////////////////////////////////////////////////////////////////
     struct OutputLanguage {
         language language_indentification;
@@ -34,9 +34,9 @@
     };
 
 /////////////////////////////////////////////////////////////////////////
-/// \brief select structure of language messages using identification character
-/// \param[in] ch identification character
-/// \return structure of language messages
+/// \brief Select structure of language messages using identification character.
+/// \param[in] ch Identification character.
+/// \return Structure of language messages.
 /////////////////////////////////////////////////////////////////////////
     const OutputLanguage * select_language(const int ch);
 

@@ -14,8 +14,8 @@ extern const OutputLanguage LANGUAGE_GERMANY;
 extern const OutputLanguage LANGUAGE_CHINESE;
 
 /////////////////////////////////////////////////////////////////////////
-/// \brief show instruction how to use test flag (--test)
-/// \param[in] argv program name pointer
+/// \brief Show instruction how to use test flag (--test).
+/// \param[in] argv Program name pointer.
 /////////////////////////////////////////////////////////////////////////
 static void show_instruction_test(char * argv);
 

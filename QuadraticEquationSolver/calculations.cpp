@@ -8,25 +8,25 @@
 #include "calculations.h"
 
 /////////////////////////////////////////////////////////////////////////
-/// \brief calculating discriminant of equation
-/// \param[in] coefficients coefficients of equation inputed
-/// \return discriminant
+/// \brief Calculating discriminant of equation.
+/// \param[in] coefficients Coefficients of equation inputed.
+/// \return Discriminant of equation.
 /////////////////////////////////////////////////////////////////////////
 static float calculate_discriminant(const EquationCoefficients * coefficients);
 
 /////////////////////////////////////////////////////////////////////////
-/// \brief calculating first root of equation
-/// \param[in] coefficients coefficients of equation inputed
-/// \param[in] sqrtf_discriminant square root of discriminant
-/// \return calculated root
+/// \brief Calculating first root of equation.
+/// \param[in] coefficients Coefficients of equation inputed.
+/// \param[in] sqrtf_discriminant Square root of discriminant.
+/// \return Calculated root.
 /////////////////////////////////////////////////////////////////////////
 static float calculate_root1(const EquationCoefficients * coefficients, const float sqrtf_discriminant);
 
 /////////////////////////////////////////////////////////////////////////
-/// \brief calculating first root of equation
-/// \param[in] coefficients coefficients of equation inputed
-/// \param[in] sqrtf_discriminant square root of discriminant
-/// \return calculated root
+/// \brief Calculating first root of equation.
+/// \param[in] coefficients Coefficients of equation inputed.
+/// \param[in] sqrtf_discriminant Square root of discriminant.
+/// \return Calculated root.
 /////////////////////////////////////////////////////////////////////////
 static float calculate_root2(const EquationCoefficients *, const float);
 
