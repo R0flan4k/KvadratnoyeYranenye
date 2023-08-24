@@ -1,2 +1,2 @@
 # Quadratic Equation Solver
-![Quadratic equation format](https://myoctocat.com/assets/images/base-octocat.svg)
+![Quadratic equation format](https://github.com/R0flan4k/Quadratic/blob/32e3000d39e526d840e7fdcca5791529dad603e7/images/%D0%91%D0%B5%D0%B7%D1%8B%D0%BC%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9.png)
