@@ -1,3 +1,6 @@
+/////////////////////////////////////////////////////////////////////////
+/// file input-output.cpp
+/////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <assert.h>
 #include <ctype.h>
@@ -5,10 +8,23 @@
 #include "input-output.h"
 #include "languages.h"
 
-
+/////////////////////////////////////////////////////////////////////////
+/// \brief skip all characters in the string and check if it has non-space characters
+/// \return is all characters in this string are spaces
+/////////////////////////////////////////////////////////////////////////
 static bool isspace_extra_characters (void);
+
+/////////////////////////////////////////////////////////////////////////
+/// \brief skip all characters until a non-space character is encountered
+/// \return first non-space character
+/////////////////////////////////////////////////////////////////////////
 static int skip_spaces_and_getchar(void);
-static void show_one_root(const float);
+
+/////////////////////////////////////////////////////////////////////////
+/// \brief show one calculated root
+/// \param[in] root this root
+/////////////////////////////////////////////////////////////////////////
+static void show_one_root(const float root);
 
 
 extern const OutputLanguage LANGUAGE_RUSSIAN;
@@ -19,7 +35,7 @@ extern const OutputLanguage LANGUAGE_CHINESE;
 
 void show_equation_format(void)
 {
-    puts("\x1b[31max^2 + bx + c = 0.\x1b[0m");
+    puts("\x1b[32max^2 + bx + c = 0.\x1b[0m");
 }
 
 
@@ -67,13 +83,13 @@ EquationCoefficients get_coefficients(const OutputLanguage * language)
 void show_equation(const EquationCoefficients * coeffs, const OutputLanguage * language)
 {
     printf("%s", language->language_show_equation);
-    printf("\x1b[31m%.3g*x^2 + %.3g*x + %.3g = 0.\x1b[0m\n", coeffs->a, coeffs->b, coeffs->c);
+    printf("\x1b[32m%.3g*x^2 + %.3g*x + %.3g = 0.\x1b[0m\n", coeffs->a, coeffs->b, coeffs->c);
 }
 
 
 static void show_one_root(const float root)
 {
-    printf("\x1b[31m%5.5g\x1b[0m\n", root);
+    printf("\x1b[32m%5.5g\x1b[0m\n", root);
 }
 
 

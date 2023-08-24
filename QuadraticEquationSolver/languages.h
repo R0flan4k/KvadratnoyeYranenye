@@ -1,6 +1,12 @@
+/////////////////////////////////////////////////////////////////////////
+/// file languages.h
+/////////////////////////////////////////////////////////////////////////
 #ifndef LANGUAGES_H 
     #define LANGUAGES_H
 
+/////////////////////////////////////////////////////////////////////////
+/// \brief enumiration of languages from 0 to 3
+/////////////////////////////////////////////////////////////////////////
     enum language {
         RUSSIAN,
         ENGLISH, 
@@ -8,8 +14,10 @@
         CHINESE
     };
 
-
-    typedef struct {
+/////////////////////////////////////////////////////////////////////////
+/// \brief structure of output messages on different languages
+/////////////////////////////////////////////////////////////////////////
+    struct OutputLanguage {
         language language_indentification;
         const char * language_menu;
         const char * language_request;
@@ -23,9 +31,13 @@
         const char * language_first_root;
         const char * language_second_root;
         const char * language_goodbye;
-    } OutputLanguage;
+    };
 
-
+/////////////////////////////////////////////////////////////////////////
+/// \brief select structure of language messages using identification character
+/// \param[in] ch identification character
+/// \return structure of language messages
+/////////////////////////////////////////////////////////////////////////
     const OutputLanguage * select_language(const int ch);
 
 

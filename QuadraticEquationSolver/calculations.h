@@ -1,30 +1,53 @@
+/////////////////////////////////////////////////////////////////////////
+/// file calculations.h
+/////////////////////////////////////////////////////////////////////////
+
 #ifndef CALCULATIONS_H
     #define CALCULATIONS_H
 
-    enum roots_count {
-        ROOTS_COUNT_INFINITY = -1,
+/////////////////////////////////////////////////////////////////////////
+/// \brief enumeration of roots count 
+/// \brief from -1 to 2      
+/////////////////////////////////////////////////////////////////////////
+    enum roots_count {                          
+        ROOTS_COUNT_INFINITY = -1,                             
         ROOTS_COUNT_ZERO, 
         ROOTS_COUNT_ONE, 
         ROOTS_COUNT_TWO
     };
 
-
-    typedef struct {
-        float a;
-        float b;
+/////////////////////////////////////////////////////////////////////////
+/// \brief struct for coefficients of quadratic equation
+/////////////////////////////////////////////////////////////////////////
+    struct EquationCoefficients {                         
+        float a;                                        
+        float b;                                                    
         float c;
-    } EquationCoefficients;
+    };
 
-
-    typedef struct {
+/////////////////////////////////////////////////////////////////////////
+/// \brief structure for roots and roots count storage
+/////////////////////////////////////////////////////////////////////////
+    struct EquationRoots {                    
         roots_count count;
         float first_root;
         float second_root;
-    } EquationRoots;
+    };
 
+/////////////////////////////////////////////////////////////////////////
+/// \brief solving equation using input data
+/// \param[in] coeffs coefficients of equation
+/// \return equation roots and count
+/////////////////////////////////////////////////////////////////////////
+    EquationRoots solve_equation(const EquationCoefficients * coeffs);   
 
-    EquationRoots solve_equation(const EquationCoefficients *);
-    bool is_equal_float(const float, const float);
+/////////////////////////////////////////////////////////////////////////
+/// \brief check if two of float numbers are equal
+/// \param[in] num1 first number of comparing
+/// \param[in] num2 second number of comparing
+/// \return is first number equal to second number
+/////////////////////////////////////////////////////////////////////////
+    bool is_equal_float(const float num1, const float num2);
 
 
 #endif

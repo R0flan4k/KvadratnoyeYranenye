@@ -1,12 +1,33 @@
+/////////////////////////////////////////////////////////////////////////
+/// file calculations.cpp
+/////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
 #include <float.h>
 #include "calculations.h"
 
+/////////////////////////////////////////////////////////////////////////
+/// \brief calculating discriminant of equation
+/// \param[in] coefficients coefficients of equation inputed
+/// \return discriminant
+/////////////////////////////////////////////////////////////////////////
+static float calculate_discriminant(const EquationCoefficients * coefficients);
 
-static float calculate_discriminant(const EquationCoefficients *);
-static float calculate_root1(const EquationCoefficients *, const float);
+/////////////////////////////////////////////////////////////////////////
+/// \brief calculating first root of equation
+/// \param[in] coefficients coefficients of equation inputed
+/// \param[in] sqrtf_discriminant square root of discriminant
+/// \return calculated root
+/////////////////////////////////////////////////////////////////////////
+static float calculate_root1(const EquationCoefficients * coefficients, const float sqrtf_discriminant);
+
+/////////////////////////////////////////////////////////////////////////
+/// \brief calculating first root of equation
+/// \param[in] coefficients coefficients of equation inputed
+/// \param[in] sqrtf_discriminant square root of discriminant
+/// \return calculated root
+/////////////////////////////////////////////////////////////////////////
 static float calculate_root2(const EquationCoefficients *, const float);
 
 

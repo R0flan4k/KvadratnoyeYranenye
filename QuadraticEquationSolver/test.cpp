@@ -1,3 +1,6 @@
+/////////////////////////////////////////////////////////////////////////
+/// file test.cpp
+/////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <stdlib.h>      
 #include <assert.h>
@@ -5,8 +8,23 @@
 #include "calculations.h"
 #include "test.h"
 
+/////////////////////////////////////////////////////////////////////////
+/// \brief check is equal calculated and right roog
+/// \param[in] program_root1 calculated first root
+/// \param[in] program_root2 calculated second root
+/// \param[in] right_root1 right first root from test file
+/// \param[in] right_root2 right second root from test file
+/// \return is program roots equal to right roots
+/////////////////////////////////////////////////////////////////////////
 static bool is_equal_equation_roots(const float program_root1, const float program_root2, const float right_root1, const float right_root2);
-static void show_test_results(test_results, const EquationRoots *, const EquationRoots *);
+
+/////////////////////////////////////////////////////////////////////////
+/// \brief show results of test
+/// \param[in] test_result result of test (succes or failure)
+/// \param[in] program_solution calculated roots and count point
+/// \param[in] right_solution right roots and count from test file
+/////////////////////////////////////////////////////////////////////////
+static void show_test_results(test_results test_result, const EquationRoots * program_solution, const EquationRoots * right_solution);
 
 test_results test_program(const char * test_file)
 {
