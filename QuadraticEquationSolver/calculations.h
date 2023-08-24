@@ -24,9 +24,6 @@
 
 
     EquationRoots solve_equation(const EquationCoefficients *);
-    float calculate_discriminant(const EquationCoefficients *);
-    float calculate_root1(const EquationCoefficients *, const float);
-    float calculate_root2(const EquationCoefficients *, const float);
     bool is_equal_float(const float, const float);
 
 

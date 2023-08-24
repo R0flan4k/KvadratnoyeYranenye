@@ -1,11 +1,12 @@
 #include <stdio.h>
-#include <stdlib.h>      // --test 
+#include <stdlib.h>      
 #include <assert.h>
 
 #include "calculations.h"
 #include "test.h"
 
 static bool is_equal_equation_roots(const float program_root1, const float program_root2, const float right_root1, const float right_root2);
+static void show_test_results(test_results, const EquationRoots *, const EquationRoots *);
 
 test_results test_program(const char * test_file)
 {
@@ -19,7 +20,7 @@ test_results test_program(const char * test_file)
     if ((fp = fopen(test_file, "r")) == NULL)
     {
         puts("Can't open the file");
-        return TEST_CANT_OPEN_FILE; // return
+        return TEST_CANT_OPEN_FILE;
     }
 
     while (fscanf(fp, "%f %f %f %d %f %f", &test_coeffs.a, &test_coeffs.b, &test_coeffs.c, 
@@ -69,7 +70,7 @@ static bool is_equal_equation_roots(const float program_root1, const float progr
 }
 
 
-void show_test_results(test_results test_result, const EquationRoots * program_solution, const EquationRoots * right_solution)
+static void show_test_results(test_results test_result, const EquationRoots * program_solution, const EquationRoots * right_solution)
 {
     switch (test_result)
     {

@@ -2,6 +2,8 @@
     #ifndef MY_ASSERT_H
         #define MY_ASSERT_H
 
+#include <stdlib.h>
+
 #define MY_ASSERT(X)\
  if (!(X))\
   { printf("Assertion failed: " #X ", line %d, file" __FILE__ ", date " __DATE__ ", function" "\n", __LINE__);\

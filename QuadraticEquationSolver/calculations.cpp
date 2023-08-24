@@ -5,6 +5,11 @@
 #include "calculations.h"
 
 
+static float calculate_discriminant(const EquationCoefficients *);
+static float calculate_root1(const EquationCoefficients *, const float);
+static float calculate_root2(const EquationCoefficients *, const float);
+
+
 EquationRoots solve_equation(const EquationCoefficients * coeffs)
 {
     EquationRoots solution = {ROOTS_COUNT_ZERO, 0.0, 0.0};
@@ -45,19 +50,19 @@ EquationRoots solve_equation(const EquationCoefficients * coeffs)
 }
 
 
-float calculate_discriminant(const EquationCoefficients * coefficients)
+static float calculate_discriminant(const EquationCoefficients * coefficients)
 {
     return coefficients->b * coefficients->b - 4 * (coefficients->a) * (coefficients->c);
 }
 
 
-float calculate_root1(const EquationCoefficients * coefficients, const float sqrtf_discriminant)
+static float calculate_root1(const EquationCoefficients * coefficients, const float sqrtf_discriminant)
 {
     return (- coefficients->b - sqrtf_discriminant ) / ( 2 * coefficients->a );
 }
 
 
-float calculate_root2(const EquationCoefficients * coefficients, const float sqrtf_discriminant)
+static float calculate_root2(const EquationCoefficients * coefficients, const float sqrtf_discriminant)
 {
     return (- coefficients->b + sqrtf_discriminant ) / ( 2 * coefficients->a );
 }

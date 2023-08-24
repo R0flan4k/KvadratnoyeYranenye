@@ -6,10 +6,15 @@
 #include "languages.h"
 
 
-extern const OutputLanguages LANGUAGE_RUSSIAN;
-extern const OutputLanguages LANGUAGE_ENGLISH;
-extern const OutputLanguages LANGUAGE_GERMANY;
-extern const OutputLanguages LANGUAGE_CHINESE;
+static bool isspace_extra_characters (void);
+static int skip_spaces_and_getchar(void);
+static void show_one_root(const float);
+
+
+extern const OutputLanguage LANGUAGE_RUSSIAN;
+extern const OutputLanguage LANGUAGE_ENGLISH;
+extern const OutputLanguage LANGUAGE_GERMANY;
+extern const OutputLanguage LANGUAGE_CHINESE;
 
 
 void show_equation_format(void)
@@ -18,47 +23,39 @@ void show_equation_format(void)
 }
 
 
-void show_menu(const OutputLanguages * language)
+void show_menu(const OutputLanguage * language)
 {
-    //setcolor(DEFAULT_COLOR);
     printf("%s", language->language_menu);
     show_equation_format();
 }
 
 
-EquationCoefficients get_coefficients(const OutputLanguages * language)
+
+EquationCoefficients get_coefficients(const OutputLanguage * language)
 {
     EquationCoefficients coefficients = {0.0, 0.0, 0.0};
     int checker = 0;
-    int EOF_checker = 0;
     bool marker = true;
-    
-    printf("%s", language->language_request); //
 
     start:
-    marker = true;
-    while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) < 3)
-    {
-        while ((EOF_checker = getchar()) != '\n')
+        marker = true;
+        while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) < 3)
         {
-            if (EOF_checker == EOF)
-                exit(EXIT_SUCCESS); // ubrat
+            while ((getchar()) != '\n')
+                continue;
+                
+            printf("%s", language->language_error); 
+            
         }
-        
-        printf("%s", language->language_error); //
-        
-    }
 
-    while ((checker = getchar()) != '\n')
-    {
-        if (!(isspace(checker)) && marker)
+        while ((checker = getchar()) != '\n')
         {
-            if (checker == EOF)
-                exit(EXIT_SUCCESS);
-            printf("%s", language->language_error);
-            marker = false;
+            if (!(isspace(checker)) && marker)
+            {
+                printf("%s", language->language_error);
+                marker = false;
+            }
         }
-    }
 
     if (!marker)
         goto start;
@@ -67,20 +64,20 @@ EquationCoefficients get_coefficients(const OutputLanguages * language)
 }
 
 
-void show_equation(const EquationCoefficients * coeffs, const OutputLanguages * language)
+void show_equation(const EquationCoefficients * coeffs, const OutputLanguage * language)
 {
     printf("%s", language->language_show_equation);
     printf("\x1b[31m%.3g*x^2 + %.3g*x + %.3g = 0.\x1b[0m\n", coeffs->a, coeffs->b, coeffs->c);
 }
 
 
-void show_one_root(const float root)
+static void show_one_root(const float root)
 {
     printf("\x1b[31m%5.5g\x1b[0m\n", root);
 }
 
 
-void show_solution(const EquationRoots * solution, const OutputLanguages * language)
+void show_solution(const EquationRoots * solution, const OutputLanguage * language)
 {
     switch (solution->count)
     {
@@ -113,55 +110,77 @@ void show_solution(const EquationRoots * solution, const OutputLanguages * langu
 }
 
 
-void show_goodbye(const OutputLanguages * language)
+void show_goodbye(const OutputLanguage * language)
 {
     printf("%s", language->language_goodbye);
 }
 
 
-const OutputLanguages * get_language(void) // na 3 func
+int get_one_char(const char * str, int n)
 {
     int ch = 0;
-    int checker = 0;
-    bool extra_characters_marker = true;
-    bool wrong_character_marker = true;
+    bool is_required_char = false;
 
+    ch = skip_spaces_and_getchar();
+    ch = tolower(ch);
+
+    if (!isspace_extra_characters())
+        return EXTRA_CHARACTERS;
+
+    for (int i = 0; i < n; i++)
+        if (ch == str[i])
+        {
+            is_required_char = true;
+            break;
+        }
+          
+    if (is_required_char == true)
+        return ch;
+    else    
+        return WRONG_CHARACTER;
+        
+    return ch;
+}
+
+
+static bool isspace_extra_characters (void)
+{
+    int ch = 0;
+    bool marker = true;
+
+    while ((ch = getchar()) != '\n')
+    {
+        if (!isspace(ch) && marker == true)
+            marker = false;
+        else
+            continue;
+    }
+
+    return marker;
+}
+
+
+static int skip_spaces_and_getchar(void)
+{
+    int ch = 0;
+
+    while (isspace(ch = getchar()))
+        continue;
+
+    return ch;
+}
+
+
+void show_language_menu(void)
+{
     puts("Enter language:");
     puts("\"R\" - Russian,      \"E\" - English,");
     puts("\"G\" - Germany,      \"C\" - Chinese.");
+}
 
-    do
-    {
-        extra_characters_marker = true;
-        wrong_character_marker = true;
-        ch = getchar();
-        ch = tolower(ch);
 
-        if (ch == EOF)
-            return EXIT_SUCCESS;
-        if ((ch != 'r' && ch != 'e' && ch != 'g' && ch != 'c'))
-        {
-            puts("Error. Enter language again (\"R\", \"E\", \"G\" or \"C\".)");
-            
-            while (getchar() != '\n')
-                continue;
-            
-            wrong_character_marker = false;
-        }
-        else
-        {
-            do
-            {
-                checker = getchar();
-                if (!(isspace(checker)) && extra_characters_marker == true)
-                {
-                    puts("Error. Enter language again (\"R\", \"E\", \"G\" or \"C\".)");
-                    extra_characters_marker = false;
-                }
-            }  while (checker != '\n');
-        }
-    } while ((ch != 'r' && ch != 'e' && ch != 'g' && ch != 'c') || extra_characters_marker == false || wrong_character_marker == false);
-
+const OutputLanguage * select_language(const int ch)
+{
     switch (ch)
     {
         case 'r':
@@ -176,54 +195,9 @@ const OutputLanguages * get_language(void) // na 3 func
         case 'c':
             return &LANGUAGE_CHINESE;
             break;
+
         default:
             assert(0 && "GET_LANG ERROR");
             break;
     }
-}
-
-
-char get_test_necessity(void)
-{
-    int ch = 0;
-    int checker = 0;
-    bool extra_characters_marker = true;
-    bool wrong_character_marker = true;
-
-    puts("Run the test?:");
-    puts("\"Y\" - yes,      \"N\" - no."); // flag --test
-
-    do
-    {
-        extra_characters_marker = true;
-        wrong_character_marker = true;
-        ch = getchar();
-        ch = tolower(ch);
-
-        if (ch == EOF)
-            return EXIT_SUCCESS;
-        if ((ch != 'y' && ch != 'n'))
-        {
-            puts("Error. Enter your choice again (\"Y\" or \"N\".)");
-            
-            while (getchar() != '\n')
-                continue;
-            
-            wrong_character_marker = false;
-        }
-        else
-        {
-            do
-            {
-                checker = getchar();
-                if (!(isspace(checker)) && extra_characters_marker == true)
-                {
-                    puts("Error. Enter language again (\"Y\" or \"N\".)");
-                    extra_characters_marker = false;
-                }
-            }  while (checker != '\n');
-        }
-    } while ((ch != 'y' && ch != 'n') || extra_characters_marker == false || wrong_character_marker == false);
-
-    return (char) ch;
 }

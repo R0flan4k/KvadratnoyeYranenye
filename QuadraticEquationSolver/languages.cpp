@@ -1,7 +1,7 @@
 #include "languages.h"
 
 
-extern const OutputLanguages LANGUAGE_ENGLISH = {
+extern const OutputLanguage LANGUAGE_ENGLISH = {
     .language_indentification = ENGLISH,
 
     .language_menu =            "Hello, Ruslan Alekseyevich.\n\
@@ -33,7 +33,7 @@ extern const OutputLanguages LANGUAGE_ENGLISH = {
 };
 
 
-extern const OutputLanguages LANGUAGE_RUSSIAN = {
+extern const OutputLanguage LANGUAGE_RUSSIAN = {
     .language_indentification = RUSSIAN,
 
     .language_menu =            "Здравствуйте, Руслан Алексеевич.\n\
@@ -65,7 +65,7 @@ extern const OutputLanguages LANGUAGE_RUSSIAN = {
 };
 
 
-extern const OutputLanguages LANGUAGE_GERMANY = {
+extern const OutputLanguage LANGUAGE_GERMANY = {
     .language_indentification = GERMANY,
 
     .language_menu =            "Hallo, Ruslan Alekseevich.\n\
@@ -97,7 +97,7 @@ extern const OutputLanguages LANGUAGE_GERMANY = {
 };
 
 
-extern const OutputLanguages LANGUAGE_CHINESE = {
+extern const OutputLanguage LANGUAGE_CHINESE = {
     .language_indentification = CHINESE,
 
     .language_menu =            "你好，鲁斯兰·阿列克谢耶维奇。\n\

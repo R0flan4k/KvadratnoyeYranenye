@@ -3,7 +3,7 @@
 
     enum language {
         RUSSIAN,
-        ENGLISH, // ID
+        ENGLISH, 
         GERMANY,
         CHINESE
     };
@@ -23,10 +23,10 @@
         const char * language_first_root;
         const char * language_second_root;
         const char * language_goodbye;
-    } OutputLanguages;
+    } OutputLanguage;
 
 
-    const OutputLanguages * get_language(void);
+    const OutputLanguage * select_language(const int ch);
 
 
 #endif

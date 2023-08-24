@@ -2,19 +2,36 @@
 #include <string.h>
 
 #include "input-output.h"
+#include "test.h"
+#include "my_assert.h"
+
+static void show_instruction_test(char *);
 
 int check_cmd_input(int argc, char ** argv)
 {
-    if (argc > 3 || (argc <= 3 && argc > 1 && strcmp(argv[1], "--test") != 0))
-        return WRONG_CMD_INPUT;
-    else if (argc == 1)
-        return TRIVIAL_CMD_INPUT;
-    else
-        return RIGHT_CMD_INPUT;
+    for (int i = 1; i < argc; i++)
+    {
+        if (strcmp(argv[i], "--test") == 0)
+        {
+            if (argc >= i+1)
+            {
+                MY_ASSERT(test_program(argv[i+1]) == TEST_SUCCESS);
+                return RIGHT_CMD_INPUT;
+            }
+            else    
+            {
+                show_instruction_test(argv[0]);
+                return WRONG_CMD_INPUT;
+            }
+        }
+        
+    }
+    
+    return TRIVIAL_CMD_INPUT;
 }
 
-void show_instruction(char ** argv)
+static void show_instruction_test(char * argv)
 {
-    printf("Please, use: %s --test *test_name.txt*\n", argv[0]);
-    printf("or use: %s\n", argv[0]);
+    printf("Please, use: %s --test *test_name.txt*\n", argv);
+    printf("or use: %s\n", argv);
 }

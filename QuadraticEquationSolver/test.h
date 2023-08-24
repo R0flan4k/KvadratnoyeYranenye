@@ -11,6 +11,5 @@
     };
 
     test_results test_program(const char *);
-    void show_test_results(test_results, const EquationRoots *, const EquationRoots *);
 
 #endif
