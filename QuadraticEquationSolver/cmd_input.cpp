@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////
-/// file cmd_input.cpp
+/// \file cmd_input.cpp
 /////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <string.h>
@@ -7,6 +7,11 @@
 #include "input-output.h"
 #include "test.h"
 #include "my_assert.h"
+
+extern const OutputLanguage LANGUAGE_RUSSIAN;
+extern const OutputLanguage LANGUAGE_ENGLISH;
+extern const OutputLanguage LANGUAGE_GERMANY;
+extern const OutputLanguage LANGUAGE_CHINESE;
 
 /////////////////////////////////////////////////////////////////////////
 /// \brief show instruction how to use test flag (--test)
@@ -31,7 +36,16 @@ int check_cmd_input(int argc, char ** argv)
                 return WRONG_CMD_INPUT;
             }
         }
-        
+        else if (strcmp(argv[i], "--coeffs") == 0)
+        {
+            if (argc >= i+3)
+            {
+                EquationCoefficients coefficients = {(float) atof(argv[i+1]), (float) atof(argv[i+2]), (float) atof(argv[i+3])};
+                EquationRoots solution = solve_equation(&coefficients);
+                show_equation(&coefficients, &LANGUAGE_ENGLISH);
+                show_solution(&solution, &LANGUAGE_ENGLISH);
+            }
+        }
     }
     
     return TRIVIAL_CMD_INPUT;

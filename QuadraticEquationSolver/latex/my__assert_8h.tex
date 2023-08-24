@@ -1,0 +1,29 @@
+\hypertarget{my__assert_8h}{}\doxysection{my\+\_\+assert.\+h File Reference}
+\label{my__assert_8h}\index{my\_assert.h@{my\_assert.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{my__assert_8h_ae2b1837fab79919242b81090d20d52c2}{MY\+\_\+\+ASSERT}}(X)
+\begin{DoxyCompactList}\small\item\em my modified version of assert() \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{my__assert_8h_ae2b1837fab79919242b81090d20d52c2}\label{my__assert_8h_ae2b1837fab79919242b81090d20d52c2}} 
+\index{my\_assert.h@{my\_assert.h}!MY\_ASSERT@{MY\_ASSERT}}
+\index{MY\_ASSERT@{MY\_ASSERT}!my\_assert.h@{my\_assert.h}}
+\doxysubsubsection{\texorpdfstring{MY\_ASSERT}{MY\_ASSERT}}
+{\footnotesize\ttfamily \#define MY\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \textcolor{keywordflow}{if} (!(X))\(\backslash\)}
+\DoxyCodeLine{  \{ printf(\textcolor{stringliteral}{"{}Assertion failed: "{}} \#X \textcolor{stringliteral}{"{}, line \%d, file"{}} \_\_FILE\_\_ \textcolor{stringliteral}{"{}, date "{}} \_\_DATE\_\_ \textcolor{stringliteral}{"{}, function"{}} \textcolor{stringliteral}{"{}\(\backslash\)n"{}}, \_\_LINE\_\_);\(\backslash\)}
+\DoxyCodeLine{   exit(EXIT\_FAILURE);\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+my modified version of assert() 
+

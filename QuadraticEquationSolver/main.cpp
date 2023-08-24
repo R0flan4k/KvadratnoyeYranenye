@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////
-/// file main.cpp
+/// \file main.cpp
 /////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <assert.h>
@@ -31,7 +31,8 @@ int main(int argc, char * argv[])
 
     show_menu(language);
     printf("%s", language->language_request); 
-    coefficients = get_coefficients(language);
+    while (!is_valid_coefficients_input(&coefficients))
+        printf("%s", language->language_error);
     solution = solve_equation(&coefficients);
     show_equation(&coefficients, language);
     show_solution(&solution, language);

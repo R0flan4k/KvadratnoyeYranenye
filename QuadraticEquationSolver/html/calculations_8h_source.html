@@ -65,11 +65,11 @@ $(function() {
 <div class="title">calculations.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="calculations_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef CALCULATIONS_H</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">    #define CALCULATIONS_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">enum</span> roots_count {                          </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="calculations_8h.html#ab81ef83b614a9cb43650290b87bbdc21">   12</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="calculations_8h.html#ab81ef83b614a9cb43650290b87bbdc21">roots_count</a> {                          </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        ROOTS_COUNT_INFINITY = -1,                             </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        ROOTS_COUNT_ZERO, </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        ROOTS_COUNT_ONE, </div>
@@ -83,17 +83,20 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="struct_equation_roots.html">   31</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_equation_roots.html">EquationRoots</a> {                    </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        roots_count count;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="calculations_8h.html#ab81ef83b614a9cb43650290b87bbdc21">roots_count</a> count;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">float</span> first_root;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">float</span> second_root;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    };</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="struct_equation_roots.html">EquationRoots</a> solve_equation(<span class="keyword">const</span> <a class="code" href="struct_equation_coefficients.html">EquationCoefficients</a> * coeffs);   </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="struct_equation_roots.html">EquationRoots</a> <a class="code" href="calculations_8h.html#a99d50baa55e0af0c73e4e76621f74261">solve_equation</a>(<span class="keyword">const</span> <a class="code" href="struct_equation_coefficients.html">EquationCoefficients</a> * coeffs);   </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> is_equal_float(<span class="keyword">const</span> <span class="keywordtype">float</span> num1, <span class="keyword">const</span> <span class="keywordtype">float</span> num2);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="calculations_8h.html#a700925380ca8260df0e44152c3a60e9c">is_equal_float</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> num1, <span class="keyword">const</span> <span class="keywordtype">float</span> num2);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="acalculations_8h_html_a700925380ca8260df0e44152c3a60e9c"><div class="ttname"><a href="calculations_8h.html#a700925380ca8260df0e44152c3a60e9c">is_equal_float</a></div><div class="ttdeci">bool is_equal_float(const float num1, const float num2)</div><div class="ttdoc">check if two of float numbers are equal</div><div class="ttdef"><b>Definition:</b> calculations.cpp:92</div></div>
+<div class="ttc" id="acalculations_8h_html_a99d50baa55e0af0c73e4e76621f74261"><div class="ttname"><a href="calculations_8h.html#a99d50baa55e0af0c73e4e76621f74261">solve_equation</a></div><div class="ttdeci">EquationRoots solve_equation(const EquationCoefficients *coeffs)</div><div class="ttdoc">solving equation using input data</div><div class="ttdef"><b>Definition:</b> calculations.cpp:34</div></div>
+<div class="ttc" id="acalculations_8h_html_ab81ef83b614a9cb43650290b87bbdc21"><div class="ttname"><a href="calculations_8h.html#ab81ef83b614a9cb43650290b87bbdc21">roots_count</a></div><div class="ttdeci">roots_count</div><div class="ttdoc">enumeration of roots count</div><div class="ttdef"><b>Definition:</b> calculations.h:12</div></div>
 <div class="ttc" id="astruct_equation_coefficients_html"><div class="ttname"><a href="struct_equation_coefficients.html">EquationCoefficients</a></div><div class="ttdoc">struct for coefficients of quadratic equation</div><div class="ttdef"><b>Definition:</b> calculations.h:22</div></div>
 <div class="ttc" id="astruct_equation_roots_html"><div class="ttname"><a href="struct_equation_roots.html">EquationRoots</a></div><div class="ttdoc">structure for roots and roots count storage</div><div class="ttdef"><b>Definition:</b> calculations.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->

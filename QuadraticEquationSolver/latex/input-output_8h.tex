@@ -1,0 +1,180 @@
+\hypertarget{input-output_8h}{}\doxysection{input-\/output.h File Reference}
+\label{input-output_8h}\index{input-\/output.h@{input-\/output.h}}
+{\ttfamily \#include \char`\"{}languages.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}calculations.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{input-output_8h_a04b89361e9538dafdad143383adb44b9}{show\+\_\+menu}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
+\begin{DoxyCompactList}\small\item\em user greeting and telling program abillity \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{input-output_8h_a5a67987feba6f5a0467b926c231175f3}\label{input-output_8h_a5a67987feba6f5a0467b926c231175f3}} 
+void \mbox{\hyperlink{input-output_8h_a5a67987feba6f5a0467b926c231175f3}{show\+\_\+language\+\_\+menu}} (void)
+\begin{DoxyCompactList}\small\item\em show user available languages \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{input-output_8h_a00c814cb3ca5dbded70f7d09eddef4a0}\label{input-output_8h_a00c814cb3ca5dbded70f7d09eddef4a0}} 
+void \mbox{\hyperlink{input-output_8h_a00c814cb3ca5dbded70f7d09eddef4a0}{show\+\_\+equation\+\_\+format}} (void)
+\begin{DoxyCompactList}\small\item\em show user format of equation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{input-output_8h_abd7888375a0b0f280b757d0e5a39f889}{show\+\_\+equation}} (const \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coeffs, const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
+\begin{DoxyCompactList}\small\item\em show user equation that he input \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{input-output_8h_a0481090766818f9dae58182e983ecab9}{show\+\_\+solution}} (const \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}} $\ast$solution, const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
+\begin{DoxyCompactList}\small\item\em show user solution of inputed equatiin \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{input-output_8h_a2057984fb86fe06f168416d3939ff607}{show\+\_\+goodbye}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
+\begin{DoxyCompactList}\small\item\em say goodebye to user \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{input-output_8h_afac1e64a683c11464c97e12472a8614d}{get\+\_\+coefficients}} (\mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coefficients)
+\begin{DoxyCompactList}\small\item\em let user input coefficients of equation and check if input valid ~\newline
+ \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{input-output_8h_a8a4c7ccd5bed224dd0b06f5ca297de05}{get\+\_\+one\+\_\+char}} (const char $\ast$str, int n)
+\begin{DoxyCompactList}\small\item\em get from stdin first non-\/space allowed character, and then skip anything after the character \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{input-output_8h_ad21ac6160c1f9a367be8ce7ee69dd216}{check\+\_\+cmd\+\_\+input}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em check if user enter flags running the program \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{input-output_8h_a2d4df57ae6f72824d786267b374cf038}{is\+\_\+valid\+\_\+coefficients\+\_\+input}} (\mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coefficients)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{input-output_8h_a561da360eae327ecc4bb368752715307}\label{input-output_8h_a561da360eae327ecc4bb368752715307}} 
+const int \mbox{\hyperlink{input-output_8h_a561da360eae327ecc4bb368752715307}{WRONG\+\_\+\+CMD\+\_\+\+INPUT}} = 1
+\begin{DoxyCompactList}\small\item\em constatnts for cmd input result return \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{input-output_8h_af69a30a47d2796a66fb3eea14904be43}\label{input-output_8h_af69a30a47d2796a66fb3eea14904be43}} 
+const int {\bfseries RIGHT\+\_\+\+CMD\+\_\+\+INPUT} = 0
+\item 
+\mbox{\Hypertarget{input-output_8h_a8c049d3424358209390f4f03474309ef}\label{input-output_8h_a8c049d3424358209390f4f03474309ef}} 
+const int {\bfseries TRIVIAL\+\_\+\+CMD\+\_\+\+INPUT} = 2
+\item 
+\mbox{\Hypertarget{input-output_8h_ad701a3bdba89d4b7f62024ed8378da89}\label{input-output_8h_ad701a3bdba89d4b7f62024ed8378da89}} 
+const int \mbox{\hyperlink{input-output_8h_ad701a3bdba89d4b7f62024ed8378da89}{EXTRA\+\_\+\+CHARACTERS}} = -\/2
+\begin{DoxyCompactList}\small\item\em constants for \mbox{\hyperlink{input-output_8h_a8a4c7ccd5bed224dd0b06f5ca297de05}{get\+\_\+one\+\_\+char()}} return \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{input-output_8h_a9a9406680d021497591ca078030273e6}\label{input-output_8h_a9a9406680d021497591ca078030273e6}} 
+const int {\bfseries WRONG\+\_\+\+CHARACTER} = -\/3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{input-output_8h_ad21ac6160c1f9a367be8ce7ee69dd216}\label{input-output_8h_ad21ac6160c1f9a367be8ce7ee69dd216}} 
+\index{input-\/output.h@{input-\/output.h}!check\_cmd\_input@{check\_cmd\_input}}
+\index{check\_cmd\_input@{check\_cmd\_input}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{check\_cmd\_input()}{check\_cmd\_input()}}
+{\footnotesize\ttfamily int check\+\_\+cmd\+\_\+input (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+check if user enter flags running the program 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em argc} & number of words inputed in cmd \\
+\hline
+\mbox{\texttt{ in}}  & {\em argv} & array of words that inputed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+is cmd inputs was right or is it there 
+\end{DoxyReturn}
+\mbox{\Hypertarget{input-output_8h_afac1e64a683c11464c97e12472a8614d}\label{input-output_8h_afac1e64a683c11464c97e12472a8614d}} 
+\index{input-\/output.h@{input-\/output.h}!get\_coefficients@{get\_coefficients}}
+\index{get\_coefficients@{get\_coefficients}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{get\_coefficients()}{get\_coefficients()}}
+{\footnotesize\ttfamily int get\+\_\+coefficients (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$}]{coefficients }\end{DoxyParamCaption})}
+
+
+
+let user input coefficients of equation and check if input valid ~\newline
+ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em language} & language that program using @@@@@@@@@@@@@ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+coefficients of equation that user inputed @@@@@@@@@@@@@ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{input-output_8h_a8a4c7ccd5bed224dd0b06f5ca297de05}\label{input-output_8h_a8a4c7ccd5bed224dd0b06f5ca297de05}} 
+\index{input-\/output.h@{input-\/output.h}!get\_one\_char@{get\_one\_char}}
+\index{get\_one\_char@{get\_one\_char}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{get\_one\_char()}{get\_one\_char()}}
+{\footnotesize\ttfamily int get\+\_\+one\+\_\+char (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+get from stdin first non-\/space allowed character, and then skip anything after the character 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & list of allowed characters \\
+\hline
+\mbox{\texttt{ in}}  & {\em n} & number of allowed characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+is character alone or is it wrong character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{input-output_8h_a2d4df57ae6f72824d786267b374cf038}\label{input-output_8h_a2d4df57ae6f72824d786267b374cf038}} 
+\index{input-\/output.h@{input-\/output.h}!is\_valid\_coefficients\_input@{is\_valid\_coefficients\_input}}
+\index{is\_valid\_coefficients\_input@{is\_valid\_coefficients\_input}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{is\_valid\_coefficients\_input()}{is\_valid\_coefficients\_input()}}
+{\footnotesize\ttfamily bool is\+\_\+valid\+\_\+coefficients\+\_\+input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$}]{coefficients }\end{DoxyParamCaption})}
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ \mbox{\Hypertarget{input-output_8h_abd7888375a0b0f280b757d0e5a39f889}\label{input-output_8h_abd7888375a0b0f280b757d0e5a39f889}} 
+\index{input-\/output.h@{input-\/output.h}!show\_equation@{show\_equation}}
+\index{show\_equation@{show\_equation}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{show\_equation()}{show\_equation()}}
+{\footnotesize\ttfamily void show\+\_\+equation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$}]{coeffs,  }\item[{const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$}]{language }\end{DoxyParamCaption})}
+
+
+
+show user equation that he input 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coeffs} & inputed coefficients of equation \\
+\hline
+{\em language} & language that program using \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{input-output_8h_a2057984fb86fe06f168416d3939ff607}\label{input-output_8h_a2057984fb86fe06f168416d3939ff607}} 
+\index{input-\/output.h@{input-\/output.h}!show\_goodbye@{show\_goodbye}}
+\index{show\_goodbye@{show\_goodbye}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{show\_goodbye()}{show\_goodbye()}}
+{\footnotesize\ttfamily void show\+\_\+goodbye (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$}]{language }\end{DoxyParamCaption})}
+
+
+
+say goodebye to user 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em language} & language that program using \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{input-output_8h_a04b89361e9538dafdad143383adb44b9}\label{input-output_8h_a04b89361e9538dafdad143383adb44b9}} 
+\index{input-\/output.h@{input-\/output.h}!show\_menu@{show\_menu}}
+\index{show\_menu@{show\_menu}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{show\_menu()}{show\_menu()}}
+{\footnotesize\ttfamily void show\+\_\+menu (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$}]{language }\end{DoxyParamCaption})}
+
+
+
+user greeting and telling program abillity 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em language} & language that program using \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{input-output_8h_a0481090766818f9dae58182e983ecab9}\label{input-output_8h_a0481090766818f9dae58182e983ecab9}} 
+\index{input-\/output.h@{input-\/output.h}!show\_solution@{show\_solution}}
+\index{show\_solution@{show\_solution}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{show\_solution()}{show\_solution()}}
+{\footnotesize\ttfamily void show\+\_\+solution (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}} $\ast$}]{solution,  }\item[{const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$}]{language }\end{DoxyParamCaption})}
+
+
+
+show user solution of inputed equatiin 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em solution} & solution of inputed equation \\
+\hline
+\mbox{\texttt{ in}}  & {\em language} & language that program using \\
+\hline
+\end{DoxyParams}

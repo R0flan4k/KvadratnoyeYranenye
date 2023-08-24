@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////
-/// file input-output.cpp
+/// \file input-output.cpp
 /////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <assert.h>
@@ -20,10 +20,10 @@ static bool isspace_extra_characters (void);
 /////////////////////////////////////////////////////////////////////////
 static int skip_spaces_and_getchar(void);
 
-/////////////////////////////////////////////////////////////////////////
+/**//////////////////////////////////////////////////////////////////////
 /// \brief show one calculated root
 /// \param[in] root this root
-/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////*/
 static void show_one_root(const float root);
 
 
@@ -47,36 +47,18 @@ void show_menu(const OutputLanguage * language)
 
 
 
-EquationCoefficients get_coefficients(const OutputLanguage * language)
+int get_coefficients(EquationCoefficients * coefficients)
 {
-    EquationCoefficients coefficients = {0.0, 0.0, 0.0};
-    int checker = 0;
-    bool marker = true;
+    return scanf("%f%f%f", &(coefficients->a), &(coefficients->b), &(coefficients->c));
+}
 
-    start:
-        marker = true;
-        while (scanf("%f%f%f", &coefficients.a, &coefficients.b, &coefficients.c) < 3)
-        {
-            while ((getchar()) != '\n')
-                continue;
-                
-            printf("%s", language->language_error); 
-            
-        }
 
-        while ((checker = getchar()) != '\n')
-        {
-            if (!(isspace(checker)) && marker)
-            {
-                printf("%s", language->language_error);
-                marker = false;
-            }
-        }
-
-    if (!marker)
-        goto start;
-
-    return coefficients;
+bool is_valid_coefficients_input (EquationCoefficients * coefficients)
+{
+    if (get_coefficients(coefficients) == 3 && isspace_extra_characters())
+        return true;
+    else
+        return false;
 }
 
 

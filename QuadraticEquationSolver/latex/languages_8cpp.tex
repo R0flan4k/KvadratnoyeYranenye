@@ -1,0 +1,177 @@
+\hypertarget{languages_8cpp}{}\doxysection{languages.\+cpp File Reference}
+\label{languages_8cpp}\index{languages.cpp@{languages.cpp}}
+{\ttfamily \#include \char`\"{}languages.\+h\char`\"{}}\newline
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{struct_output_language}{Output\+Language}} {\bfseries LANGUAGE\+\_\+\+ENGLISH}
+\item 
+const \mbox{\hyperlink{struct_output_language}{Output\+Language}} {\bfseries LANGUAGE\+\_\+\+RUSSIAN}
+\item 
+const \mbox{\hyperlink{struct_output_language}{Output\+Language}} {\bfseries LANGUAGE\+\_\+\+GERMANY}
+\item 
+const \mbox{\hyperlink{struct_output_language}{Output\+Language}} {\bfseries LANGUAGE\+\_\+\+CHINESE}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{languages_8cpp_ae3f22ed96bb3de814a25411ec08ea659}\label{languages_8cpp_ae3f22ed96bb3de814a25411ec08ea659}} 
+\index{languages.cpp@{languages.cpp}!LANGUAGE\_CHINESE@{LANGUAGE\_CHINESE}}
+\index{LANGUAGE\_CHINESE@{LANGUAGE\_CHINESE}!languages.cpp@{languages.cpp}}
+\doxysubsubsection{\texorpdfstring{LANGUAGE\_CHINESE}{LANGUAGE\_CHINESE}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_output_language}{Output\+Language}} LANGUAGE\+\_\+\+CHINESE\hspace{0.3cm}{\ttfamily [extern]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .language\_indentification = CHINESE,}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_menu =            \textcolor{stringliteral}{"{}你好，鲁斯兰·阿列克谢耶维奇。\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                \(\backslash\)r该程序旨在求解二次方程。\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                \(\backslash\)r等式应如下所示： "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_request =         \textcolor{stringliteral}{"{}输入赔率 a, b, c:\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_error =           \textcolor{stringliteral}{"{}О错误。输入三个实数\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                \(\backslash\)r例如 12, -\/1.5, 3.14, 1.618.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_show\_equation =   \textcolor{stringliteral}{"{}这是你的等式： "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_inf\_roots =       \textcolor{stringliteral}{"{}这个方程有无数个根。\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_no\_roots =        \textcolor{stringliteral}{"{}该方程没有实根。\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_one\_root =        \textcolor{stringliteral}{"{}这个方程只有一个根。\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_two\_roots =       \textcolor{stringliteral}{"{}这个方程有两个根。\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_this\_root =       \textcolor{stringliteral}{"{}这是根: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_first\_root =      \textcolor{stringliteral}{"{}第一个根： "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_second\_root =     \textcolor{stringliteral}{"{}第二根： "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_goodbye =         \textcolor{stringliteral}{"{}再见！结尾。"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{languages_8cpp_a85567d928f2a5d99bc09fe7a7ad5168d}\label{languages_8cpp_a85567d928f2a5d99bc09fe7a7ad5168d}} 
+\index{languages.cpp@{languages.cpp}!LANGUAGE\_ENGLISH@{LANGUAGE\_ENGLISH}}
+\index{LANGUAGE\_ENGLISH@{LANGUAGE\_ENGLISH}!languages.cpp@{languages.cpp}}
+\doxysubsubsection{\texorpdfstring{LANGUAGE\_ENGLISH}{LANGUAGE\_ENGLISH}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_output_language}{Output\+Language}} LANGUAGE\+\_\+\+ENGLISH\hspace{0.3cm}{\ttfamily [extern]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .language\_indentification = ENGLISH,}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_menu =            \textcolor{stringliteral}{"{}Hello, Ruslan Alekseyevich.\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                \(\backslash\)rThis program can solve quadratic equation.\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                \(\backslash\)rEquation must looks like: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_request =         \textcolor{stringliteral}{"{}Enter coeficients a, b, c:\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_error =           \textcolor{stringliteral}{"{}Error. Enter 3 real numbers\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                \(\backslash\)rlike 12, -\/1.5, 3.14 or 1.618.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_show\_equation =   \textcolor{stringliteral}{"{}Your equation: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_inf\_roots =       \textcolor{stringliteral}{"{}This equation has infinite number of roots.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_no\_roots =        \textcolor{stringliteral}{"{}This equation hasn't roots.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_one\_root =        \textcolor{stringliteral}{"{}This equation has one root.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_two\_roots =       \textcolor{stringliteral}{"{}This equation has two roots.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_this\_root =       \textcolor{stringliteral}{"{}This root: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_first\_root =      \textcolor{stringliteral}{"{}First root: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_second\_root =     \textcolor{stringliteral}{"{}Second root: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_goodbye =         \textcolor{stringliteral}{"{}Have a good day! End."{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{languages_8cpp_ac118ba8b7681673d05c86cf34313c6b4}\label{languages_8cpp_ac118ba8b7681673d05c86cf34313c6b4}} 
+\index{languages.cpp@{languages.cpp}!LANGUAGE\_GERMANY@{LANGUAGE\_GERMANY}}
+\index{LANGUAGE\_GERMANY@{LANGUAGE\_GERMANY}!languages.cpp@{languages.cpp}}
+\doxysubsubsection{\texorpdfstring{LANGUAGE\_GERMANY}{LANGUAGE\_GERMANY}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_output_language}{Output\+Language}} LANGUAGE\+\_\+\+GERMANY\hspace{0.3cm}{\ttfamily [extern]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .language\_indentification = GERMANY,}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_menu =            \textcolor{stringliteral}{"{}Hallo, Ruslan Alekseevich.\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                \(\backslash\)rDieses Programm dient zur Lösung quadratischer Gleichungen.\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                \(\backslash\)rDie Gleichung sollte so aussehen: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_request =         \textcolor{stringliteral}{"{}Geben Sie die Quoten ein a, b, c:\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_error =           \textcolor{stringliteral}{"{}Fehler. Geben Sie 3 reelle Zahlen ein\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                \(\backslash\)rZum Beispiel 12, -\/1.5, 3.14, 1.618.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_show\_equation =   \textcolor{stringliteral}{"{}Hier ist deine Gleichung: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_inf\_roots =       \textcolor{stringliteral}{"{}Diese Gleichung hat unendlich viele Wurzeln.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_no\_roots =        \textcolor{stringliteral}{"{}Diese Gleichung hat keine Wurzeln.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_one\_root =        \textcolor{stringliteral}{"{}Diese Gleichung hat nur eine Wurzel.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_two\_roots =       \textcolor{stringliteral}{"{}Diese Gleichung hat zwei Wurzeln.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_this\_root =       \textcolor{stringliteral}{"{}das ist die Wurzel: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_first\_root =      \textcolor{stringliteral}{"{}erste Wurzel: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_second\_root =     \textcolor{stringliteral}{"{}zweite Wurzel: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_goodbye =         \textcolor{stringliteral}{"{}Auf Wiedersehen! Ende."{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{languages_8cpp_a96d1280c6e0e7a15ffee5abf59d525f0}\label{languages_8cpp_a96d1280c6e0e7a15ffee5abf59d525f0}} 
+\index{languages.cpp@{languages.cpp}!LANGUAGE\_RUSSIAN@{LANGUAGE\_RUSSIAN}}
+\index{LANGUAGE\_RUSSIAN@{LANGUAGE\_RUSSIAN}!languages.cpp@{languages.cpp}}
+\doxysubsubsection{\texorpdfstring{LANGUAGE\_RUSSIAN}{LANGUAGE\_RUSSIAN}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_output_language}{Output\+Language}} LANGUAGE\+\_\+\+RUSSIAN\hspace{0.3cm}{\ttfamily [extern]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .language\_indentification = RUSSIAN,}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_menu =            \textcolor{stringliteral}{"{}Здравствуйте, Руслан Алексеевич.\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                \(\backslash\)rЭта программа преднозначена для решения квадратных уравнений.\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                \(\backslash\)rУравнение должно выглядеть следующим образом: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_request =         \textcolor{stringliteral}{"{}Введите коэффициенты a, b и c:\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_error =           \textcolor{stringliteral}{"{}Ошибка. Введите 3 вещественных числа\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{                                \(\backslash\)rтаких как 12, -\/1.5, 3.14 или 1.618.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_show\_equation =   \textcolor{stringliteral}{"{}Ваше уравнение: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_inf\_roots =       \textcolor{stringliteral}{"{}Это уравнение имеет бесконечное количество корней.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_no\_roots =        \textcolor{stringliteral}{"{}Это уравнение не имеет корней.\(\backslash\)n"{}},}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    .language\_one\_root =        \textcolor{stringliteral}{"{}Это уравнение имеет всего один корень.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_two\_roots =       \textcolor{stringliteral}{"{}Это уравнение имеет два корня.\(\backslash\)n"{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_this\_root =       \textcolor{stringliteral}{"{}Этот корень: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_first\_root =      \textcolor{stringliteral}{"{}Первый корень: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_second\_root =     \textcolor{stringliteral}{"{}Второй корень: "{}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{    .language\_goodbye =         \textcolor{stringliteral}{"{}Всего доброго! Конец."{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

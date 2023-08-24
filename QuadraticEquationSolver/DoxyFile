@@ -1,0 +1,1 @@
+INPUT = calculations.h input-output.h languages.h my_assert.h test.h calculations.cpp cmd_input.cpp input-output.cpp languages.cpp main.cpp test.cpp

@@ -1,0 +1,80 @@
+\hypertarget{calculations_8h}{}\doxysection{calculations.\+h File Reference}
+\label{calculations_8h}\index{calculations.h@{calculations.h}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}}
+\begin{DoxyCompactList}\small\item\em struct for coefficients of quadratic equation \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}}
+\begin{DoxyCompactList}\small\item\em structure for roots and roots count storage \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}{roots\+\_\+count}} \{ {\bfseries ROOTS\+\_\+\+COUNT\+\_\+\+INFINITY} = -\/1
+, {\bfseries ROOTS\+\_\+\+COUNT\+\_\+\+ZERO}
+, {\bfseries ROOTS\+\_\+\+COUNT\+\_\+\+ONE}
+, {\bfseries ROOTS\+\_\+\+COUNT\+\_\+\+TWO}
+ \}
+\begin{DoxyCompactList}\small\item\em enumeration of roots count \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}} \mbox{\hyperlink{calculations_8h_a99d50baa55e0af0c73e4e76621f74261}{solve\+\_\+equation}} (const \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coeffs)
+\begin{DoxyCompactList}\small\item\em solving equation using input data \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{calculations_8h_a700925380ca8260df0e44152c3a60e9c}{is\+\_\+equal\+\_\+float}} (const float num1, const float num2)
+\begin{DoxyCompactList}\small\item\em check if two of float numbers are equal \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}\label{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}} 
+\index{calculations.h@{calculations.h}!roots\_count@{roots\_count}}
+\index{roots\_count@{roots\_count}!calculations.h@{calculations.h}}
+\doxysubsubsection{\texorpdfstring{roots\_count}{roots\_count}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}{roots\+\_\+count}}}
+
+
+
+enumeration of roots count 
+
+from -\/1 to 2 ~\newline
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{calculations_8h_a700925380ca8260df0e44152c3a60e9c}\label{calculations_8h_a700925380ca8260df0e44152c3a60e9c}} 
+\index{calculations.h@{calculations.h}!is\_equal\_float@{is\_equal\_float}}
+\index{is\_equal\_float@{is\_equal\_float}!calculations.h@{calculations.h}}
+\doxysubsubsection{\texorpdfstring{is\_equal\_float()}{is\_equal\_float()}}
+{\footnotesize\ttfamily bool is\+\_\+equal\+\_\+float (\begin{DoxyParamCaption}\item[{const float}]{num1,  }\item[{const float}]{num2 }\end{DoxyParamCaption})}
+
+
+
+check if two of float numbers are equal 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num1} & first number of comparing \\
+\hline
+\mbox{\texttt{ in}}  & {\em num2} & second number of comparing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+is first number equal to second number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{calculations_8h_a99d50baa55e0af0c73e4e76621f74261}\label{calculations_8h_a99d50baa55e0af0c73e4e76621f74261}} 
+\index{calculations.h@{calculations.h}!solve\_equation@{solve\_equation}}
+\index{solve\_equation@{solve\_equation}!calculations.h@{calculations.h}}
+\doxysubsubsection{\texorpdfstring{solve\_equation()}{solve\_equation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}} solve\+\_\+equation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$}]{coeffs }\end{DoxyParamCaption})}
+
+
+
+solving equation using input data 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em coeffs} & coefficients of equation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+equation roots and count 
+\end{DoxyReturn}

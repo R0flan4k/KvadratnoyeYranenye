@@ -1,5 +1,5 @@
 /////////////////////////////////////////////////////////////////////////
-/// file input-output.h
+/// \file input-output.h
 /////////////////////////////////////////////////////////////////////////
 #ifndef INPUT_OUTPUT_H
     #define INPUT_OUTPUT_H
@@ -58,10 +58,10 @@
 
 /////////////////////////////////////////////////////////////////////////
 /// \brief let user input coefficients of equation and check if input valid  
-/// \param[in] language language that program using
-/// \return coefficients of equation that user inputed
+/// \param[in] language language that program using                               @@@@@@@@@@@@@@@@@@@@@@@@@@
+/// \return coefficients of equation that user inputed                            @@@@@@@@@@@@@@@@@@@@@@@@@@
 /////////////////////////////////////////////////////////////////////////
-    EquationCoefficients get_coefficients(const OutputLanguage * language);
+    int get_coefficients(EquationCoefficients * coefficients);
 
 /////////////////////////////////////////////////////////////////////////
 /// \brief get from stdin first non-space allowed character, and then skip anything after the character
@@ -79,5 +79,8 @@
 /////////////////////////////////////////////////////////////////////////
     int check_cmd_input(int argc, char ** argv);
 
+/// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+/// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    bool is_valid_coefficients_input(EquationCoefficients * coefficients);
 
 #endif
