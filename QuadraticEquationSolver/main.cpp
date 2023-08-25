@@ -20,8 +20,12 @@ int main(int argc, char * argv[])
 
     const OutputLanguage * language = &LANGUAGE_ENGLISH;
     
-    if (check_cmd_input(argc, argv) == WRONG_CMD_INPUT)
+    int cmd_input_status = RIGHT_CMD_INPUT;
+    if ((cmd_input_status = check_cmd_input(argc, argv)) == WRONG_CMD_INPUT ||
+         cmd_input_status == PREMATURE_CMD_INPUT)
+    {
         return 0;
+    }
 
     show_language_menu();
 
@@ -34,11 +38,20 @@ int main(int argc, char * argv[])
     language = select_language(character);
 
     show_menu(language);
-    printf("%s", language->language_request); 
-    while (!is_valid_coefficients_input(&coefficients))
+    show_request(language); 
+
+    bool coefficients_input_status = true;
+    while (!(coefficients_input_status = is_valid_coefficients_input(&coefficients)) || !isspace_extra_characters())
     {
-        printf("%s", language->language_error);
-        skip_input();
+        if (!coefficients_input_status)
+        {
+            show_error(language);
+            skip_input();
+        }
+        else
+        {
+            show_error(language);
+        }
     }
     solution = solve_equation(&coefficients);
     show_equation(&coefficients, language);

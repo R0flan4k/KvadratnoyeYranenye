@@ -24,26 +24,30 @@ static void show_instruction_test(char * argv);
 /////////////////////////////////////////////////////////////////////////
 static void show_instruction_coeffs(char * argv);
 
-static CmdLineArg test = {
+static CmdLineArg test_flag = {
     .name = "--test",
     .num_of_param = 1
 };
 
-static CmdLineArg coeffs = {
+static CmdLineArg coeffs_flag = {
     .name = "--coeffs",
     .num_of_param = 3
 };
 
 int check_cmd_input(int argc, char ** argv)
 {
+    MY_ASSERT(argv != nullptr);
+
+    static int input_status = TRIVIAL_CMD_INPUT;
+
     for (int i = 1; i < argc; i++)
     {
-        if (strcmp(argv[i], test.name) == 0)
+        if (strcmp(argv[i], test_flag.name) == 0)
         {
-            if (argc >= i + test.num_of_param)
+            if (argc >= i + test_flag.num_of_param)
             {
-                MY_ASSERT(test_program(argv[i + test.num_of_param]) == TEST_SUCCESS);
-                return RIGHT_CMD_INPUT;
+                MY_ASSERT(test_program(argv[i + test_flag.num_of_param]) == TEST_SUCCESS);
+                input_status == PREMATURE_CMD_INPUT? 0 : input_status = RIGHT_CMD_INPUT;
             }
             else    
             {
@@ -51,16 +55,17 @@ int check_cmd_input(int argc, char ** argv)
                 return WRONG_CMD_INPUT;
             }
         }
-        else if (strcmp(argv[i], coeffs.name) == 0)
+        else if (strcmp(argv[i], coeffs_flag.name) == 0)
         {
-            if (argc >= i + coeffs.num_of_param)
+            if (argc >= i + coeffs_flag.num_of_param)
             {
-                EquationCoefficients coefficients = {(float) atof(argv[i + coeffs.num_of_param -2]),
-                                                     (float) atof(argv[i + coeffs.num_of_param -1]),
-                                                     (float) atof(argv[i + coeffs.num_of_param])};
+                EquationCoefficients coefficients = {(float) atof(argv[i + coeffs_flag.num_of_param -2]),
+                                                     (float) atof(argv[i + coeffs_flag.num_of_param -1]),
+                                                     (float) atof(argv[i + coeffs_flag.num_of_param])};
                 EquationRoots solution = solve_equation(&coefficients);
                 show_equation(&coefficients, &LANGUAGE_ENGLISH);
                 show_solution(&solution, &LANGUAGE_ENGLISH);
+                input_status = PREMATURE_CMD_INPUT;
             }
             else
             {
@@ -70,7 +75,7 @@ int check_cmd_input(int argc, char ** argv)
         }
     }
     
-    return TRIVIAL_CMD_INPUT;
+    return input_status;
 }
 
 static void show_instruction_test(char * argv)

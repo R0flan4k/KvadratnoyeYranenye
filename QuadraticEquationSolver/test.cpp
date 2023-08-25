@@ -37,7 +37,7 @@ TestResults test_program(const char * test_file)
 
     if ((fp = fopen(test_file, "r")) == NULL)
     {
-        puts("Can't open the file");
+        puts("Can't open the file.");
         return TEST_CANT_OPEN_FILE;
     }
 
@@ -64,7 +64,7 @@ TestResults test_program(const char * test_file)
 
     fclose(fp);
 
-    puts("Test successfully passed");
+    puts("Test successfully passed.");
 
     return TEST_SUCCESS;
 }
@@ -87,17 +87,17 @@ static void show_test_results(TestResults test_result, const EquationRoots * pro
     switch (test_result)
     {
         case TEST_SUCCESS:
-            puts("The test successfully passed");
+            puts("The test successfully passed.");
             break;
 
         case TEST_COUNT_FAILURE:
-            puts ("Test error: wrong count");
+            puts ("Test error: wrong count.");
             printf("Expected count: %d\n", (int) right_solution->count);
             printf("Program count: %d\n", (int) program_solution->count);
             break;
 
         case TEST_ROOTS_FAILURE:
-            puts("Test error: wrong roots");
+            puts("Test error: wrong roots.");
             printf("Expected roots: %f and %f\n", right_solution->first_root, right_solution->second_root);
             printf("Program roots: %f and %f\n", program_solution->first_root, program_solution->second_root);
             break;

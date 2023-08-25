@@ -12,12 +12,6 @@
 
 
 /////////////////////////////////////////////////////////////////////////
-/// \brief Skip all characters in the string and check if it has non-space characters.
-/// \return Is all characters in this string are spaces.
-/////////////////////////////////////////////////////////////////////////
-static bool isspace_extra_characters(void);
-
-/////////////////////////////////////////////////////////////////////////
 /// \brief Skip all characters until a non-space character is encountered.
 /// \return First non-space character.
 /////////////////////////////////////////////////////////////////////////
@@ -53,7 +47,7 @@ int get_coefficients(EquationCoefficients * coefficients)
 
 bool is_valid_coefficients_input (EquationCoefficients * coefficients)
 {
-    return get_coefficients(coefficients) == 3 && isspace_extra_characters();
+    return get_coefficients(coefficients) == 3;
 }
 
 
@@ -136,7 +130,7 @@ int get_one_char(const char * str, int n)
 }
 
 
-static bool isspace_extra_characters (void)
+bool isspace_extra_characters (void)
 {
     int ch = 0;
     bool marker = true;
@@ -199,4 +193,15 @@ void skip_input(void)
 {
     while (getchar() != '\n')
         continue;
+}
+
+void show_request(const OutputLanguage * language)
+{
+    printf("%s", language->language_request);
+}
+
+
+void show_error(const OutputLanguage * language)
+{
+    printf("%s", language->language_error);
 }

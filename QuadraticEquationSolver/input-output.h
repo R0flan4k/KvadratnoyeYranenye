@@ -24,9 +24,10 @@
         int num_of_param; ///< Number of flag parameters.
     };
 
-    const int WRONG_CMD_INPUT   = 1;  ///< If user incorrectly using flags.
-    const int RIGHT_CMD_INPUT   = 0;  ///< If user correctly using flags.
-    const int TRIVIAL_CMD_INPUT = 2;  ///< If user dont using flags.
+    const int WRONG_CMD_INPUT     = 1;  ///< If user incorrectly using flags.
+    const int RIGHT_CMD_INPUT     = 0;  ///< If user correctly using flags.
+    const int TRIVIAL_CMD_INPUT   = 2;  ///< If user dont using flags.
+    const int PREMATURE_CMD_INPUT = 3;  ///< If user prematurely enter coefficients.
     
     const int EXTRA_CHARACTERS = -2;  ///< If the user has entered unnecessary characters.
     const int WRONG_CHARACTER  = -3;  ///< If the user has entered wrong characters.
@@ -102,5 +103,23 @@
     /// @brief Skip all characters in the line.
     /////////////////////////////////////////////////////////////////////////
     void skip_input(void);
+
+    /////////////////////////////////////////////////////////////////////////
+    /// \brief Show request to input coefficients.
+    /// \param[in] language Entered language.
+    ///////////////////////////////////////////////////////////////////////// 
+    void show_request(const OutputLanguage * language);
+
+    /////////////////////////////////////////////////////////////////////////
+    /// \brief Skip all characters in the string and check if it has non-space characters.
+    /// \return Is all characters in this string are spaces.
+    /////////////////////////////////////////////////////////////////////////
+    bool isspace_extra_characters(void);
+
+    /////////////////////////////////////////////////////////////////////////
+    /// \brief Show error if user entered invalid coefficients.
+    /// \param[in] language Entered language.
+    /////////////////////////////////////////////////////////////////////////
+    void show_error(const OutputLanguage * language);
 
 #endif // INPUT_OUTPUT_H
