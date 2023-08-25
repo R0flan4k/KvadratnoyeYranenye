@@ -14,9 +14,18 @@ This program is designed to solve a quadratic equation, but it can do more than 
 ## Installation:
 Bend the repository and compile the files
 
+First step:
 ~~~
 git clone https://github.com/R0flan4k/Quadratic.git
+~~~
+
+Second step:
+~~~
 cd Quadratic\QuadraticEquationSolver
+~~~
+
+Third step:
+~~~
 make
 ~~~
 
