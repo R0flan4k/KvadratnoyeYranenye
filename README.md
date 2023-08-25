@@ -32,7 +32,7 @@ make
 ## Usage
 
 ~~~
-qSolver --*flags* *arguments*
+qSolver.exe --*flags* *arguments*
 ~~~
 
 ## Flags
