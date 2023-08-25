@@ -29,15 +29,17 @@ qSolver --*flags* *arguments*
 ## Flags
 This program supports the following flags (the list will be extended in the future)
 
---test
 - Start tests according to the test_arguments.txt file. The list of files with tested input data can be expanded.
+
+--test
 
 ~~~
 qSolver.exe --test test_arguments.txt
 ~~~
 
---coeffs
 - Get the coefficients of an equation from the command line.
+
+--coeffs
 
 ~~~
 qSolver.exe --coeffs 1 -1.618 3.14
