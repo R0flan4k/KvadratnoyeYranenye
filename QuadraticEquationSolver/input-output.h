@@ -4,8 +4,16 @@
 #ifndef INPUT_OUTPUT_H
     #define INPUT_OUTPUT_H
 
+
     #include "languages.h"
     #include "calculations.h"
+
+    struct CmdLineArg {
+    const char* name;
+    int num_of_param;
+};
+
+
 /////////////////////////////////////////////////////////////////////////
 /// \brief Constatnts for cmd input result return.
 /////////////////////////////////////////////////////////////////////////

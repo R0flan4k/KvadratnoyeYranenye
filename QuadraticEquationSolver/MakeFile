@@ -1,0 +1,24 @@
+CC = g++
+FLAGS = -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wno-missing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -Werror=vla -D_DEBUG -D_EJUDGE_CLIENT_SIDE
+TARGETS = main.o input-output.o languages.o test.o cmd_input.o calculations.o
+
+all: $(TARGETS)
+	$(CC) $(TARGETS) -o qSolver
+
+main.o: main.cpp
+	$(CC) -c main.cpp $(FLAGS) -o main.o
+
+input-output.o: input-output.cpp
+	$(CC) -c input-output.cpp $(FLAGS) -o input-output.o
+
+languages.o: languages.cpp
+	$(CC) -c languages.cpp $(FLAGS) -o languages.o
+
+test.o: test.cpp
+	$(CC) -c test.cpp $(FLAGS) -o test.o
+
+cmd_input.o: cmd_input.cpp
+	$(CC) -c cmd_input.cpp $(FLAGS) -o cmd_input.o
+
+calculations.o: calculations.cpp
+	$(CC) -c calculations.cpp $(FLAGS) -o calculations.o

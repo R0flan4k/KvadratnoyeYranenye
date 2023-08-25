@@ -40,5 +40,10 @@
 /////////////////////////////////////////////////////////////////////////
     const OutputLanguage * select_language(const int ch);
 
+extern const OutputLanguage LANGUAGE_RUSSIAN;
+extern const OutputLanguage LANGUAGE_ENGLISH;
+extern const OutputLanguage LANGUAGE_GERMANY;
+extern const OutputLanguage LANGUAGE_CHINESE;
+
 
 #endif

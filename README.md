@@ -17,7 +17,7 @@ Bend the repository and compile the files
 ~~~
 git clone https://github.com/R0flan4k/Quadratic.git
 cd Quadratic\QuadraticEquationSolver
-g+++ *.cpp -o qSolver
+make
 ~~~
 
 ## Usage

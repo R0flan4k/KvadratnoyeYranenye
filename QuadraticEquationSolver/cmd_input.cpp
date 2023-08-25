@@ -7,11 +7,8 @@
 #include "input-output.h"
 #include "test.h"
 #include "my_assert.h"
+#include "languages.h"
 
-extern const OutputLanguage LANGUAGE_RUSSIAN;
-extern const OutputLanguage LANGUAGE_ENGLISH;
-extern const OutputLanguage LANGUAGE_GERMANY;
-extern const OutputLanguage LANGUAGE_CHINESE;
 
 /////////////////////////////////////////////////////////////////////////
 /// \brief Show instruction how to use test flag (--test).
@@ -19,15 +16,31 @@ extern const OutputLanguage LANGUAGE_CHINESE;
 /////////////////////////////////////////////////////////////////////////
 static void show_instruction_test(char * argv);
 
+/////////////////////////////////////////////////////////////////////////
+/// \brief Show instruction how to use coeffs flag (--coeffs).
+/// \param[in] argv Program name pointer.
+/////////////////////////////////////////////////////////////////////////
+static void show_instruction_coeffs(char * argv);
+
+static CmdLineArg test = {
+    .name = "--test",
+    .num_of_param = 1
+};
+
+static CmdLineArg coeffs = {
+    .name = "--coeffs",
+    .num_of_param = 3
+};
+
 int check_cmd_input(int argc, char ** argv)
 {
     for (int i = 1; i < argc; i++)
     {
-        if (strcmp(argv[i], "--test") == 0)
+        if (strcmp(argv[i], test.name) == 0)
         {
-            if (argc >= i+1)
+            if (argc >= i + test.num_of_param)
             {
-                MY_ASSERT(test_program(argv[i+1]) == TEST_SUCCESS);
+                MY_ASSERT(test_program(argv[i + test.num_of_param]) == TEST_SUCCESS);
                 return RIGHT_CMD_INPUT;
             }
             else    
@@ -36,14 +49,21 @@ int check_cmd_input(int argc, char ** argv)
                 return WRONG_CMD_INPUT;
             }
         }
-        else if (strcmp(argv[i], "--coeffs") == 0)
+        else if (strcmp(argv[i], coeffs.name) == 0)
         {
-            if (argc >= i+3)
+            if (argc >= i + coeffs.num_of_param)
             {
-                EquationCoefficients coefficients = {(float) atof(argv[i+1]), (float) atof(argv[i+2]), (float) atof(argv[i+3])};
+                EquationCoefficients coefficients = {(float) atof(argv[i + coeffs.num_of_param -2]),
+                                                     (float) atof(argv[i + coeffs.num_of_param -1]),
+                                                     (float) atof(argv[i + coeffs.num_of_param])};
                 EquationRoots solution = solve_equation(&coefficients);
                 show_equation(&coefficients, &LANGUAGE_ENGLISH);
                 show_solution(&solution, &LANGUAGE_ENGLISH);
+            }
+            else
+            {
+                show_instruction_coeffs(argv[0]);
+                return WRONG_CMD_INPUT;
             }
         }
     }
@@ -54,5 +74,12 @@ int check_cmd_input(int argc, char ** argv)
 static void show_instruction_test(char * argv)
 {
     printf("Please, use: %s --test *test_name.txt*\n", argv);
+    printf("or use: %s\n", argv);
+}
+
+
+static void show_instruction_coeffs(char * argv)
+{
+    printf("Please, use: %s --coeffs *a coefficient* *b coefficient* *c coefficient*\n", argv);
     printf("or use: %s\n", argv);
 }

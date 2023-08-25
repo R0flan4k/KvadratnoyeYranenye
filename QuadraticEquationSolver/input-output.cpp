@@ -8,6 +8,10 @@
 #include "input-output.h"
 #include "languages.h"
 
+
+// [Error]: 
+// [Debug]
+
 /////////////////////////////////////////////////////////////////////////
 /// \brief Skip all characters in the string and check if it has non-space characters.
 /// \return Is all characters in this string are spaces.
@@ -26,11 +30,6 @@ static int skip_spaces_and_getchar(void);
 ////////////////////////////////////////////////////////////////////////*/
 static void show_one_root(const float root);
 
-
-extern const OutputLanguage LANGUAGE_RUSSIAN;
-extern const OutputLanguage LANGUAGE_ENGLISH;
-extern const OutputLanguage LANGUAGE_GERMANY;
-extern const OutputLanguage LANGUAGE_CHINESE;
 
 
 void show_equation_format(void)
