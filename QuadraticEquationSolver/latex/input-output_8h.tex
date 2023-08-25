@@ -2,10 +2,24 @@
 \label{input-output_8h}\index{input-\/output.h@{input-\/output.h}}
 {\ttfamily \#include \char`\"{}languages.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}calculations.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_cmd_line_arg}{Cmd\+Line\+Arg}}
+\begin{DoxyCompactList}\small\item\em String with allowed for language input characters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{input-output_8h_ac4bdeb73d33895bb745d17b3d8539a6a}\label{input-output_8h_ac4bdeb73d33895bb745d17b3d8539a6a}} 
+\#define {\bfseries GREEN\+\_\+\+COLOR}~\char`\"{}\textbackslash{}x1b\mbox{[}32m\char`\"{}
+\item 
+\mbox{\Hypertarget{input-output_8h_a6218ebf3d38879af3e58f18e39c4e064}\label{input-output_8h_a6218ebf3d38879af3e58f18e39c4e064}} 
+\#define {\bfseries DEFAULT\+\_\+\+COLOR}~\char`\"{}\textbackslash{}x1b\mbox{[}0m\char`\"{}
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{input-output_8h_a04b89361e9538dafdad143383adb44b9}{show\+\_\+menu}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
+void \mbox{\hyperlink{input-output_8h_a04b89361e9538dafdad143383adb44b9}{show\+\_\+menu}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$language)
 \begin{DoxyCompactList}\small\item\em User greeting and telling program abillity. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input-output_8h_a5a67987feba6f5a0467b926c231175f3}\label{input-output_8h_a5a67987feba6f5a0467b926c231175f3}} 
 void \mbox{\hyperlink{input-output_8h_a5a67987feba6f5a0467b926c231175f3}{show\+\_\+language\+\_\+menu}} (void)
@@ -13,11 +27,11 @@ void \mbox{\hyperlink{input-output_8h_a5a67987feba6f5a0467b926c231175f3}{show\+\
 \mbox{\Hypertarget{input-output_8h_a00c814cb3ca5dbded70f7d09eddef4a0}\label{input-output_8h_a00c814cb3ca5dbded70f7d09eddef4a0}} 
 void \mbox{\hyperlink{input-output_8h_a00c814cb3ca5dbded70f7d09eddef4a0}{show\+\_\+equation\+\_\+format}} (void)
 \begin{DoxyCompactList}\small\item\em Show user format of equation. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{input-output_8h_abd7888375a0b0f280b757d0e5a39f889}{show\+\_\+equation}} (const \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coeffs, const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
+void \mbox{\hyperlink{input-output_8h_abd7888375a0b0f280b757d0e5a39f889}{show\+\_\+equation}} (const \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coeffs, const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$language)
 \begin{DoxyCompactList}\small\item\em Show user equation that he input. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{input-output_8h_a0481090766818f9dae58182e983ecab9}{show\+\_\+solution}} (const \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}} $\ast$solution, const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
+void \mbox{\hyperlink{input-output_8h_a0481090766818f9dae58182e983ecab9}{show\+\_\+solution}} (const \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}} $\ast$solution, const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$language)
 \begin{DoxyCompactList}\small\item\em Show user solution of inputed equatiin. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{input-output_8h_a2057984fb86fe06f168416d3939ff607}{show\+\_\+goodbye}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
+void \mbox{\hyperlink{input-output_8h_a2057984fb86fe06f168416d3939ff607}{show\+\_\+goodbye}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$language)
 \begin{DoxyCompactList}\small\item\em Say goodebye to user. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{input-output_8h_afac1e64a683c11464c97e12472a8614d}{get\+\_\+coefficients}} (\mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coefficients)
 \begin{DoxyCompactList}\small\item\em Let user input coefficients of equation. \end{DoxyCompactList}\item 
@@ -26,12 +40,16 @@ int \mbox{\hyperlink{input-output_8h_a8a4c7ccd5bed224dd0b06f5ca297de05}{get\+\_\
 int \mbox{\hyperlink{input-output_8h_ad21ac6160c1f9a367be8ce7ee69dd216}{check\+\_\+cmd\+\_\+input}} (int argc, char $\ast$$\ast$argv)
 \begin{DoxyCompactList}\small\item\em Check if user enter flags running the program. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{input-output_8h_a2d4df57ae6f72824d786267b374cf038}{is\+\_\+valid\+\_\+coefficients\+\_\+input}} (\mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coefficients)
-\begin{DoxyCompactList}\small\item\em Check if inputed coefficients are valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Check if inputed coefficients are valid. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{input-output_8h_acb623c217efef276c73a9b0c1a5438c5}\label{input-output_8h_acb623c217efef276c73a9b0c1a5438c5}} 
+void \mbox{\hyperlink{input-output_8h_acb623c217efef276c73a9b0c1a5438c5}{skip\+\_\+input}} (void)
+\begin{DoxyCompactList}\small\item\em Skip all characters in the line. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{input-output_8h_a561da360eae327ecc4bb368752715307}\label{input-output_8h_a561da360eae327ecc4bb368752715307}} 
 const int \mbox{\hyperlink{input-output_8h_a561da360eae327ecc4bb368752715307}{WRONG\+\_\+\+CMD\+\_\+\+INPUT}} = 1
-\begin{DoxyCompactList}\small\item\em Constatnts for cmd input result return. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em If user incorrectly using flags. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input-output_8h_af69a30a47d2796a66fb3eea14904be43}\label{input-output_8h_af69a30a47d2796a66fb3eea14904be43}} 
 const int \mbox{\hyperlink{input-output_8h_af69a30a47d2796a66fb3eea14904be43}{RIGHT\+\_\+\+CMD\+\_\+\+INPUT}} = 0
 \begin{DoxyCompactList}\small\item\em If user correctly using flags. \end{DoxyCompactList}\item 
@@ -40,10 +58,10 @@ const int \mbox{\hyperlink{input-output_8h_a8c049d3424358209390f4f03474309ef}{TR
 \begin{DoxyCompactList}\small\item\em If user dont using flags. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input-output_8h_ad701a3bdba89d4b7f62024ed8378da89}\label{input-output_8h_ad701a3bdba89d4b7f62024ed8378da89}} 
 const int \mbox{\hyperlink{input-output_8h_ad701a3bdba89d4b7f62024ed8378da89}{EXTRA\+\_\+\+CHARACTERS}} = -\/2
-\begin{DoxyCompactList}\small\item\em Constants for \mbox{\hyperlink{input-output_8h_a8a4c7ccd5bed224dd0b06f5ca297de05}{get\+\_\+one\+\_\+char()}} return. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em If the user has entered unnecessary characters. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input-output_8h_a9a9406680d021497591ca078030273e6}\label{input-output_8h_a9a9406680d021497591ca078030273e6}} 
-const int {\bfseries WRONG\+\_\+\+CHARACTER} = -\/3
-\end{DoxyCompactItemize}
+const int \mbox{\hyperlink{input-output_8h_a9a9406680d021497591ca078030273e6}{WRONG\+\_\+\+CHARACTER}} = -\/3
+\begin{DoxyCompactList}\small\item\em If the user has entered wrong characters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -189,17 +207,3 @@ Show user solution of inputed equatiin.
 \mbox{\texttt{ in}}  & {\em language} & Language that program using. \\
 \hline
 \end{DoxyParams}
-
-
-\doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{input-output_8h_a561da360eae327ecc4bb368752715307}\label{input-output_8h_a561da360eae327ecc4bb368752715307}} 
-\index{input-\/output.h@{input-\/output.h}!WRONG\_CMD\_INPUT@{WRONG\_CMD\_INPUT}}
-\index{WRONG\_CMD\_INPUT@{WRONG\_CMD\_INPUT}!input-\/output.h@{input-\/output.h}}
-\doxysubsubsection{\texorpdfstring{WRONG\_CMD\_INPUT}{WRONG\_CMD\_INPUT}}
-{\footnotesize\ttfamily const int WRONG\+\_\+\+CMD\+\_\+\+INPUT = 1}
-
-
-
-Constatnts for cmd input result return. 
-
-If user incorrectly using flags. 

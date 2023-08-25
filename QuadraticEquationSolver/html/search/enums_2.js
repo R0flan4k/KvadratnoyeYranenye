@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['test_5fresults_72',['test_results',['../test_8h.html#a7a28d57776196de6c56e93bccf30d494',1,'test.h']]]
+  ['testresults_122',['TestResults',['../test_8h.html#ae9124543a34a26613e8e327e68bd2d6d',1,'test.h']]]
 ];

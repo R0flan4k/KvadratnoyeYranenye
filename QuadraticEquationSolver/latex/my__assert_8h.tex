@@ -4,26 +4,37 @@
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{my__assert_8h_ae2b1837fab79919242b81090d20d52c2}{MY\+\_\+\+ASSERT}}(X)
-\begin{DoxyCompactList}\small\item\em My modified version of assert(). \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Macro Definition Documentation}
 \mbox{\Hypertarget{my__assert_8h_ae2b1837fab79919242b81090d20d52c2}\label{my__assert_8h_ae2b1837fab79919242b81090d20d52c2}} 
-\index{my\_assert.h@{my\_assert.h}!MY\_ASSERT@{MY\_ASSERT}}
-\index{MY\_ASSERT@{MY\_ASSERT}!my\_assert.h@{my\_assert.h}}
-\doxysubsubsection{\texorpdfstring{MY\_ASSERT}{MY\_ASSERT}}
-{\footnotesize\ttfamily \#define MY\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})}
-
-{\bfseries Value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{ \textcolor{keywordflow}{if} (!(X))\(\backslash\)}
-\DoxyCodeLine{  \{ printf(\textcolor{stringliteral}{"{}Assertion failed: "{}} \#X \textcolor{stringliteral}{"{}, line \%d, file"{}} \_\_FILE\_\_ \textcolor{stringliteral}{"{}, date "{}} \_\_DATE\_\_ \textcolor{stringliteral}{"{}, function"{}} \textcolor{stringliteral}{"{}\(\backslash\)n"{}}, \_\_LINE\_\_);\(\backslash\)}
-\DoxyCodeLine{   exit(EXIT\_FAILURE);\(\backslash\)}
-\DoxyCodeLine{    \}}
-
-\end{DoxyCode}
+\#define \mbox{\hyperlink{my__assert_8h_ae2b1837fab79919242b81090d20d52c2}{MY\+\_\+\+ASSERT}}(X)~\mbox{\hyperlink{my__assert_8h_ac52a4ab54ea81597e585106daf5a9a56}{my\+\_\+func\+\_\+assert}}(X, \#X, \+\_\+\+\_\+\+DATE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em My modified version of assert(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{my__assert_8h_ac52a4ab54ea81597e585106daf5a9a56}{my\+\_\+func\+\_\+assert}} (const bool expr, const char $\ast$expr\+\_\+string, const char $\ast$date, const int line, const char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Function for output assert error and exit. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-My modified version of assert(). 
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{my__assert_8h_ac52a4ab54ea81597e585106daf5a9a56}\label{my__assert_8h_ac52a4ab54ea81597e585106daf5a9a56}} 
+\index{my\_assert.h@{my\_assert.h}!my\_func\_assert@{my\_func\_assert}}
+\index{my\_func\_assert@{my\_func\_assert}!my\_assert.h@{my\_assert.h}}
+\doxysubsubsection{\texorpdfstring{my\_func\_assert()}{my\_func\_assert()}}
+{\footnotesize\ttfamily void my\+\_\+func\+\_\+assert (\begin{DoxyParamCaption}\item[{const bool}]{expr,  }\item[{const char $\ast$}]{expr\+\_\+string,  }\item[{const char $\ast$}]{date,  }\item[{const int}]{line,  }\item[{const char $\ast$}]{file }\end{DoxyParamCaption})}
 
+
+
+Function for output assert error and exit. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em expr} & Expression. \\
+\hline
+\mbox{\texttt{ in}}  & {\em expr\+\_\+string} & Expression in the form of string. \\
+\hline
+\mbox{\texttt{ in}}  & {\em date} & Date of error. \\
+\hline
+\mbox{\texttt{ in}}  & {\em line} & Error line. \\
+\hline
+\mbox{\texttt{ in}}  & {\em file} & Error file. \\
+\hline
+\end{DoxyParams}

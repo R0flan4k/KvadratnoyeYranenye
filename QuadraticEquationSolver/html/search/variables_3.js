@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wrong_5fcmd_5finput_69',['WRONG_CMD_INPUT',['../input-output_8h.html#a561da360eae327ecc4bb368752715307',1,'input-output.h']]]
+  ['right_5fcmd_5finput_116',['RIGHT_CMD_INPUT',['../input-output_8h.html#af69a30a47d2796a66fb3eea14904be43',1,'input-output.h']]]
 ];

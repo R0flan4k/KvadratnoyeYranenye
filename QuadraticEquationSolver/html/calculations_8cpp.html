@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: calculations.cpp File Reference</title>
+<title>Quadratic Equation Solver: calculations.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Quadratic Equation Solver
    </div>
+   <div id="projectbrief">This program can solve quadratic equations.</div>
   </td>
  </tr>
  </tbody>
@@ -67,6 +68,9 @@ $(function() {
 <div class="title">calculations.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Computational part of the program.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
@@ -78,11 +82,16 @@ Functions</h2></td></tr>
 <tr class="memitem:a99d50baa55e0af0c73e4e76621f74261"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_equation_roots.html">EquationRoots</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8cpp.html#a99d50baa55e0af0c73e4e76621f74261">solve_equation</a> (const <a class="el" href="struct_equation_coefficients.html">EquationCoefficients</a> *coeffs)</td></tr>
 <tr class="memdesc:a99d50baa55e0af0c73e4e76621f74261"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solving equation using input data.  <a href="calculations_8cpp.html#a99d50baa55e0af0c73e4e76621f74261">More...</a><br /></td></tr>
 <tr class="separator:a99d50baa55e0af0c73e4e76621f74261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad64d878479641c0af07c7a7a2580bb8b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8cpp.html#ad64d878479641c0af07c7a7a2580bb8b">is_zero_float</a> (const float num)</td></tr>
+<tr class="memdesc:ad64d878479641c0af07c7a7a2580bb8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if float number is equal to zero.  <a href="calculations_8cpp.html#ad64d878479641c0af07c7a7a2580bb8b">More...</a><br /></td></tr>
+<tr class="separator:ad64d878479641c0af07c7a7a2580bb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a700925380ca8260df0e44152c3a60e9c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8cpp.html#a700925380ca8260df0e44152c3a60e9c">is_equal_float</a> (const float num1, const float num2)</td></tr>
 <tr class="memdesc:a700925380ca8260df0e44152c3a60e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two of float numbers are equal.  <a href="calculations_8cpp.html#a700925380ca8260df0e44152c3a60e9c">More...</a><br /></td></tr>
 <tr class="separator:a700925380ca8260df0e44152c3a60e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Computational part of the program. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a700925380ca8260df0e44152c3a60e9c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a700925380ca8260df0e44152c3a60e9c">&#9670;&nbsp;</a></span>is_equal_float()</h2>
 
@@ -118,6 +127,33 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Is first number equal to second number. </dd></dl>
+
+</div>
+</div>
+<a id="ad64d878479641c0af07c7a7a2580bb8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad64d878479641c0af07c7a7a2580bb8b">&#9670;&nbsp;</a></span>is_zero_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_zero_float </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if float number is equal to zero. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>Checking float number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Is this number zero. </dd></dl>
 
 </div>
 </div>

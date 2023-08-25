@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['roots_5fcount_71',['roots_count',['../calculations_8h.html#ab81ef83b614a9cb43650290b87bbdc21',1,'calculations.h']]]
+  ['rootscount_121',['RootsCount',['../calculations_8h.html#aa25c6d8cdf0bee88e27388ccef3dcdc3',1,'calculations.h']]]
 ];

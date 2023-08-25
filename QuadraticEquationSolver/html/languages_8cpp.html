@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: languages.cpp File Reference</title>
+<title>Quadratic Equation Solver: languages.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Quadratic Equation Solver
    </div>
+   <div id="projectbrief">This program can solve quadratic equations.</div>
   </td>
  </tr>
  </tbody>
@@ -67,6 +68,9 @@ $(function() {
 <div class="title">languages.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Language support.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="languages_8h_source.html">languages.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -80,28 +84,22 @@ Variables</h2></td></tr>
 <tr class="memitem:ae3f22ed96bb3de814a25411ec08ea659"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_output_language.html">OutputLanguage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>LANGUAGE_CHINESE</b></td></tr>
 <tr class="separator:ae3f22ed96bb3de814a25411ec08ea659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Language support. </p>
+</div><h2 class="groupheader">Variable Documentation</h2>
 <a id="ae3f22ed96bb3de814a25411ec08ea659"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae3f22ed96bb3de814a25411ec08ea659">&#9670;&nbsp;</a></span>LANGUAGE_CHINESE</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const <a class="el" href="struct_output_language.html">OutputLanguage</a> LANGUAGE_CHINESE</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    .language_indentification = CHINESE,</div>
+<div class="line">    .language_identification = <a class="code" href="languages_8h.html#a315ca917ad583797f709ea477dd28705a8d7593b87ecf6666c4d12470e56ef645">CHINESE</a>,</div>
 <div class="line"> </div>
 <div class="line">    .language_menu =            <span class="stringliteral">&quot;你好，鲁斯兰·阿列克谢耶维奇。\n\</span></div>
 <div class="line"><span class="stringliteral">                                \r该程序旨在求解二次方程。\n\</span></div>
@@ -130,6 +128,7 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">    .language_goodbye =         <span class="stringliteral">&quot;再见！结尾。&quot;</span></div>
 <div class="line">}</div>
+<div class="ttc" id="alanguages_8h_html_a315ca917ad583797f709ea477dd28705a8d7593b87ecf6666c4d12470e56ef645"><div class="ttname"><a href="languages_8h.html#a315ca917ad583797f709ea477dd28705a8d7593b87ecf6666c4d12470e56ef645">CHINESE</a></div><div class="ttdeci">@ CHINESE</div><div class="ttdoc">Chinese language.</div><div class="ttdef"><b>Definition:</b> languages.h:14</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -138,22 +137,14 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const <a class="el" href="struct_output_language.html">OutputLanguage</a> LANGUAGE_ENGLISH</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    .language_indentification = ENGLISH,</div>
+<div class="line">    .language_identification = <a class="code" href="languages_8h.html#a315ca917ad583797f709ea477dd28705afb297577dad4cc723ce8e94430f3defc">ENGLISH</a>,</div>
 <div class="line"> </div>
 <div class="line">    .language_menu =            <span class="stringliteral">&quot;Hello, Ruslan Alekseyevich.\n\</span></div>
 <div class="line"><span class="stringliteral">                                \rThis program can solve quadratic equation.\n\</span></div>
@@ -182,6 +173,7 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">    .language_goodbye =         <span class="stringliteral">&quot;Have a good day! End.&quot;</span></div>
 <div class="line">}</div>
+<div class="ttc" id="alanguages_8h_html_a315ca917ad583797f709ea477dd28705afb297577dad4cc723ce8e94430f3defc"><div class="ttname"><a href="languages_8h.html#a315ca917ad583797f709ea477dd28705afb297577dad4cc723ce8e94430f3defc">ENGLISH</a></div><div class="ttdeci">@ ENGLISH</div><div class="ttdoc">US English language.</div><div class="ttdef"><b>Definition:</b> languages.h:12</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -190,22 +182,14 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const <a class="el" href="struct_output_language.html">OutputLanguage</a> LANGUAGE_GERMANY</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    .language_indentification = GERMANY,</div>
+<div class="line">    .language_identification = <a class="code" href="languages_8h.html#a315ca917ad583797f709ea477dd28705af53c9433806f0c714c8ab35709ca7a1e">GERMANY</a>,</div>
 <div class="line"> </div>
 <div class="line">    .language_menu =            <span class="stringliteral">&quot;Hallo, Ruslan Alekseevich.\n\</span></div>
 <div class="line"><span class="stringliteral">                                \rDieses Programm dient zur Lösung quadratischer Gleichungen.\n\</span></div>
@@ -234,6 +218,7 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">    .language_goodbye =         <span class="stringliteral">&quot;Auf Wiedersehen! Ende.&quot;</span></div>
 <div class="line">}</div>
+<div class="ttc" id="alanguages_8h_html_a315ca917ad583797f709ea477dd28705af53c9433806f0c714c8ab35709ca7a1e"><div class="ttname"><a href="languages_8h.html#a315ca917ad583797f709ea477dd28705af53c9433806f0c714c8ab35709ca7a1e">GERMANY</a></div><div class="ttdeci">@ GERMANY</div><div class="ttdoc">Germany language.</div><div class="ttdef"><b>Definition:</b> languages.h:13</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -242,22 +227,14 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const <a class="el" href="struct_output_language.html">OutputLanguage</a> LANGUAGE_RUSSIAN</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    .language_indentification = RUSSIAN,</div>
+<div class="line">    .language_identification = <a class="code" href="languages_8h.html#a315ca917ad583797f709ea477dd28705aaacab1fe87e87d04d9ee27249eafbbcd">RUSSIAN</a>,</div>
 <div class="line"> </div>
 <div class="line">    .language_menu =            <span class="stringliteral">&quot;Здравствуйте, Руслан Алексеевич.\n\</span></div>
 <div class="line"><span class="stringliteral">                                \rЭта программа преднозначена для решения квадратных уравнений.\n\</span></div>
@@ -286,6 +263,7 @@ Variables</h2></td></tr>
 <div class="line"> </div>
 <div class="line">    .language_goodbye =         <span class="stringliteral">&quot;Всего доброго! Конец.&quot;</span></div>
 <div class="line">}</div>
+<div class="ttc" id="alanguages_8h_html_a315ca917ad583797f709ea477dd28705aaacab1fe87e87d04d9ee27249eafbbcd"><div class="ttname"><a href="languages_8h.html#a315ca917ad583797f709ea477dd28705aaacab1fe87e87d04d9ee27249eafbbcd">RUSSIAN</a></div><div class="ttdeci">@ RUSSIAN</div><div class="ttdoc">Russian language.</div><div class="ttdef"><b>Definition:</b> languages.h:11</div></div>
 </div><!-- fragment -->
 </div>
 </div>

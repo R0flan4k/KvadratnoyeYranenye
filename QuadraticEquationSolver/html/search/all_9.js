@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['test_2eh_30',['test.h',['../test_8h.html',1,'']]],
-  ['test_5fcant_5fopen_5ffile_31',['TEST_CANT_OPEN_FILE',['../test_8h.html#a7a28d57776196de6c56e93bccf30d494a8d424a6c8ebe73e85add7a390ec71005',1,'test.h']]],
-  ['test_5fcount_5ffailure_32',['TEST_COUNT_FAILURE',['../test_8h.html#a7a28d57776196de6c56e93bccf30d494a87f5a2e24b8d41ad972893d59f5f09a1',1,'test.h']]],
-  ['test_5fprogram_33',['test_program',['../test_8h.html#a9448dabfc85e4b72e365eb3bd918b0d3',1,'test.cpp']]],
-  ['test_5fresults_34',['test_results',['../test_8h.html#a7a28d57776196de6c56e93bccf30d494',1,'test.h']]],
-  ['test_5froots_5ffailure_35',['TEST_ROOTS_FAILURE',['../test_8h.html#a7a28d57776196de6c56e93bccf30d494a2441b9f91aa0634e97f1897b6815a831',1,'test.h']]],
-  ['test_5fsuccess_36',['TEST_SUCCESS',['../test_8h.html#a7a28d57776196de6c56e93bccf30d494aa1244c0fe3ab7427e3451341048559c8',1,'test.h']]],
-  ['trivial_5fcmd_5finput_37',['TRIVIAL_CMD_INPUT',['../input-output_8h.html#a8c049d3424358209390f4f03474309ef',1,'input-output.h']]]
+  ['select_5flanguage_48',['select_language',['../languages_8h.html#a1828039a304ff6f97510ad42407de1ee',1,'select_language(const int ch):&#160;input-output.cpp'],['../input-output_8cpp.html#a1828039a304ff6f97510ad42407de1ee',1,'select_language(const int ch):&#160;input-output.cpp']]],
+  ['show_5fequation_49',['show_equation',['../input-output_8h.html#abd7888375a0b0f280b757d0e5a39f889',1,'show_equation(const EquationCoefficients *coeffs, const OutputLanguage *language):&#160;input-output.cpp'],['../input-output_8cpp.html#abd7888375a0b0f280b757d0e5a39f889',1,'show_equation(const EquationCoefficients *coeffs, const OutputLanguage *language):&#160;input-output.cpp']]],
+  ['show_5fequation_5fformat_50',['show_equation_format',['../input-output_8h.html#a00c814cb3ca5dbded70f7d09eddef4a0',1,'show_equation_format(void):&#160;input-output.cpp'],['../input-output_8cpp.html#a00c814cb3ca5dbded70f7d09eddef4a0',1,'show_equation_format(void):&#160;input-output.cpp']]],
+  ['show_5fgoodbye_51',['show_goodbye',['../input-output_8h.html#a2057984fb86fe06f168416d3939ff607',1,'show_goodbye(const OutputLanguage *language):&#160;input-output.cpp'],['../input-output_8cpp.html#a2057984fb86fe06f168416d3939ff607',1,'show_goodbye(const OutputLanguage *language):&#160;input-output.cpp']]],
+  ['show_5flanguage_5fmenu_52',['show_language_menu',['../input-output_8h.html#a5a67987feba6f5a0467b926c231175f3',1,'show_language_menu(void):&#160;input-output.cpp'],['../input-output_8cpp.html#a5a67987feba6f5a0467b926c231175f3',1,'show_language_menu(void):&#160;input-output.cpp']]],
+  ['show_5fmenu_53',['show_menu',['../input-output_8h.html#a04b89361e9538dafdad143383adb44b9',1,'show_menu(const OutputLanguage *language):&#160;input-output.cpp'],['../input-output_8cpp.html#a04b89361e9538dafdad143383adb44b9',1,'show_menu(const OutputLanguage *language):&#160;input-output.cpp']]],
+  ['show_5fsolution_54',['show_solution',['../input-output_8h.html#a0481090766818f9dae58182e983ecab9',1,'show_solution(const EquationRoots *solution, const OutputLanguage *language):&#160;input-output.cpp'],['../input-output_8cpp.html#a0481090766818f9dae58182e983ecab9',1,'show_solution(const EquationRoots *solution, const OutputLanguage *language):&#160;input-output.cpp']]],
+  ['skip_5finput_55',['skip_input',['../input-output_8h.html#acb623c217efef276c73a9b0c1a5438c5',1,'skip_input(void):&#160;input-output.cpp'],['../input-output_8cpp.html#acb623c217efef276c73a9b0c1a5438c5',1,'skip_input(void):&#160;input-output.cpp']]],
+  ['solve_5fequation_56',['solve_equation',['../calculations_8h.html#a99d50baa55e0af0c73e4e76621f74261',1,'solve_equation(const EquationCoefficients *coeffs):&#160;calculations.cpp'],['../calculations_8cpp.html#a99d50baa55e0af0c73e4e76621f74261',1,'solve_equation(const EquationCoefficients *coeffs):&#160;calculations.cpp']]]
 ];

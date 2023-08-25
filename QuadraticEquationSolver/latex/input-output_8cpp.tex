@@ -1,27 +1,33 @@
 \hypertarget{input-output_8cpp}{}\doxysection{input-\/output.cpp File Reference}
 \label{input-output_8cpp}\index{input-\/output.cpp@{input-\/output.cpp}}
+
+
+The part of the program responsible for stdin and stdout.  
+
+
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$assert.\+h$>$}\newline
 {\ttfamily \#include $<$ctype.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}input-\/output.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}languages.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}my\+\_\+assert.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{input-output_8cpp_a00c814cb3ca5dbded70f7d09eddef4a0}\label{input-output_8cpp_a00c814cb3ca5dbded70f7d09eddef4a0}} 
 void \mbox{\hyperlink{input-output_8cpp_a00c814cb3ca5dbded70f7d09eddef4a0}{show\+\_\+equation\+\_\+format}} (void)
 \begin{DoxyCompactList}\small\item\em Show user format of equation. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{input-output_8cpp_a04b89361e9538dafdad143383adb44b9}{show\+\_\+menu}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
+void \mbox{\hyperlink{input-output_8cpp_a04b89361e9538dafdad143383adb44b9}{show\+\_\+menu}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$language)
 \begin{DoxyCompactList}\small\item\em User greeting and telling program abillity. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{input-output_8cpp_afac1e64a683c11464c97e12472a8614d}{get\+\_\+coefficients}} (\mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coefficients)
 \begin{DoxyCompactList}\small\item\em Let user input coefficients of equation. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{input-output_8cpp_a2d4df57ae6f72824d786267b374cf038}{is\+\_\+valid\+\_\+coefficients\+\_\+input}} (\mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coefficients)
 \begin{DoxyCompactList}\small\item\em Check if inputed coefficients are valid. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{input-output_8cpp_abd7888375a0b0f280b757d0e5a39f889}{show\+\_\+equation}} (const \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coeffs, const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
+void \mbox{\hyperlink{input-output_8cpp_abd7888375a0b0f280b757d0e5a39f889}{show\+\_\+equation}} (const \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coeffs, const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$language)
 \begin{DoxyCompactList}\small\item\em Show user equation that he input. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{input-output_8cpp_a0481090766818f9dae58182e983ecab9}{show\+\_\+solution}} (const \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}} $\ast$solution, const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
+void \mbox{\hyperlink{input-output_8cpp_a0481090766818f9dae58182e983ecab9}{show\+\_\+solution}} (const \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}} $\ast$solution, const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$language)
 \begin{DoxyCompactList}\small\item\em Show user solution of inputed equatiin. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{input-output_8cpp_a2057984fb86fe06f168416d3939ff607}{show\+\_\+goodbye}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$\mbox{\hyperlink{languages_8h_aa37aa8979934d47ac32fd96ecff32202}{language}})
+void \mbox{\hyperlink{input-output_8cpp_a2057984fb86fe06f168416d3939ff607}{show\+\_\+goodbye}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$language)
 \begin{DoxyCompactList}\small\item\em Say goodebye to user. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{input-output_8cpp_a8a4c7ccd5bed224dd0b06f5ca297de05}{get\+\_\+one\+\_\+char}} (const char $\ast$str, int n)
 \begin{DoxyCompactList}\small\item\em Get from stdin first non-\/space allowed character, and then skip anything after the character. \end{DoxyCompactList}\item 
@@ -29,22 +35,15 @@ int \mbox{\hyperlink{input-output_8cpp_a8a4c7ccd5bed224dd0b06f5ca297de05}{get\+\
 void \mbox{\hyperlink{input-output_8cpp_a5a67987feba6f5a0467b926c231175f3}{show\+\_\+language\+\_\+menu}} (void)
 \begin{DoxyCompactList}\small\item\em Show user available languages. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$ \mbox{\hyperlink{input-output_8cpp_a1828039a304ff6f97510ad42407de1ee}{select\+\_\+language}} (const int ch)
-\begin{DoxyCompactList}\small\item\em Select structure of language messages using identification character. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{input-output_8cpp_a96d1280c6e0e7a15ffee5abf59d525f0}\label{input-output_8cpp_a96d1280c6e0e7a15ffee5abf59d525f0}} 
-const \mbox{\hyperlink{struct_output_language}{Output\+Language}} {\bfseries LANGUAGE\+\_\+\+RUSSIAN}
-\item 
-\mbox{\Hypertarget{input-output_8cpp_a85567d928f2a5d99bc09fe7a7ad5168d}\label{input-output_8cpp_a85567d928f2a5d99bc09fe7a7ad5168d}} 
-const \mbox{\hyperlink{struct_output_language}{Output\+Language}} {\bfseries LANGUAGE\+\_\+\+ENGLISH}
-\item 
-\mbox{\Hypertarget{input-output_8cpp_ac118ba8b7681673d05c86cf34313c6b4}\label{input-output_8cpp_ac118ba8b7681673d05c86cf34313c6b4}} 
-const \mbox{\hyperlink{struct_output_language}{Output\+Language}} {\bfseries LANGUAGE\+\_\+\+GERMANY}
-\item 
-\mbox{\Hypertarget{input-output_8cpp_ae3f22ed96bb3de814a25411ec08ea659}\label{input-output_8cpp_ae3f22ed96bb3de814a25411ec08ea659}} 
-const \mbox{\hyperlink{struct_output_language}{Output\+Language}} {\bfseries LANGUAGE\+\_\+\+CHINESE}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Select structure of language messages using identification character. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{input-output_8cpp_acb623c217efef276c73a9b0c1a5438c5}\label{input-output_8cpp_acb623c217efef276c73a9b0c1a5438c5}} 
+void \mbox{\hyperlink{input-output_8cpp_acb623c217efef276c73a9b0c1a5438c5}{skip\+\_\+input}} (void)
+\begin{DoxyCompactList}\small\item\em Skip all characters in the line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The part of the program responsible for stdin and stdout. 
+
 
 
 \doxysubsection{Function Documentation}

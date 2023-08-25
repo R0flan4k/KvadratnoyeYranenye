@@ -2,20 +2,29 @@
 /// \file my_assert.h
 /////////////////////////////////////////////////////////////////////////
 #ifndef NDEBUG
-    #ifndef MY_ASSERT_H
+    #ifndef     MY_ASSERT_H
         #define MY_ASSERT_H
 
-#include <stdlib.h>
 
-/////////////////////////////////////////////////////////////////////////
-/// \brief My modified version of assert().
-/////////////////////////////////////////////////////////////////////////
-#define MY_ASSERT(X)\
- if (!(X))\
-  { printf("Assertion failed: " #X ", line %d, file" __FILE__ ", date " __DATE__ ", function" "\n", __LINE__);\
-   exit(EXIT_FAILURE);\
-    }
+        #include <stdlib.h>
 
-    #endif 
-#endif
-    
+        /////////////////////////////////////////////////////////////////////////
+        /// \brief My modified version of assert().
+        /////////////////////////////////////////////////////////////////////////
+        #define MY_ASSERT(X) my_func_assert(X, #X, __DATE__, __LINE__, __FILE__)   
+
+        /////////////////////////////////////////////////////////////////////////
+        /// @brief Function for output assert error and exit.
+        /// @param[in] expr Expression.
+        /// @param[in] expr_string Expression in the form of string.
+        /// @param[in] date Date of error.
+        /// @param[in] line Error line.
+        /// @param[in] file Error file.
+        /////////////////////////////////////////////////////////////////////////
+        void my_func_assert(const bool expr, const char * expr_string, const char * date,
+                            const int line, const char * file);
+
+    #endif // MY_ASSERT_H
+#endif // NDEBUG
+
+

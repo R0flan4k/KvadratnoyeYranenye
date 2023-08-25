@@ -1,5 +1,6 @@
 /////////////////////////////////////////////////////////////////////////
 /// \file input-output.cpp
+/// \brief The part of the program responsible for stdin and stdout
 /////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <assert.h>
@@ -7,16 +8,14 @@
 
 #include "input-output.h"
 #include "languages.h"
+#include "my_assert.h"
 
-
-// [Error]: 
-// [Debug]
 
 /////////////////////////////////////////////////////////////////////////
 /// \brief Skip all characters in the string and check if it has non-space characters.
 /// \return Is all characters in this string are spaces.
 /////////////////////////////////////////////////////////////////////////
-static bool isspace_extra_characters (void);
+static bool isspace_extra_characters(void);
 
 /////////////////////////////////////////////////////////////////////////
 /// \brief Skip all characters until a non-space character is encountered.
@@ -34,7 +33,7 @@ static void show_one_root(const float root);
 
 void show_equation_format(void)
 {
-    puts("\x1b[32max^2 + bx + c = 0.\x1b[0m");
+    puts("ax^2 + bx + c = 0.");
 }
 
 
@@ -54,23 +53,20 @@ int get_coefficients(EquationCoefficients * coefficients)
 
 bool is_valid_coefficients_input (EquationCoefficients * coefficients)
 {
-    if (get_coefficients(coefficients) == 3 && isspace_extra_characters())
-        return true;
-    else
-        return false;
+    return get_coefficients(coefficients) == 3 && isspace_extra_characters();
 }
 
 
 void show_equation(const EquationCoefficients * coeffs, const OutputLanguage * language)
 {
     printf("%s", language->language_show_equation);
-    printf("\x1b[32m%.3g*x^2 + %.3g*x + %.3g = 0.\x1b[0m\n", coeffs->a, coeffs->b, coeffs->c);
+    printf(GREEN_COLOR "%.3g*x^2 + %.3g*x + %.3g = 0.\n" DEFAULT_COLOR, coeffs->a, coeffs->b, coeffs->c);
 }
 
 
 static void show_one_root(const float root)
 {
-    printf("\x1b[32m%5.5g\x1b[0m\n", root);
+    printf(GREEN_COLOR "\x1b[32m%5.5g\n" DEFAULT_COLOR, root);
 }
 
 
@@ -124,7 +120,7 @@ int get_one_char(const char * str, int n)
     if (!isspace_extra_characters())
         return EXTRA_CHARACTERS;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) 
         if (ch == str[i])
         {
             is_required_char = true;
@@ -136,7 +132,7 @@ int get_one_char(const char * str, int n)
     else    
         return WRONG_CHARACTER;
         
-    return ch;
+    MY_ASSERT(0 && "GET_ONE_CHAR() ERROR");
 }
 
 
@@ -197,4 +193,10 @@ const OutputLanguage * select_language(const int ch)
             assert(0 && "GET_LANG ERROR");
             break;
     }
+}
+
+void skip_input(void)
+{
+    while (getchar() != '\n')
+        continue;
 }

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['outputlanguage_41',['OutputLanguage',['../struct_output_language.html',1,'']]]
+  ['equationcoefficients_69',['EquationCoefficients',['../struct_equation_coefficients.html',1,'']]],
+  ['equationroots_70',['EquationRoots',['../struct_equation_roots.html',1,'']]]
 ];

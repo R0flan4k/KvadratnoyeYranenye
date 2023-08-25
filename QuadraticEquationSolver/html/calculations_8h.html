@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: calculations.h File Reference</title>
+<title>Quadratic Equation Solver: calculations.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,8 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Quadratic Equation Solver
    </div>
+   <div id="projectbrief">This program can solve quadratic equations.</div>
   </td>
  </tr>
  </tbody>
@@ -64,7 +65,8 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">calculations.h File Reference</div>  </div>
 </div><!--header-->
@@ -83,14 +85,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ab81ef83b614a9cb43650290b87bbdc21"><td class="memItemLeft" align="right" valign="top"><a id="ab81ef83b614a9cb43650290b87bbdc21"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8h.html#ab81ef83b614a9cb43650290b87bbdc21">roots_count</a> { <b>ROOTS_COUNT_INFINITY</b> = -1
-, <b>ROOTS_COUNT_ZERO</b>
-, <b>ROOTS_COUNT_ONE</b>
-, <b>ROOTS_COUNT_TWO</b>
+<tr class="memitem:aa25c6d8cdf0bee88e27388ccef3dcdc3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8h.html#aa25c6d8cdf0bee88e27388ccef3dcdc3">RootsCount</a> { <a class="el" href="calculations_8h.html#aa25c6d8cdf0bee88e27388ccef3dcdc3a85eb07243acfd839ec057353b54cba8e">ROOTS_COUNT_INFINITY</a> = -1
+, <a class="el" href="calculations_8h.html#aa25c6d8cdf0bee88e27388ccef3dcdc3a2a6662df94a4fb85f9205be0650927ad">ROOTS_COUNT_ZERO</a>
+, <a class="el" href="calculations_8h.html#aa25c6d8cdf0bee88e27388ccef3dcdc3af23ccd1dc876ffc9bf45ff01cc49d44d">ROOTS_COUNT_ONE</a>
+, <a class="el" href="calculations_8h.html#aa25c6d8cdf0bee88e27388ccef3dcdc3a0a0bfdf940d067bbc9ae67dcecac0131">ROOTS_COUNT_TWO</a>
  }</td></tr>
-<tr class="memdesc:ab81ef83b614a9cb43650290b87bbdc21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equation roots count. <br  />
- <br /></td></tr>
-<tr class="separator:ab81ef83b614a9cb43650290b87bbdc21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:aa25c6d8cdf0bee88e27388ccef3dcdc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equation roots count. <br  />
+  <a href="calculations_8h.html#aa25c6d8cdf0bee88e27388ccef3dcdc3">More...</a><br /></td></tr>
+<tr class="separator:aa25c6d8cdf0bee88e27388ccef3dcdc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -100,7 +102,45 @@ Functions</h2></td></tr>
 <tr class="memitem:a700925380ca8260df0e44152c3a60e9c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8h.html#a700925380ca8260df0e44152c3a60e9c">is_equal_float</a> (const float num1, const float num2)</td></tr>
 <tr class="memdesc:a700925380ca8260df0e44152c3a60e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if two of float numbers are equal.  <a href="calculations_8h.html#a700925380ca8260df0e44152c3a60e9c">More...</a><br /></td></tr>
 <tr class="separator:a700925380ca8260df0e44152c3a60e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad64d878479641c0af07c7a7a2580bb8b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="calculations_8h.html#ad64d878479641c0af07c7a7a2580bb8b">is_zero_float</a> (const float num)</td></tr>
+<tr class="memdesc:ad64d878479641c0af07c7a7a2580bb8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if float number is equal to zero.  <a href="calculations_8h.html#ad64d878479641c0af07c7a7a2580bb8b">More...</a><br /></td></tr>
+<tr class="separator:ad64d878479641c0af07c7a7a2580bb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a0367b61ccfa4b460461396aeb35f9722"><td class="memItemLeft" align="right" valign="top"><a id="a0367b61ccfa4b460461396aeb35f9722"></a>
+const double&#160;</td><td class="memItemRight" valign="bottom"><b>MY_EPSILON</b> = 1e-5</td></tr>
+<tr class="separator:a0367b61ccfa4b460461396aeb35f9722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="aa25c6d8cdf0bee88e27388ccef3dcdc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa25c6d8cdf0bee88e27388ccef3dcdc3">&#9670;&nbsp;</a></span>RootsCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="calculations_8h.html#aa25c6d8cdf0bee88e27388ccef3dcdc3">RootsCount</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Equation roots count. <br  />
+ </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa25c6d8cdf0bee88e27388ccef3dcdc3a85eb07243acfd839ec057353b54cba8e"></a>ROOTS_COUNT_INFINITY&#160;</td><td class="fielddoc"><p>Infinity number of roots. <br  />
+ </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa25c6d8cdf0bee88e27388ccef3dcdc3a2a6662df94a4fb85f9205be0650927ad"></a>ROOTS_COUNT_ZERO&#160;</td><td class="fielddoc"><p>Zero roots. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa25c6d8cdf0bee88e27388ccef3dcdc3af23ccd1dc876ffc9bf45ff01cc49d44d"></a>ROOTS_COUNT_ONE&#160;</td><td class="fielddoc"><p>One root. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa25c6d8cdf0bee88e27388ccef3dcdc3a0a0bfdf940d067bbc9ae67dcecac0131"></a>ROOTS_COUNT_TWO&#160;</td><td class="fielddoc"><p>Two roots. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a700925380ca8260df0e44152c3a60e9c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a700925380ca8260df0e44152c3a60e9c">&#9670;&nbsp;</a></span>is_equal_float()</h2>
@@ -137,6 +177,33 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Is first number equal to second number. </dd></dl>
+
+</div>
+</div>
+<a id="ad64d878479641c0af07c7a7a2580bb8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad64d878479641c0af07c7a7a2580bb8b">&#9670;&nbsp;</a></span>is_zero_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_zero_float </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if float number is equal to zero. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">num</td><td>Checking float number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Is this number zero. </dd></dl>
 
 </div>
 </div>

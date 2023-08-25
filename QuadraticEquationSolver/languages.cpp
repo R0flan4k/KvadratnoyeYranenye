@@ -1,11 +1,12 @@
 /////////////////////////////////////////////////////////////////////////
 /// \file languages.cpp
+/// \brief Language support.
 /////////////////////////////////////////////////////////////////////////
 #include "languages.h"
 
 
 const OutputLanguage LANGUAGE_ENGLISH = {
-    .language_indentification = ENGLISH,
+    .language_identification = ENGLISH,
 
     .language_menu =            "Hello, Ruslan Alekseyevich.\n\
                                 \rThis program can solve quadratic equation.\n\
@@ -37,7 +38,7 @@ const OutputLanguage LANGUAGE_ENGLISH = {
 
 
 const OutputLanguage LANGUAGE_RUSSIAN = {
-    .language_indentification = RUSSIAN,
+    .language_identification = RUSSIAN,
 
     .language_menu =            "Здравствуйте, Руслан Алексеевич.\n\
                                 \rЭта программа преднозначена для решения квадратных уравнений.\n\
@@ -69,7 +70,7 @@ const OutputLanguage LANGUAGE_RUSSIAN = {
 
 
 const OutputLanguage LANGUAGE_GERMANY = {
-    .language_indentification = GERMANY,
+    .language_identification = GERMANY,
 
     .language_menu =            "Hallo, Ruslan Alekseevich.\n\
                                 \rDieses Programm dient zur Lösung quadratischer Gleichungen.\n\
@@ -101,7 +102,7 @@ const OutputLanguage LANGUAGE_GERMANY = {
 
 
 const OutputLanguage LANGUAGE_CHINESE = {
-    .language_indentification = CHINESE,
+    .language_identification = CHINESE,
 
     .language_menu =            "你好，鲁斯兰·阿列克谢耶维奇。\n\
                                 \r该程序旨在求解二次方程。\n\

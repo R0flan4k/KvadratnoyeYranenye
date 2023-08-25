@@ -9,7 +9,7 @@
 /////////////////////////////////////////////////////////////////////////
 /// \brief All kind of test results.
 /////////////////////////////////////////////////////////////////////////
-    enum test_results {
+    enum TestResults { //TestResults????
         TEST_CANT_OPEN_FILE, ///< If file not found.
         TEST_SUCCESS,        ///< If file successfully tested.
         TEST_COUNT_FAILURE,  ///< If calculated wrong number of roots.
@@ -21,6 +21,6 @@
 /// \param[in] test_file Name of test file.
 /// \return Results of test.
 /////////////////////////////////////////////////////////////////////////
-    test_results test_program(const char * test_file);
+    TestResults test_program(const char * test_file);
 
 #endif

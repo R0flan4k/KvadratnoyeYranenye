@@ -10,11 +10,10 @@ struct \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}\label{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}} 
-enum \mbox{\hyperlink{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}{roots\+\_\+count}} \{ {\bfseries ROOTS\+\_\+\+COUNT\+\_\+\+INFINITY} = -\/1
-, {\bfseries ROOTS\+\_\+\+COUNT\+\_\+\+ZERO}
-, {\bfseries ROOTS\+\_\+\+COUNT\+\_\+\+ONE}
-, {\bfseries ROOTS\+\_\+\+COUNT\+\_\+\+TWO}
+enum \mbox{\hyperlink{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3}{Roots\+Count}} \{ \mbox{\hyperlink{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3a85eb07243acfd839ec057353b54cba8e}{ROOTS\+\_\+\+COUNT\+\_\+\+INFINITY}} = -\/1
+, \mbox{\hyperlink{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3a2a6662df94a4fb85f9205be0650927ad}{ROOTS\+\_\+\+COUNT\+\_\+\+ZERO}}
+, \mbox{\hyperlink{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3af23ccd1dc876ffc9bf45ff01cc49d44d}{ROOTS\+\_\+\+COUNT\+\_\+\+ONE}}
+, \mbox{\hyperlink{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3a0a0bfdf940d067bbc9ae67dcecac0131}{ROOTS\+\_\+\+COUNT\+\_\+\+TWO}}
  \}
 \begin{DoxyCompactList}\small\item\em Equation roots count. ~\newline
  \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -24,7 +23,48 @@ enum \mbox{\hyperlink{calculations_8h_ab81ef83b614a9cb43650290b87bbdc21}{roots\+
 \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}} \mbox{\hyperlink{calculations_8h_a99d50baa55e0af0c73e4e76621f74261}{solve\+\_\+equation}} (const \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coeffs)
 \begin{DoxyCompactList}\small\item\em Solving equation using input data. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{calculations_8h_a700925380ca8260df0e44152c3a60e9c}{is\+\_\+equal\+\_\+float}} (const float num1, const float num2)
-\begin{DoxyCompactList}\small\item\em Check if two of float numbers are equal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Check if two of float numbers are equal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{calculations_8h_ad64d878479641c0af07c7a7a2580bb8b}{is\+\_\+zero\+\_\+float}} (const float num)
+\begin{DoxyCompactList}\small\item\em Check if float number is equal to zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{calculations_8h_a0367b61ccfa4b460461396aeb35f9722}\label{calculations_8h_a0367b61ccfa4b460461396aeb35f9722}} 
+const double {\bfseries MY\+\_\+\+EPSILON} = 1e-\/5
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3}\label{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3}} 
+\index{calculations.h@{calculations.h}!RootsCount@{RootsCount}}
+\index{RootsCount@{RootsCount}!calculations.h@{calculations.h}}
+\doxysubsubsection{\texorpdfstring{RootsCount}{RootsCount}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3}{Roots\+Count}}}
+
+
+
+Equation roots count. ~\newline
+ 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROOTS\_COUNT\_INFINITY@{ROOTS\_COUNT\_INFINITY}!calculations.h@{calculations.h}}\index{calculations.h@{calculations.h}!ROOTS\_COUNT\_INFINITY@{ROOTS\_COUNT\_INFINITY}}}\mbox{\Hypertarget{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3a85eb07243acfd839ec057353b54cba8e}\label{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3a85eb07243acfd839ec057353b54cba8e}} 
+ROOTS\+\_\+\+COUNT\+\_\+\+INFINITY&Infinity number of roots. ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROOTS\_COUNT\_ZERO@{ROOTS\_COUNT\_ZERO}!calculations.h@{calculations.h}}\index{calculations.h@{calculations.h}!ROOTS\_COUNT\_ZERO@{ROOTS\_COUNT\_ZERO}}}\mbox{\Hypertarget{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3a2a6662df94a4fb85f9205be0650927ad}\label{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3a2a6662df94a4fb85f9205be0650927ad}} 
+ROOTS\+\_\+\+COUNT\+\_\+\+ZERO&Zero roots. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROOTS\_COUNT\_ONE@{ROOTS\_COUNT\_ONE}!calculations.h@{calculations.h}}\index{calculations.h@{calculations.h}!ROOTS\_COUNT\_ONE@{ROOTS\_COUNT\_ONE}}}\mbox{\Hypertarget{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3af23ccd1dc876ffc9bf45ff01cc49d44d}\label{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3af23ccd1dc876ffc9bf45ff01cc49d44d}} 
+ROOTS\+\_\+\+COUNT\+\_\+\+ONE&One root. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROOTS\_COUNT\_TWO@{ROOTS\_COUNT\_TWO}!calculations.h@{calculations.h}}\index{calculations.h@{calculations.h}!ROOTS\_COUNT\_TWO@{ROOTS\_COUNT\_TWO}}}\mbox{\Hypertarget{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3a0a0bfdf940d067bbc9ae67dcecac0131}\label{calculations_8h_aa25c6d8cdf0bee88e27388ccef3dcdc3a0a0bfdf940d067bbc9ae67dcecac0131}} 
+ROOTS\+\_\+\+COUNT\+\_\+\+TWO&Two roots. \\
+\hline
+
+\end{DoxyEnumFields}
 
 
 \doxysubsection{Function Documentation}
@@ -47,6 +87,24 @@ Check if two of float numbers are equal.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Is first number equal to second number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{calculations_8h_ad64d878479641c0af07c7a7a2580bb8b}\label{calculations_8h_ad64d878479641c0af07c7a7a2580bb8b}} 
+\index{calculations.h@{calculations.h}!is\_zero\_float@{is\_zero\_float}}
+\index{is\_zero\_float@{is\_zero\_float}!calculations.h@{calculations.h}}
+\doxysubsubsection{\texorpdfstring{is\_zero\_float()}{is\_zero\_float()}}
+{\footnotesize\ttfamily bool is\+\_\+zero\+\_\+float (\begin{DoxyParamCaption}\item[{const float}]{num }\end{DoxyParamCaption})}
+
+
+
+Check if float number is equal to zero. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num} & Checking float number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is this number zero. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{calculations_8h_a99d50baa55e0af0c73e4e76621f74261}\label{calculations_8h_a99d50baa55e0af0c73e4e76621f74261}} 
 \index{calculations.h@{calculations.h}!solve\_equation@{solve\_equation}}

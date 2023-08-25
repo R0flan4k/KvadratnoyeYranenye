@@ -1,5 +1,10 @@
 \hypertarget{calculations_8cpp}{}\doxysection{calculations.\+cpp File Reference}
 \label{calculations_8cpp}\index{calculations.cpp@{calculations.cpp}}
+
+
+Computational part of the program.  
+
+
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$math.\+h$>$}\newline
@@ -10,8 +15,15 @@
 \item 
 \mbox{\hyperlink{struct_equation_roots}{Equation\+Roots}} \mbox{\hyperlink{calculations_8cpp_a99d50baa55e0af0c73e4e76621f74261}{solve\+\_\+equation}} (const \mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coeffs)
 \begin{DoxyCompactList}\small\item\em Solving equation using input data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{calculations_8cpp_ad64d878479641c0af07c7a7a2580bb8b}{is\+\_\+zero\+\_\+float}} (const float num)
+\begin{DoxyCompactList}\small\item\em Check if float number is equal to zero. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{calculations_8cpp_a700925380ca8260df0e44152c3a60e9c}{is\+\_\+equal\+\_\+float}} (const float num1, const float num2)
 \begin{DoxyCompactList}\small\item\em Check if two of float numbers are equal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computational part of the program. 
+
 
 
 \doxysubsection{Function Documentation}
@@ -34,6 +46,24 @@ Check if two of float numbers are equal.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Is first number equal to second number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{calculations_8cpp_ad64d878479641c0af07c7a7a2580bb8b}\label{calculations_8cpp_ad64d878479641c0af07c7a7a2580bb8b}} 
+\index{calculations.cpp@{calculations.cpp}!is\_zero\_float@{is\_zero\_float}}
+\index{is\_zero\_float@{is\_zero\_float}!calculations.cpp@{calculations.cpp}}
+\doxysubsubsection{\texorpdfstring{is\_zero\_float()}{is\_zero\_float()}}
+{\footnotesize\ttfamily bool is\+\_\+zero\+\_\+float (\begin{DoxyParamCaption}\item[{const float}]{num }\end{DoxyParamCaption})}
+
+
+
+Check if float number is equal to zero. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em num} & Checking float number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Is this number zero. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{calculations_8cpp_a99d50baa55e0af0c73e4e76621f74261}\label{calculations_8cpp_a99d50baa55e0af0c73e4e76621f74261}} 
 \index{calculations.cpp@{calculations.cpp}!solve\_equation@{solve\_equation}}
