@@ -8,6 +8,7 @@
 
 #include "calculations.h"
 #include "test.h"
+#include "input-output.h"
 
 /////////////////////////////////////////////////////////////////////////
 /// \brief Check is equal calculated and right roog.
@@ -98,14 +99,14 @@ static void show_test_results(TestResults test_result, const EquationRoots * pro
 
         case TEST_COUNT_FAILURE:
             puts ("Test error: wrong count.");
-            printf("Expected count: %d\n", (int) right_solution->count);
-            printf("Program count: %d\n", (int) program_solution->count);
+            printf("Expected count: " GREEN_COLOR "%d" DEFAULT_COLOR "\n", (int) right_solution->count);
+            printf("Program count:  " RED_COLOR "%d" DEFAULT_COLOR "\n", (int) program_solution->count);
             break;
 
         case TEST_ROOTS_FAILURE:
             puts("Test error: wrong roots.");
-            printf("Expected roots: %f and %f\n", right_solution->first_root, right_solution->second_root);
-            printf("Program roots: %f and %f\n", program_solution->first_root, program_solution->second_root);
+            printf("Expected roots: " GREEN_COLOR "%+f and %+f" DEFAULT_COLOR "\n", right_solution->first_root, right_solution->second_root);
+            printf("Program roots:  " RED_COLOR "%+f and %+f" DEFAULT_COLOR "\n", program_solution->first_root, program_solution->second_root);
             break;
 
         case TEST_CANT_OPEN_FILE:

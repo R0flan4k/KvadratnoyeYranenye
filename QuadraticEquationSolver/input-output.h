@@ -8,6 +8,7 @@
     #include "languages.h"
     #include "calculations.h"
 
+    #define RED_COLOR "\x1b[31m"
     #define GREEN_COLOR "\x1b[32m"
     #define DEFAULT_COLOR "\x1b[0m"
 
