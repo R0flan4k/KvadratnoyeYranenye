@@ -29,7 +29,7 @@ const OutputLanguage LANGUAGE_ENGLISH = {
 
     .language_this_root =       "This root: ",
 
-    .language_first_root =      "First root: ",
+    .language_first_root =      "First root:  ",
 
     .language_second_root =     "Second root: ",
 
@@ -93,7 +93,7 @@ const OutputLanguage LANGUAGE_GERMANY = {
 
     .language_this_root =       "das ist die Wurzel: ",
 
-    .language_first_root =      "erste Wurzel: ",
+    .language_first_root =      "erste Wurzel:  ",
 
     .language_second_root =     "zweite Wurzel: ",
 
@@ -127,7 +127,7 @@ const OutputLanguage LANGUAGE_CHINESE = {
 
     .language_first_root =      "第一个根： ",
 
-    .language_second_root =     "第二根： ",
+    .language_second_root =     "第二根：  ",
 
     .language_goodbye =         "再见！结尾。"
 };

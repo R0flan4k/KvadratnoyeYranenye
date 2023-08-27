@@ -33,6 +33,8 @@ void show_equation_format(void)
 
 void show_menu(const OutputLanguage * language)
 {
+    MY_ASSERT(language != nullptr);
+
     printf("%s", language->language_menu);
     show_equation_format();
 }
@@ -41,6 +43,8 @@ void show_menu(const OutputLanguage * language)
 
 int get_coefficients(EquationCoefficients * coefficients)
 {
+    MY_ASSERT(coefficients != nullptr);
+
     return scanf("%f%f%f", &(coefficients->a), &(coefficients->b), &(coefficients->c));
 }
 
@@ -53,6 +57,8 @@ bool is_valid_coefficients_input (EquationCoefficients * coefficients)
 
 void show_equation(const EquationCoefficients * coeffs, const OutputLanguage * language)
 {
+    MY_ASSERT(coeffs != nullptr && language != nullptr);
+
     printf("%s", language->language_show_equation);
     printf(GREEN_COLOR "%.3g*x^2 + %.3g*x + %.3g = 0.\n" DEFAULT_COLOR, coeffs->a, coeffs->b, coeffs->c);
 }
@@ -60,12 +66,14 @@ void show_equation(const EquationCoefficients * coeffs, const OutputLanguage * l
 
 static void show_one_root(const float root)
 {
-    printf(GREEN_COLOR "\x1b[32m%5.5g\n" DEFAULT_COLOR, root);
+    printf(GREEN_COLOR "\x1b[32m%+5.5g" DEFAULT_COLOR "\n", root);
 }
 
 
 void show_solution(const EquationRoots * solution, const OutputLanguage * language)
 {
+    MY_ASSERT(solution != nullptr && language != nullptr);
+
     switch (solution->count)
     {
         case ROOTS_COUNT_INFINITY:
@@ -99,12 +107,16 @@ void show_solution(const EquationRoots * solution, const OutputLanguage * langua
 
 void show_goodbye(const OutputLanguage * language)
 {
+    MY_ASSERT(language != nullptr);
+
     printf("%s", language->language_goodbye);
 }
 
 
 int get_one_char(const char * str, int n)
 {
+    MY_ASSERT(str != nullptr);
+
     int ch = 0;
     bool is_required_char = false;
 
@@ -197,11 +209,15 @@ void skip_input(void)
 
 void show_request(const OutputLanguage * language)
 {
+    MY_ASSERT(language != nullptr);
+
     printf("%s", language->language_request);
 }
 
 
 void show_error(const OutputLanguage * language)
 {
+    MY_ASSERT(language != nullptr);
+
     printf("%s", language->language_error);
 }

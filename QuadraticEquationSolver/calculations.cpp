@@ -7,6 +7,7 @@
 #include <math.h>
 #include <float.h>
 #include "calculations.h"
+#include "my_assert.h"
 
 /////////////////////////////////////////////////////////////////////////
 /// \brief Calculating discriminant of equation.
@@ -18,7 +19,9 @@ static float calculate_discriminant(const EquationCoefficients * coefficients);
 
 EquationRoots solve_equation(const EquationCoefficients * coeffs)
 {
-    EquationRoots solution = {ROOTS_COUNT_ZERO, 0.0, 0.0};
+    MY_ASSERT(coeffs != nullptr);
+
+    EquationRoots solution = {ROOTS_COUNT_ZERO, NULL, NULL};
 
     if (is_zero_float(coeffs->a))
     {
