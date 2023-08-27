@@ -47,9 +47,7 @@ TestResults test_program(const char * test_file)
     {
         program_solution = solve_equation(&test_coeffs);
 
-        if (program_solution.count != right_solution.count ||
-            !is_equal_equation_roots(program_solution.first_root, program_solution.second_root, 
-            right_solution.first_root, right_solution.second_root))
+        if (program_solution.count != right_solution.count)
         {
             fclose(fp);
 
@@ -57,6 +55,14 @@ TestResults test_program(const char * test_file)
             printf("%s: string %d\n", test_file, test_string_number);
 
             return TEST_COUNT_FAILURE;
+        }
+        else if (!is_equal_equation_roots(program_solution.first_root, program_solution.second_root, 
+                 right_solution.first_root, right_solution.second_root))
+        {
+            show_test_results(TEST_ROOTS_FAILURE, &program_solution, &right_solution);
+            printf("%s: string %d\n", test_file, test_string_number);
+
+            return TEST_ROOTS_FAILURE;
         }
 
         test_string_number++;
