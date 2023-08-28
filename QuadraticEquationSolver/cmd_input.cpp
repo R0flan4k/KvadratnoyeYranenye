@@ -4,89 +4,63 @@
 /////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "input-output.h"
 #include "test.h"
-#include "my_assert.h"
 #include "languages.h"
+
 #include "my_assert.h"
 
 
-/////////////////////////////////////////////////////////////////////////
-/// \brief Show instruction how to use test flag (--test).
-/// \param[in] argv Program name pointer.
-/////////////////////////////////////////////////////////////////////////
-static void show_instruction_test(char * argv);
-
-/////////////////////////////////////////////////////////////////////////
-/// \brief Show instruction how to use coeffs flag (--coeffs).
-/// \param[in] argv Program name pointer.
-/////////////////////////////////////////////////////////////////////////
-static void show_instruction_coeffs(char * argv);
-
-static CmdLineArg test_flag = {
-    .name = "--test",
-    .num_of_param = 1
+CmdLineArg TESTS = {
+    .name =         "--test",
+    .num_of_param = 1,
+    .necessity =    false,
+    .argc_number =  0,
+    .help =         "--test *test_file*"
+};
+CmdLineArg COEFFS = {
+    .name =         "--coeffs",
+    .num_of_param = 3,
+    .necessity =    false,
+    .argc_number =  0,
+    .help =         "--coeffs *a coefficient* *b coefficient* *c coefficient*"
 };
 
-static CmdLineArg coeffs_flag = {
-    .name = "--coeffs",
-    .num_of_param = 3
-};
-
-int check_cmd_input(int argc, char ** argv)
+bool check_cmd_input(int argc, char * * argv)
 {
-    MY_ASSERT(argv != nullptr);
+    CmdLineArg * flags[SUPPORTED_FLAGS_NUMBER] = {&TESTS, &COEFFS};
 
-    static int input_status = TRIVIAL_CMD_INPUT;
-
-    for (int i = 1; i < argc; i++)
+    for (int i = 0; i < SUPPORTED_FLAGS_NUMBER; i++)
     {
-        if (strcmp(argv[i], test_flag.name) == 0)
+        for (int j = 1; j < argc; j++)
         {
-            if (argc > i + test_flag.num_of_param)
+            if (strcmp(flags[i]->name, argv[j]) == 0)
             {
-                MY_ASSERT(test_program(argv[i + test_flag.num_of_param]) == TEST_SUCCESS);
-                input_status == PREMATURE_CMD_INPUT? 0 : input_status = RIGHT_CMD_INPUT;
-            }
-            else    
-            {
-                show_instruction_test(argv[0]);
-                return WRONG_CMD_INPUT;
-            }
-        }
-        else if (strcmp(argv[i], coeffs_flag.name) == 0)
-        {
-            if (argc > i + coeffs_flag.num_of_param)
-            {
-                EquationCoefficients coefficients = {(float) atof(argv[i + coeffs_flag.num_of_param -2]),
-                                                     (float) atof(argv[i + coeffs_flag.num_of_param -1]),
-                                                     (float) atof(argv[i + coeffs_flag.num_of_param])};
-                EquationRoots solution = solve_equation(&coefficients);
-                show_equation(&coefficients, &LANGUAGE_ENGLISH);
-                show_solution(&solution, &LANGUAGE_ENGLISH);
-                input_status = PREMATURE_CMD_INPUT;
-            }
-            else
-            {
-                show_instruction_coeffs(argv[0]);
-                return WRONG_CMD_INPUT;
+                if (argc > j + flags[i]->num_of_param)
+                {
+                    flags[i]->argc_number = j;
+                    flags[i]->necessity = true;
+                }
+                else 
+                {
+                    printf("Error. Please, use %s %s\n", argv[0], flags[i]->help);
+                    printf("or use %s\n", argv[0]);
+                    return false;
+                }    
             }
         }
     }
-    
-    return input_status;
-}
 
-static void show_instruction_test(char * argv)
-{
-    printf("Please, use: %s --test *test_name.txt*\n", argv);
-    printf("or use: %s\n", argv);
+    return true;
 }
 
 
-static void show_instruction_coeffs(char * argv)
+void run_from_cmdline(const float a, const float b, const float c)
 {
-    printf("Please, use: %s --coeffs *a coefficient* *b coefficient* *c coefficient*\n", argv);
-    printf("or use: %s\n", argv);
+    EquationCoefficients coefficients = {a, b, c};
+    EquationRoots solution = solve_equation(&coefficients);
+    show_equation(&coefficients, &LANGUAGE_ENGLISH);
+    show_solution(&solution, &LANGUAGE_ENGLISH);
 }

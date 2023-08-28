@@ -7,7 +7,9 @@
 #include <math.h>
 #include <float.h>
 #include "calculations.h"
+
 #include "my_assert.h"
+
 
 /////////////////////////////////////////////////////////////////////////
 /// \brief Calculating discriminant of equation.

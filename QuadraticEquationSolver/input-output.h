@@ -12,6 +12,7 @@
     #define GREEN_COLOR "\x1b[32m"
     #define DEFAULT_COLOR "\x1b[0m"
 
+
     /////////////////////////////////////////////////////////////////////////
     /// @brief String with allowed for language input characters.
     /////////////////////////////////////////////////////////////////////////  
@@ -21,9 +22,15 @@
     /// @brief Flags and arguments from command line.
     /////////////////////////////////////////////////////////////////////////
     struct CmdLineArg {
-        const char* name; ///< Name of flag.
-        int num_of_param; ///< Number of flag parameters.
+        const char * name; ///< Name of flag.
+        int num_of_param;  ///< Number of flag parameters.
+        bool necessity;    ///< Necessity of flag.
+        int argc_number;   ///< Serial number of flag in cmd line.
+        const char * help;
     };
+
+
+    const int SUPPORTED_FLAGS_NUMBER = 2;
 
     const int WRONG_CMD_INPUT     = 1;  ///< If user incorrectly using flags.
     const int RIGHT_CMD_INPUT     = 0;  ///< If user correctly using flags.
@@ -91,7 +98,7 @@
     /// \param[in] argv Array of words that inputed.
     /// \return Is cmd inputs was right or is it there.
     /////////////////////////////////////////////////////////////////////////
-    int check_cmd_input(int argc, char ** argv);
+    bool check_cmd_input(int argc, char * * argv);
 
     /////////////////////////////////////////////////////////////////////////
     /// \brief Check if inputed coefficients are valid.
@@ -122,5 +129,12 @@
     /// \param[in] language Entered language.
     /////////////////////////////////////////////////////////////////////////
     void show_error(const OutputLanguage * language);
+
+    void run_from_cmdline(const float a, const float b, const float c);
+
+
+    extern CmdLineArg COEFFS;
+    extern CmdLineArg TESTS;
+
 
 #endif // INPUT_OUTPUT_H

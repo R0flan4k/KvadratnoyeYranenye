@@ -198,6 +198,8 @@ const OutputLanguage * select_language(const int ch)
             MY_ASSERT(0 && "GET_LANG ERROR");
             break;
     }
+    
+    return NULL;
 }
 
 void skip_input(void)

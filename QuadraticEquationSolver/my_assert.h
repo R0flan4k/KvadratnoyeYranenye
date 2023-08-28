@@ -1,6 +1,7 @@
 /////////////////////////////////////////////////////////////////////////
 /// \file my_assert.h
 /////////////////////////////////////////////////////////////////////////
+
 #ifndef NDEBUG
     #ifndef     MY_ASSERT_H
         #define MY_ASSERT_H
@@ -25,6 +26,12 @@
                             const int line, const char * file);
 
     #endif // MY_ASSERT_H
-#endif // NDEBUG
+
+#else // NDEBUG
+
+    #define MY_ASSERT(X)
+
+#endif
+
 
 

@@ -4,12 +4,13 @@
 /////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "input-output.h"
 #include "calculations.h"
 #include "test.h"
-#include "my_assert.h"
 #include "languages.h"
+#include "my_assert.h"
 
 
 int main(int argc, char * argv[])
@@ -19,10 +20,20 @@ int main(int argc, char * argv[])
 
     const OutputLanguage * language = &LANGUAGE_ENGLISH;
     
-    int cmd_input_status = RIGHT_CMD_INPUT;
-    if ((cmd_input_status = check_cmd_input(argc, argv)) == WRONG_CMD_INPUT ||
-         cmd_input_status == PREMATURE_CMD_INPUT)
+    
+    if (check_cmd_input(argc, argv) == false)
+        return 1;
+
+    if (TESTS.necessity)
     {
+        MY_ASSERT(test_program(argv[TESTS.argc_number + 1]) == TEST_SUCCESS);
+    }
+
+    if (COEFFS.necessity)
+    {
+        run_from_cmdline((float) atof(argv[COEFFS.argc_number + 1]),
+                         (float) atof(argv[COEFFS.argc_number + 2]),
+                         (float) atof(argv[COEFFS.argc_number + 3]));
         return 0;
     }
 

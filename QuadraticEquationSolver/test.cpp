@@ -8,7 +8,9 @@
 #include "calculations.h"
 #include "test.h"
 #include "input-output.h"
+
 #include "my_assert.h"
+
 
 /////////////////////////////////////////////////////////////////////////
 /// \brief Check is equal calculated and right roog.
