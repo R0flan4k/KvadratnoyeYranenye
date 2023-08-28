@@ -63,7 +63,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">cmd_input.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -73,28 +74,41 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="input-output_8h_source.html">input-output.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="test_8h_source.html">test.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="my__assert_8h_source.html">my_assert.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="languages_8h_source.html">languages.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="my__assert_8h_source.html">my_assert.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad21ac6160c1f9a367be8ce7ee69dd216"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__input_8cpp.html#ad21ac6160c1f9a367be8ce7ee69dd216">check_cmd_input</a> (int argc, char **argv)</td></tr>
-<tr class="memdesc:ad21ac6160c1f9a367be8ce7ee69dd216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if user enter flags running the program.  <a href="cmd__input_8cpp.html#ad21ac6160c1f9a367be8ce7ee69dd216">More...</a><br /></td></tr>
-<tr class="separator:ad21ac6160c1f9a367be8ce7ee69dd216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86c9793be3c06efa0684cc6ef90dced0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__input_8cpp.html#a86c9793be3c06efa0684cc6ef90dced0">check_cmd_input</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a86c9793be3c06efa0684cc6ef90dced0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if user enter flags running the program.  <a href="cmd__input_8cpp.html#a86c9793be3c06efa0684cc6ef90dced0">More...</a><br /></td></tr>
+<tr class="separator:a86c9793be3c06efa0684cc6ef90dced0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cbc9ab691c0a09beac91cb81096b796"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__input_8cpp.html#a5cbc9ab691c0a09beac91cb81096b796">run_from_cmdline</a> (const float a, const float b, const float c)</td></tr>
+<tr class="memdesc:a5cbc9ab691c0a09beac91cb81096b796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run program from cmd line using flag &ndash;coeffs (default ENG language).  <a href="cmd__input_8cpp.html#a5cbc9ab691c0a09beac91cb81096b796">More...</a><br /></td></tr>
+<tr class="separator:a5cbc9ab691c0a09beac91cb81096b796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a7d22539f6a8b1eba6b8780ea198ac8b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_cmd_line_arg.html">CmdLineArg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__input_8cpp.html#a7d22539f6a8b1eba6b8780ea198ac8b0">TESTS</a></td></tr>
+<tr class="memdesc:a7d22539f6a8b1eba6b8780ea198ac8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for usable &ndash;test flag.  <a href="cmd__input_8cpp.html#a7d22539f6a8b1eba6b8780ea198ac8b0">More...</a><br /></td></tr>
+<tr class="separator:a7d22539f6a8b1eba6b8780ea198ac8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f90d9b949217aa10c25d9bfe1ecc91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_cmd_line_arg.html">CmdLineArg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmd__input_8cpp.html#a78f90d9b949217aa10c25d9bfe1ecc91">COEFFS</a></td></tr>
+<tr class="memdesc:a78f90d9b949217aa10c25d9bfe1ecc91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for usable &ndash;coeffs flag.  <a href="cmd__input_8cpp.html#a78f90d9b949217aa10c25d9bfe1ecc91">More...</a><br /></td></tr>
+<tr class="separator:a78f90d9b949217aa10c25d9bfe1ecc91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Command line data processing. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ad21ac6160c1f9a367be8ce7ee69dd216"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad21ac6160c1f9a367be8ce7ee69dd216">&#9670;&nbsp;</a></span>check_cmd_input()</h2>
+<a id="a86c9793be3c06efa0684cc6ef90dced0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86c9793be3c06efa0684cc6ef90dced0">&#9670;&nbsp;</a></span>check_cmd_input()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int check_cmd_input </td>
+          <td class="memname">bool check_cmd_input </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>argc</em>, </td>
@@ -122,6 +136,97 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Is cmd inputs was right or is it there. </dd></dl>
+
+</div>
+</div>
+<a id="a5cbc9ab691c0a09beac91cb81096b796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cbc9ab691c0a09beac91cb81096b796">&#9670;&nbsp;</a></span>run_from_cmdline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void run_from_cmdline </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run program from cmd line using flag &ndash;coeffs (default ENG language). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Coefficient a. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Coefficient b. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>Coefficient c. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a78f90d9b949217aa10c25d9bfe1ecc91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78f90d9b949217aa10c25d9bfe1ecc91">&#9670;&nbsp;</a></span>COEFFS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_cmd_line_arg.html">CmdLineArg</a> COEFFS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .name =         <span class="stringliteral">&quot;--coeffs&quot;</span>,</div>
+<div class="line">    .num_of_param = 3,</div>
+<div class="line">    .necessity =    <span class="keyword">false</span>,</div>
+<div class="line">    .argc_number =  0,</div>
+<div class="line">    .help =         <span class="stringliteral">&quot;--coeffs *a coefficient* *b coefficient* *c coefficient*&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Structure for usable &ndash;coeffs flag. </p>
+
+</div>
+</div>
+<a id="a7d22539f6a8b1eba6b8780ea198ac8b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d22539f6a8b1eba6b8780ea198ac8b0">&#9670;&nbsp;</a></span>TESTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_cmd_line_arg.html">CmdLineArg</a> TESTS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .name =         <span class="stringliteral">&quot;--test&quot;</span>,</div>
+<div class="line">    .num_of_param = 1,</div>
+<div class="line">    .necessity =    <span class="keyword">false</span>,</div>
+<div class="line">    .argc_number =  0,</div>
+<div class="line">    .help =         <span class="stringliteral">&quot;--test *test_file*&quot;</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p>Structure for usable &ndash;test flag. </p>
 
 </div>
 </div>

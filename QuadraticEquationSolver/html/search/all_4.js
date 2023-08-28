@@ -1,19 +1,4 @@
 var searchData=
 [
-  ['language_18',['Language',['../languages_8h.html#a315ca917ad583797f709ea477dd28705',1,'languages.h']]],
-  ['language_5ferror_19',['language_error',['../struct_output_language.html#a6e942b0c8df657d2edcc4f19123df47f',1,'OutputLanguage']]],
-  ['language_5ffirst_5froot_20',['language_first_root',['../struct_output_language.html#aea534aaa7e3cde3b6817db52e80ffdda',1,'OutputLanguage']]],
-  ['language_5fgoodbye_21',['language_goodbye',['../struct_output_language.html#a5c3ea18f07e40fb7d60eeeaa3938c3ea',1,'OutputLanguage']]],
-  ['language_5fidentification_22',['language_identification',['../struct_output_language.html#a037c958a510083f364f1e3d4dd260e85',1,'OutputLanguage']]],
-  ['language_5finf_5froots_23',['language_inf_roots',['../struct_output_language.html#a4d04f0ed70968960aa23988a8aedcef2',1,'OutputLanguage']]],
-  ['language_5fmenu_24',['language_menu',['../struct_output_language.html#a1ebd2e25eb788bc3702cc1ca8adb0dd4',1,'OutputLanguage']]],
-  ['language_5fno_5froots_25',['language_no_roots',['../struct_output_language.html#a9dba36325006af587c06cdd57ea7ed76',1,'OutputLanguage']]],
-  ['language_5fone_5froot_26',['language_one_root',['../struct_output_language.html#a0313f0eb7d72e4d007e8149a12f6a386',1,'OutputLanguage']]],
-  ['language_5frequest_27',['language_request',['../struct_output_language.html#a39eb534178eb6773c8aeab2d913ca021',1,'OutputLanguage']]],
-  ['language_5fsecond_5froot_28',['language_second_root',['../struct_output_language.html#a10e596f38bc807dc426746889d883ce6',1,'OutputLanguage']]],
-  ['language_5fshow_5fequation_29',['language_show_equation',['../struct_output_language.html#ab380f4deeaf36cecff1566a99ebb9589',1,'OutputLanguage']]],
-  ['language_5fthis_5froot_30',['language_this_root',['../struct_output_language.html#a1d05d7508743d8138382b9a3ada20b57',1,'OutputLanguage']]],
-  ['language_5ftwo_5froots_31',['language_two_roots',['../struct_output_language.html#a8cca89698904c7761812e01ded291e6b',1,'OutputLanguage']]],
-  ['languages_2ecpp_32',['languages.cpp',['../languages_8cpp.html',1,'']]],
-  ['languages_2eh_33',['languages.h',['../languages_8h.html',1,'']]]
+  ['help_15',['help',['../struct_cmd_line_arg.html#abdd7aaf0eb58a5df0b017e3abc2e5958',1,'CmdLineArg']]]
 ];

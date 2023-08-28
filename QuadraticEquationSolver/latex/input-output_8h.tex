@@ -10,6 +10,9 @@ struct \mbox{\hyperlink{struct_cmd_line_arg}{Cmd\+Line\+Arg}}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{input-output_8h_a683cdc96b34c5ddea1306e8e9f9ec438}\label{input-output_8h_a683cdc96b34c5ddea1306e8e9f9ec438}} 
+\#define {\bfseries RED\+\_\+\+COLOR}~\char`\"{}\textbackslash{}x1b\mbox{[}31m\char`\"{}
+\item 
 \mbox{\Hypertarget{input-output_8h_ac4bdeb73d33895bb745d17b3d8539a6a}\label{input-output_8h_ac4bdeb73d33895bb745d17b3d8539a6a}} 
 \#define {\bfseries GREEN\+\_\+\+COLOR}~\char`\"{}\textbackslash{}x1b\mbox{[}32m\char`\"{}
 \item 
@@ -37,15 +40,26 @@ int \mbox{\hyperlink{input-output_8h_afac1e64a683c11464c97e12472a8614d}{get\+\_\
 \begin{DoxyCompactList}\small\item\em Let user input coefficients of equation. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{input-output_8h_a8a4c7ccd5bed224dd0b06f5ca297de05}{get\+\_\+one\+\_\+char}} (const char $\ast$str, int n)
 \begin{DoxyCompactList}\small\item\em Get from stdin first non-\/space allowed character, and then skip anything after the character. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{input-output_8h_ad21ac6160c1f9a367be8ce7ee69dd216}{check\+\_\+cmd\+\_\+input}} (int argc, char $\ast$$\ast$argv)
+bool \mbox{\hyperlink{input-output_8h_a86c9793be3c06efa0684cc6ef90dced0}{check\+\_\+cmd\+\_\+input}} (int argc, char $\ast$$\ast$argv)
 \begin{DoxyCompactList}\small\item\em Check if user enter flags running the program. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{input-output_8h_a2d4df57ae6f72824d786267b374cf038}{is\+\_\+valid\+\_\+coefficients\+\_\+input}} (\mbox{\hyperlink{struct_equation_coefficients}{Equation\+Coefficients}} $\ast$coefficients)
 \begin{DoxyCompactList}\small\item\em Check if inputed coefficients are valid. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input-output_8h_acb623c217efef276c73a9b0c1a5438c5}\label{input-output_8h_acb623c217efef276c73a9b0c1a5438c5}} 
 void \mbox{\hyperlink{input-output_8h_acb623c217efef276c73a9b0c1a5438c5}{skip\+\_\+input}} (void)
-\begin{DoxyCompactList}\small\item\em Skip all characters in the line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Skip all characters in the line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{input-output_8h_aa1737d5d090c1e9b9400b87891abb07c}{show\+\_\+request}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$language)
+\begin{DoxyCompactList}\small\item\em Show request to input coefficients. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{input-output_8h_a5dd7a1a048c4e5c7efc1325840795631}{isspace\+\_\+extra\+\_\+characters}} (void)
+\begin{DoxyCompactList}\small\item\em Skip all characters in the string and check if it has non-\/space characters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{input-output_8h_afc564100c4ca389edb1d42e19162c273}{show\+\_\+error}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$language)
+\begin{DoxyCompactList}\small\item\em Show error if user entered invalid coefficients. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{input-output_8h_a5cbc9ab691c0a09beac91cb81096b796}{run\+\_\+from\+\_\+cmdline}} (const float a, const float b, const float c)
+\begin{DoxyCompactList}\small\item\em Run program from cmd line using flag --coeffs (default ENG language). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{input-output_8h_a730d3f342dac7b224f3326e7ec97cd82}\label{input-output_8h_a730d3f342dac7b224f3326e7ec97cd82}} 
+const int {\bfseries SUPPORTED\+\_\+\+FLAGS\+\_\+\+NUMBER} = 2
 \item 
 \mbox{\Hypertarget{input-output_8h_a561da360eae327ecc4bb368752715307}\label{input-output_8h_a561da360eae327ecc4bb368752715307}} 
 const int \mbox{\hyperlink{input-output_8h_a561da360eae327ecc4bb368752715307}{WRONG\+\_\+\+CMD\+\_\+\+INPUT}} = 1
@@ -56,20 +70,29 @@ const int \mbox{\hyperlink{input-output_8h_af69a30a47d2796a66fb3eea14904be43}{RI
 \mbox{\Hypertarget{input-output_8h_a8c049d3424358209390f4f03474309ef}\label{input-output_8h_a8c049d3424358209390f4f03474309ef}} 
 const int \mbox{\hyperlink{input-output_8h_a8c049d3424358209390f4f03474309ef}{TRIVIAL\+\_\+\+CMD\+\_\+\+INPUT}} = 2
 \begin{DoxyCompactList}\small\item\em If user dont using flags. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{input-output_8h_a2d2a831695291483d55efd7051ca7570}\label{input-output_8h_a2d2a831695291483d55efd7051ca7570}} 
+const int \mbox{\hyperlink{input-output_8h_a2d2a831695291483d55efd7051ca7570}{PREMATURE\+\_\+\+CMD\+\_\+\+INPUT}} = 3
+\begin{DoxyCompactList}\small\item\em If user prematurely enter coefficients. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input-output_8h_ad701a3bdba89d4b7f62024ed8378da89}\label{input-output_8h_ad701a3bdba89d4b7f62024ed8378da89}} 
 const int \mbox{\hyperlink{input-output_8h_ad701a3bdba89d4b7f62024ed8378da89}{EXTRA\+\_\+\+CHARACTERS}} = -\/2
 \begin{DoxyCompactList}\small\item\em If the user has entered unnecessary characters. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input-output_8h_a9a9406680d021497591ca078030273e6}\label{input-output_8h_a9a9406680d021497591ca078030273e6}} 
 const int \mbox{\hyperlink{input-output_8h_a9a9406680d021497591ca078030273e6}{WRONG\+\_\+\+CHARACTER}} = -\/3
-\begin{DoxyCompactList}\small\item\em If the user has entered wrong characters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em If the user has entered wrong characters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{input-output_8h_a78f90d9b949217aa10c25d9bfe1ecc91}\label{input-output_8h_a78f90d9b949217aa10c25d9bfe1ecc91}} 
+\mbox{\hyperlink{struct_cmd_line_arg}{Cmd\+Line\+Arg}} \mbox{\hyperlink{input-output_8h_a78f90d9b949217aa10c25d9bfe1ecc91}{COEFFS}}
+\begin{DoxyCompactList}\small\item\em Structure for usable --coeffs flag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{input-output_8h_a7d22539f6a8b1eba6b8780ea198ac8b0}\label{input-output_8h_a7d22539f6a8b1eba6b8780ea198ac8b0}} 
+\mbox{\hyperlink{struct_cmd_line_arg}{Cmd\+Line\+Arg}} \mbox{\hyperlink{input-output_8h_a7d22539f6a8b1eba6b8780ea198ac8b0}{TESTS}}
+\begin{DoxyCompactList}\small\item\em Structure for usable --test flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{input-output_8h_ad21ac6160c1f9a367be8ce7ee69dd216}\label{input-output_8h_ad21ac6160c1f9a367be8ce7ee69dd216}} 
+\mbox{\Hypertarget{input-output_8h_a86c9793be3c06efa0684cc6ef90dced0}\label{input-output_8h_a86c9793be3c06efa0684cc6ef90dced0}} 
 \index{input-\/output.h@{input-\/output.h}!check\_cmd\_input@{check\_cmd\_input}}
 \index{check\_cmd\_input@{check\_cmd\_input}!input-\/output.h@{input-\/output.h}}
 \doxysubsubsection{\texorpdfstring{check\_cmd\_input()}{check\_cmd\_input()}}
-{\footnotesize\ttfamily int check\+\_\+cmd\+\_\+input (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool check\+\_\+cmd\+\_\+input (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
 
 
 
@@ -143,6 +166,38 @@ Check if inputed coefficients are valid.
 \begin{DoxyReturn}{Returns}
 Is inputed coefficients are valid. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{input-output_8h_a5dd7a1a048c4e5c7efc1325840795631}\label{input-output_8h_a5dd7a1a048c4e5c7efc1325840795631}} 
+\index{input-\/output.h@{input-\/output.h}!isspace\_extra\_characters@{isspace\_extra\_characters}}
+\index{isspace\_extra\_characters@{isspace\_extra\_characters}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{isspace\_extra\_characters()}{isspace\_extra\_characters()}}
+{\footnotesize\ttfamily bool isspace\+\_\+extra\+\_\+characters (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Skip all characters in the string and check if it has non-\/space characters. 
+
+\begin{DoxyReturn}{Returns}
+Is all characters in this string are spaces. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{input-output_8h_a5cbc9ab691c0a09beac91cb81096b796}\label{input-output_8h_a5cbc9ab691c0a09beac91cb81096b796}} 
+\index{input-\/output.h@{input-\/output.h}!run\_from\_cmdline@{run\_from\_cmdline}}
+\index{run\_from\_cmdline@{run\_from\_cmdline}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{run\_from\_cmdline()}{run\_from\_cmdline()}}
+{\footnotesize\ttfamily void run\+\_\+from\+\_\+cmdline (\begin{DoxyParamCaption}\item[{const float}]{a,  }\item[{const float}]{b,  }\item[{const float}]{c }\end{DoxyParamCaption})}
+
+
+
+Run program from cmd line using flag --coeffs (default ENG language). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & Coefficient a. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & Coefficient b. \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & Coefficient c. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{input-output_8h_abd7888375a0b0f280b757d0e5a39f889}\label{input-output_8h_abd7888375a0b0f280b757d0e5a39f889}} 
 \index{input-\/output.h@{input-\/output.h}!show\_equation@{show\_equation}}
 \index{show\_equation@{show\_equation}!input-\/output.h@{input-\/output.h}}
@@ -158,6 +213,21 @@ Show user equation that he input.
 {\em coeffs} & Inputed coefficients of equation. \\
 \hline
 {\em language} & Language that program using. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{input-output_8h_afc564100c4ca389edb1d42e19162c273}\label{input-output_8h_afc564100c4ca389edb1d42e19162c273}} 
+\index{input-\/output.h@{input-\/output.h}!show\_error@{show\_error}}
+\index{show\_error@{show\_error}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{show\_error()}{show\_error()}}
+{\footnotesize\ttfamily void show\+\_\+error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$}]{language }\end{DoxyParamCaption})}
+
+
+
+Show error if user entered invalid coefficients. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em language} & Entered language. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{input-output_8h_a2057984fb86fe06f168416d3939ff607}\label{input-output_8h_a2057984fb86fe06f168416d3939ff607}} 
@@ -188,6 +258,21 @@ User greeting and telling program abillity.
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em language} & Language that program using. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{input-output_8h_aa1737d5d090c1e9b9400b87891abb07c}\label{input-output_8h_aa1737d5d090c1e9b9400b87891abb07c}} 
+\index{input-\/output.h@{input-\/output.h}!show\_request@{show\_request}}
+\index{show\_request@{show\_request}!input-\/output.h@{input-\/output.h}}
+\doxysubsubsection{\texorpdfstring{show\_request()}{show\_request()}}
+{\footnotesize\ttfamily void show\+\_\+request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$}]{language }\end{DoxyParamCaption})}
+
+
+
+Show request to input coefficients. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em language} & Entered language. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{input-output_8h_a0481090766818f9dae58182e983ecab9}\label{input-output_8h_a0481090766818f9dae58182e983ecab9}} 

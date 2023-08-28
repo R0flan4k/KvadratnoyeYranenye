@@ -84,6 +84,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a683cdc96b34c5ddea1306e8e9f9ec438"><td class="memItemLeft" align="right" valign="top"><a id="a683cdc96b34c5ddea1306e8e9f9ec438"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RED_COLOR</b>&#160;&#160;&#160;&quot;\x1b[31m&quot;</td></tr>
+<tr class="separator:a683cdc96b34c5ddea1306e8e9f9ec438"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4bdeb73d33895bb745d17b3d8539a6a"><td class="memItemLeft" align="right" valign="top"><a id="ac4bdeb73d33895bb745d17b3d8539a6a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>GREEN_COLOR</b>&#160;&#160;&#160;&quot;\x1b[32m&quot;</td></tr>
 <tr class="separator:ac4bdeb73d33895bb745d17b3d8539a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,9 +122,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inpu
 <tr class="memitem:a8a4c7ccd5bed224dd0b06f5ca297de05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#a8a4c7ccd5bed224dd0b06f5ca297de05">get_one_char</a> (const char *str, int n)</td></tr>
 <tr class="memdesc:a8a4c7ccd5bed224dd0b06f5ca297de05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get from stdin first non-space allowed character, and then skip anything after the character.  <a href="input-output_8h.html#a8a4c7ccd5bed224dd0b06f5ca297de05">More...</a><br /></td></tr>
 <tr class="separator:a8a4c7ccd5bed224dd0b06f5ca297de05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad21ac6160c1f9a367be8ce7ee69dd216"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#ad21ac6160c1f9a367be8ce7ee69dd216">check_cmd_input</a> (int argc, char **argv)</td></tr>
-<tr class="memdesc:ad21ac6160c1f9a367be8ce7ee69dd216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if user enter flags running the program.  <a href="input-output_8h.html#ad21ac6160c1f9a367be8ce7ee69dd216">More...</a><br /></td></tr>
-<tr class="separator:ad21ac6160c1f9a367be8ce7ee69dd216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86c9793be3c06efa0684cc6ef90dced0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#a86c9793be3c06efa0684cc6ef90dced0">check_cmd_input</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a86c9793be3c06efa0684cc6ef90dced0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if user enter flags running the program.  <a href="input-output_8h.html#a86c9793be3c06efa0684cc6ef90dced0">More...</a><br /></td></tr>
+<tr class="separator:a86c9793be3c06efa0684cc6ef90dced0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d4df57ae6f72824d786267b374cf038"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#a2d4df57ae6f72824d786267b374cf038">is_valid_coefficients_input</a> (<a class="el" href="struct_equation_coefficients.html">EquationCoefficients</a> *coefficients)</td></tr>
 <tr class="memdesc:a2d4df57ae6f72824d786267b374cf038"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if inputed coefficients are valid.  <a href="input-output_8h.html#a2d4df57ae6f72824d786267b374cf038">More...</a><br /></td></tr>
 <tr class="separator:a2d4df57ae6f72824d786267b374cf038"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,9 +132,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inpu
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#acb623c217efef276c73a9b0c1a5438c5">skip_input</a> (void)</td></tr>
 <tr class="memdesc:acb623c217efef276c73a9b0c1a5438c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skip all characters in the line. <br /></td></tr>
 <tr class="separator:acb623c217efef276c73a9b0c1a5438c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1737d5d090c1e9b9400b87891abb07c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#aa1737d5d090c1e9b9400b87891abb07c">show_request</a> (const <a class="el" href="struct_output_language.html">OutputLanguage</a> *language)</td></tr>
+<tr class="memdesc:aa1737d5d090c1e9b9400b87891abb07c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show request to input coefficients.  <a href="input-output_8h.html#aa1737d5d090c1e9b9400b87891abb07c">More...</a><br /></td></tr>
+<tr class="separator:aa1737d5d090c1e9b9400b87891abb07c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dd7a1a048c4e5c7efc1325840795631"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#a5dd7a1a048c4e5c7efc1325840795631">isspace_extra_characters</a> (void)</td></tr>
+<tr class="memdesc:a5dd7a1a048c4e5c7efc1325840795631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skip all characters in the string and check if it has non-space characters.  <a href="input-output_8h.html#a5dd7a1a048c4e5c7efc1325840795631">More...</a><br /></td></tr>
+<tr class="separator:a5dd7a1a048c4e5c7efc1325840795631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc564100c4ca389edb1d42e19162c273"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#afc564100c4ca389edb1d42e19162c273">show_error</a> (const <a class="el" href="struct_output_language.html">OutputLanguage</a> *language)</td></tr>
+<tr class="memdesc:afc564100c4ca389edb1d42e19162c273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show error if user entered invalid coefficients.  <a href="input-output_8h.html#afc564100c4ca389edb1d42e19162c273">More...</a><br /></td></tr>
+<tr class="separator:afc564100c4ca389edb1d42e19162c273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cbc9ab691c0a09beac91cb81096b796"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#a5cbc9ab691c0a09beac91cb81096b796">run_from_cmdline</a> (const float a, const float b, const float c)</td></tr>
+<tr class="memdesc:a5cbc9ab691c0a09beac91cb81096b796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run program from cmd line using flag &ndash;coeffs (default ENG language).  <a href="input-output_8h.html#a5cbc9ab691c0a09beac91cb81096b796">More...</a><br /></td></tr>
+<tr class="separator:a5cbc9ab691c0a09beac91cb81096b796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a730d3f342dac7b224f3326e7ec97cd82"><td class="memItemLeft" align="right" valign="top"><a id="a730d3f342dac7b224f3326e7ec97cd82"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>SUPPORTED_FLAGS_NUMBER</b> = 2</td></tr>
+<tr class="separator:a730d3f342dac7b224f3326e7ec97cd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a561da360eae327ecc4bb368752715307"><td class="memItemLeft" align="right" valign="top"><a id="a561da360eae327ecc4bb368752715307"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#a561da360eae327ecc4bb368752715307">WRONG_CMD_INPUT</a> = 1</td></tr>
 <tr class="memdesc:a561da360eae327ecc4bb368752715307"><td class="mdescLeft">&#160;</td><td class="mdescRight">If user incorrectly using flags. <br /></td></tr>
@@ -144,6 +162,10 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#a8c049d3424358209390f4f03474309ef">TRIVIAL_CMD_INPUT</a> = 2</td></tr>
 <tr class="memdesc:a8c049d3424358209390f4f03474309ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">If user dont using flags. <br /></td></tr>
 <tr class="separator:a8c049d3424358209390f4f03474309ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d2a831695291483d55efd7051ca7570"><td class="memItemLeft" align="right" valign="top"><a id="a2d2a831695291483d55efd7051ca7570"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#a2d2a831695291483d55efd7051ca7570">PREMATURE_CMD_INPUT</a> = 3</td></tr>
+<tr class="memdesc:a2d2a831695291483d55efd7051ca7570"><td class="mdescLeft">&#160;</td><td class="mdescRight">If user prematurely enter coefficients. <br /></td></tr>
+<tr class="separator:a2d2a831695291483d55efd7051ca7570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad701a3bdba89d4b7f62024ed8378da89"><td class="memItemLeft" align="right" valign="top"><a id="ad701a3bdba89d4b7f62024ed8378da89"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#ad701a3bdba89d4b7f62024ed8378da89">EXTRA_CHARACTERS</a> = -2</td></tr>
 <tr class="memdesc:ad701a3bdba89d4b7f62024ed8378da89"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the user has entered unnecessary characters. <br /></td></tr>
@@ -152,16 +174,24 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#a9a9406680d021497591ca078030273e6">WRONG_CHARACTER</a> = -3</td></tr>
 <tr class="memdesc:a9a9406680d021497591ca078030273e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the user has entered wrong characters. <br /></td></tr>
 <tr class="separator:a9a9406680d021497591ca078030273e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f90d9b949217aa10c25d9bfe1ecc91"><td class="memItemLeft" align="right" valign="top"><a id="a78f90d9b949217aa10c25d9bfe1ecc91"></a>
+<a class="el" href="struct_cmd_line_arg.html">CmdLineArg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#a78f90d9b949217aa10c25d9bfe1ecc91">COEFFS</a></td></tr>
+<tr class="memdesc:a78f90d9b949217aa10c25d9bfe1ecc91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for usable &ndash;coeffs flag. <br /></td></tr>
+<tr class="separator:a78f90d9b949217aa10c25d9bfe1ecc91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d22539f6a8b1eba6b8780ea198ac8b0"><td class="memItemLeft" align="right" valign="top"><a id="a7d22539f6a8b1eba6b8780ea198ac8b0"></a>
+<a class="el" href="struct_cmd_line_arg.html">CmdLineArg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input-output_8h.html#a7d22539f6a8b1eba6b8780ea198ac8b0">TESTS</a></td></tr>
+<tr class="memdesc:a7d22539f6a8b1eba6b8780ea198ac8b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for usable &ndash;test flag. <br /></td></tr>
+<tr class="separator:a7d22539f6a8b1eba6b8780ea198ac8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ad21ac6160c1f9a367be8ce7ee69dd216"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad21ac6160c1f9a367be8ce7ee69dd216">&#9670;&nbsp;</a></span>check_cmd_input()</h2>
+<a id="a86c9793be3c06efa0684cc6ef90dced0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86c9793be3c06efa0684cc6ef90dced0">&#9670;&nbsp;</a></span>check_cmd_input()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int check_cmd_input </td>
+          <td class="memname">bool check_cmd_input </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>argc</em>, </td>
@@ -286,6 +316,71 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 </div>
 </div>
+<a id="a5dd7a1a048c4e5c7efc1325840795631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dd7a1a048c4e5c7efc1325840795631">&#9670;&nbsp;</a></span>isspace_extra_characters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isspace_extra_characters </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Skip all characters in the string and check if it has non-space characters. </p>
+<dl class="section return"><dt>Returns</dt><dd>Is all characters in this string are spaces. </dd></dl>
+
+</div>
+</div>
+<a id="a5cbc9ab691c0a09beac91cb81096b796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cbc9ab691c0a09beac91cb81096b796">&#9670;&nbsp;</a></span>run_from_cmdline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void run_from_cmdline </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run program from cmd line using flag &ndash;coeffs (default ENG language). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Coefficient a. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Coefficient b. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>Coefficient c. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="abd7888375a0b0f280b757d0e5a39f889"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd7888375a0b0f280b757d0e5a39f889">&#9670;&nbsp;</a></span>show_equation()</h2>
 
@@ -317,6 +412,32 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
   <table class="params">
     <tr><td class="paramname">coeffs</td><td>Inputed coefficients of equation. </td></tr>
     <tr><td class="paramname">language</td><td>Language that program using. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afc564100c4ca389edb1d42e19162c273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc564100c4ca389edb1d42e19162c273">&#9670;&nbsp;</a></span>show_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void show_error </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_output_language.html">OutputLanguage</a> *&#160;</td>
+          <td class="paramname"><em>language</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Show error if user entered invalid coefficients. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">language</td><td>Entered language. </td></tr>
   </table>
   </dd>
 </dl>
@@ -369,6 +490,32 @@ const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">language</td><td>Language that program using. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa1737d5d090c1e9b9400b87891abb07c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1737d5d090c1e9b9400b87891abb07c">&#9670;&nbsp;</a></span>show_request()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void show_request </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_output_language.html">OutputLanguage</a> *&#160;</td>
+          <td class="paramname"><em>language</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Show request to input coefficients. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">language</td><td>Entered language. </td></tr>
   </table>
   </dd>
 </dl>

@@ -7,15 +7,25 @@ Command line data processing.
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}input-\/output.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}test.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}my\+\_\+assert.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}languages.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}my\+\_\+assert.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{cmd__input_8cpp_ad21ac6160c1f9a367be8ce7ee69dd216}{check\+\_\+cmd\+\_\+input}} (int argc, char $\ast$$\ast$argv)
-\begin{DoxyCompactList}\small\item\em Check if user enter flags running the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{cmd__input_8cpp_a86c9793be3c06efa0684cc6ef90dced0}{check\+\_\+cmd\+\_\+input}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Check if user enter flags running the program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cmd__input_8cpp_a5cbc9ab691c0a09beac91cb81096b796}{run\+\_\+from\+\_\+cmdline}} (const float a, const float b, const float c)
+\begin{DoxyCompactList}\small\item\em Run program from cmd line using flag --coeffs (default ENG language). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_cmd_line_arg}{Cmd\+Line\+Arg}} \mbox{\hyperlink{cmd__input_8cpp_a7d22539f6a8b1eba6b8780ea198ac8b0}{TESTS}}
+\begin{DoxyCompactList}\small\item\em Structure for usable --test flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cmd_line_arg}{Cmd\+Line\+Arg}} \mbox{\hyperlink{cmd__input_8cpp_a78f90d9b949217aa10c25d9bfe1ecc91}{COEFFS}}
+\begin{DoxyCompactList}\small\item\em Structure for usable --coeffs flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -24,11 +34,11 @@ Command line data processing.
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{cmd__input_8cpp_ad21ac6160c1f9a367be8ce7ee69dd216}\label{cmd__input_8cpp_ad21ac6160c1f9a367be8ce7ee69dd216}} 
+\mbox{\Hypertarget{cmd__input_8cpp_a86c9793be3c06efa0684cc6ef90dced0}\label{cmd__input_8cpp_a86c9793be3c06efa0684cc6ef90dced0}} 
 \index{cmd\_input.cpp@{cmd\_input.cpp}!check\_cmd\_input@{check\_cmd\_input}}
 \index{check\_cmd\_input@{check\_cmd\_input}!cmd\_input.cpp@{cmd\_input.cpp}}
 \doxysubsubsection{\texorpdfstring{check\_cmd\_input()}{check\_cmd\_input()}}
-{\footnotesize\ttfamily int check\+\_\+cmd\+\_\+input (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool check\+\_\+cmd\+\_\+input (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
 
 
 
@@ -44,3 +54,67 @@ Check if user enter flags running the program.
 \begin{DoxyReturn}{Returns}
 Is cmd inputs was right or is it there. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{cmd__input_8cpp_a5cbc9ab691c0a09beac91cb81096b796}\label{cmd__input_8cpp_a5cbc9ab691c0a09beac91cb81096b796}} 
+\index{cmd\_input.cpp@{cmd\_input.cpp}!run\_from\_cmdline@{run\_from\_cmdline}}
+\index{run\_from\_cmdline@{run\_from\_cmdline}!cmd\_input.cpp@{cmd\_input.cpp}}
+\doxysubsubsection{\texorpdfstring{run\_from\_cmdline()}{run\_from\_cmdline()}}
+{\footnotesize\ttfamily void run\+\_\+from\+\_\+cmdline (\begin{DoxyParamCaption}\item[{const float}]{a,  }\item[{const float}]{b,  }\item[{const float}]{c }\end{DoxyParamCaption})}
+
+
+
+Run program from cmd line using flag --coeffs (default ENG language). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & Coefficient a. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & Coefficient b. \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & Coefficient c. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{cmd__input_8cpp_a78f90d9b949217aa10c25d9bfe1ecc91}\label{cmd__input_8cpp_a78f90d9b949217aa10c25d9bfe1ecc91}} 
+\index{cmd\_input.cpp@{cmd\_input.cpp}!COEFFS@{COEFFS}}
+\index{COEFFS@{COEFFS}!cmd\_input.cpp@{cmd\_input.cpp}}
+\doxysubsubsection{\texorpdfstring{COEFFS}{COEFFS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_cmd_line_arg}{Cmd\+Line\+Arg}} COEFFS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .name =         \textcolor{stringliteral}{"{}-\/-\/coeffs"{}},}
+\DoxyCodeLine{    .num\_of\_param = 3,}
+\DoxyCodeLine{    .necessity =    \textcolor{keyword}{false},}
+\DoxyCodeLine{    .argc\_number =  0,}
+\DoxyCodeLine{    .help =         \textcolor{stringliteral}{"{}-\/-\/coeffs *a coefficient* *b coefficient* *c coefficient*"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Structure for usable --coeffs flag. 
+
+\mbox{\Hypertarget{cmd__input_8cpp_a7d22539f6a8b1eba6b8780ea198ac8b0}\label{cmd__input_8cpp_a7d22539f6a8b1eba6b8780ea198ac8b0}} 
+\index{cmd\_input.cpp@{cmd\_input.cpp}!TESTS@{TESTS}}
+\index{TESTS@{TESTS}!cmd\_input.cpp@{cmd\_input.cpp}}
+\doxysubsubsection{\texorpdfstring{TESTS}{TESTS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_cmd_line_arg}{Cmd\+Line\+Arg}} TESTS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .name =         \textcolor{stringliteral}{"{}-\/-\/test"{}},}
+\DoxyCodeLine{    .num\_of\_param = 1,}
+\DoxyCodeLine{    .necessity =    \textcolor{keyword}{false},}
+\DoxyCodeLine{    .argc\_number =  0,}
+\DoxyCodeLine{    .help =         \textcolor{stringliteral}{"{}-\/-\/test *test\_file*"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Structure for usable --test flag. 
+

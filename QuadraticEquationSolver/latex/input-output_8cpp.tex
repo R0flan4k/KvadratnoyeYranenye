@@ -6,7 +6,6 @@ The part of the program responsible for stdin and stdout.
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include $<$assert.\+h$>$}\newline
 {\ttfamily \#include $<$ctype.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}input-\/output.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}languages.\+h\char`\"{}}\newline
@@ -31,6 +30,8 @@ void \mbox{\hyperlink{input-output_8cpp_a2057984fb86fe06f168416d3939ff607}{show\
 \begin{DoxyCompactList}\small\item\em Say goodebye to user. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{input-output_8cpp_a8a4c7ccd5bed224dd0b06f5ca297de05}{get\+\_\+one\+\_\+char}} (const char $\ast$str, int n)
 \begin{DoxyCompactList}\small\item\em Get from stdin first non-\/space allowed character, and then skip anything after the character. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{input-output_8cpp_a5dd7a1a048c4e5c7efc1325840795631}{isspace\+\_\+extra\+\_\+characters}} (void)
+\begin{DoxyCompactList}\small\item\em Skip all characters in the string and check if it has non-\/space characters. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input-output_8cpp_a5a67987feba6f5a0467b926c231175f3}\label{input-output_8cpp_a5a67987feba6f5a0467b926c231175f3}} 
 void \mbox{\hyperlink{input-output_8cpp_a5a67987feba6f5a0467b926c231175f3}{show\+\_\+language\+\_\+menu}} (void)
 \begin{DoxyCompactList}\small\item\em Show user available languages. \end{DoxyCompactList}\item 
@@ -38,7 +39,11 @@ const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$ \mbox{\
 \begin{DoxyCompactList}\small\item\em Select structure of language messages using identification character. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{input-output_8cpp_acb623c217efef276c73a9b0c1a5438c5}\label{input-output_8cpp_acb623c217efef276c73a9b0c1a5438c5}} 
 void \mbox{\hyperlink{input-output_8cpp_acb623c217efef276c73a9b0c1a5438c5}{skip\+\_\+input}} (void)
-\begin{DoxyCompactList}\small\item\em Skip all characters in the line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Skip all characters in the line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{input-output_8cpp_aa1737d5d090c1e9b9400b87891abb07c}{show\+\_\+request}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$language)
+\begin{DoxyCompactList}\small\item\em Show request to input coefficients. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{input-output_8cpp_afc564100c4ca389edb1d42e19162c273}{show\+\_\+error}} (const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$language)
+\begin{DoxyCompactList}\small\item\em Show error if user entered invalid coefficients. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -105,6 +110,19 @@ Check if inputed coefficients are valid.
 \begin{DoxyReturn}{Returns}
 Is inputed coefficients are valid. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{input-output_8cpp_a5dd7a1a048c4e5c7efc1325840795631}\label{input-output_8cpp_a5dd7a1a048c4e5c7efc1325840795631}} 
+\index{input-\/output.cpp@{input-\/output.cpp}!isspace\_extra\_characters@{isspace\_extra\_characters}}
+\index{isspace\_extra\_characters@{isspace\_extra\_characters}!input-\/output.cpp@{input-\/output.cpp}}
+\doxysubsubsection{\texorpdfstring{isspace\_extra\_characters()}{isspace\_extra\_characters()}}
+{\footnotesize\ttfamily bool isspace\+\_\+extra\+\_\+characters (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Skip all characters in the string and check if it has non-\/space characters. 
+
+\begin{DoxyReturn}{Returns}
+Is all characters in this string are spaces. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{input-output_8cpp_a1828039a304ff6f97510ad42407de1ee}\label{input-output_8cpp_a1828039a304ff6f97510ad42407de1ee}} 
 \index{input-\/output.cpp@{input-\/output.cpp}!select\_language@{select\_language}}
 \index{select\_language@{select\_language}!input-\/output.cpp@{input-\/output.cpp}}
@@ -140,6 +158,21 @@ Show user equation that he input.
 {\em language} & Language that program using. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{input-output_8cpp_afc564100c4ca389edb1d42e19162c273}\label{input-output_8cpp_afc564100c4ca389edb1d42e19162c273}} 
+\index{input-\/output.cpp@{input-\/output.cpp}!show\_error@{show\_error}}
+\index{show\_error@{show\_error}!input-\/output.cpp@{input-\/output.cpp}}
+\doxysubsubsection{\texorpdfstring{show\_error()}{show\_error()}}
+{\footnotesize\ttfamily void show\+\_\+error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$}]{language }\end{DoxyParamCaption})}
+
+
+
+Show error if user entered invalid coefficients. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em language} & Entered language. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{input-output_8cpp_a2057984fb86fe06f168416d3939ff607}\label{input-output_8cpp_a2057984fb86fe06f168416d3939ff607}} 
 \index{input-\/output.cpp@{input-\/output.cpp}!show\_goodbye@{show\_goodbye}}
 \index{show\_goodbye@{show\_goodbye}!input-\/output.cpp@{input-\/output.cpp}}
@@ -168,6 +201,21 @@ User greeting and telling program abillity.
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em language} & Language that program using. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{input-output_8cpp_aa1737d5d090c1e9b9400b87891abb07c}\label{input-output_8cpp_aa1737d5d090c1e9b9400b87891abb07c}} 
+\index{input-\/output.cpp@{input-\/output.cpp}!show\_request@{show\_request}}
+\index{show\_request@{show\_request}!input-\/output.cpp@{input-\/output.cpp}}
+\doxysubsubsection{\texorpdfstring{show\_request()}{show\_request()}}
+{\footnotesize\ttfamily void show\+\_\+request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_output_language}{Output\+Language}} $\ast$}]{language }\end{DoxyParamCaption})}
+
+
+
+Show request to input coefficients. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em language} & Entered language. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{input-output_8cpp_a0481090766818f9dae58182e983ecab9}\label{input-output_8cpp_a0481090766818f9dae58182e983ecab9}} 

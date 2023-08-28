@@ -26,7 +26,7 @@
         int num_of_param;  ///< Number of flag parameters.
         bool necessity;    ///< Necessity of flag.
         int argc_number;   ///< Serial number of flag in cmd line.
-        const char * help;
+        const char * help; ///< How to use this flag.
     };
 
 
@@ -130,10 +130,22 @@
     /////////////////////////////////////////////////////////////////////////
     void show_error(const OutputLanguage * language);
 
+    /////////////////////////////////////////////////////////////////////////
+    /// \brief Run program from cmd line using flag --coeffs (default ENG language).
+    /// \param[in] a Coefficient a.
+    /// \param[in] b Coefficient b.
+    /// \param[in] c Coefficient c.
+    /////////////////////////////////////////////////////////////////////////
     void run_from_cmdline(const float a, const float b, const float c);
 
-
+    /////////////////////////////////////////////////////////////////////////
+    /// \brief Structure for usable --coeffs flag.
+    /////////////////////////////////////////////////////////////////////////
     extern CmdLineArg COEFFS;
+
+    /////////////////////////////////////////////////////////////////////////
+    /// \brief Structure for usable --test flag.
+    /////////////////////////////////////////////////////////////////////////
     extern CmdLineArg TESTS;
 
 
