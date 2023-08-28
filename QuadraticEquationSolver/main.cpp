@@ -3,7 +3,6 @@
 /// \brief File with main().
 /////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
-#include <assert.h>
 #include <string.h>
 
 #include "input-output.h"

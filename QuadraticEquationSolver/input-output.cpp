@@ -3,7 +3,6 @@
 /// \brief The part of the program responsible for stdin and stdout
 /////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
-#include <assert.h>
 #include <ctype.h>
 
 #include "input-output.h"
@@ -99,7 +98,7 @@ void show_solution(const EquationRoots * solution, const OutputLanguage * langua
             break;
 
         default:
-            assert(0 && "ROOTS COUNT ERROR");
+            MY_ASSERT(0 && "ROOTS COUNT ERROR");
             break;
     }
 }
@@ -196,7 +195,7 @@ const OutputLanguage * select_language(const int ch)
             break;
 
         default:
-            assert(0 && "GET_LANG ERROR");
+            MY_ASSERT(0 && "GET_LANG ERROR");
             break;
     }
 }

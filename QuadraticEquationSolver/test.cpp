@@ -4,7 +4,6 @@
 /////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
 #include <stdlib.h>      
-#include <assert.h>
 
 #include "calculations.h"
 #include "test.h"
@@ -15,17 +14,17 @@
 /// \brief Check is equal calculated and right roog.
 /// \param[in] program_root1 Calculated first root.
 /// \param[in] program_root2 Calculated second root.
-/// \param[in] right_root1 Right first root from test file.
-/// \param[in] right_root2 Right second root from test file.
+/// \param[in] right_root1 Right first root from tests file.
+/// \param[in] right_root2 Right second root from tests file.
 /// \return Is program roots equal to right roots.
 /////////////////////////////////////////////////////////////////////////
 static bool is_equal_equation_roots(const float program_root1, const float program_root2, const float right_root1, const float right_root2);
 
 /////////////////////////////////////////////////////////////////////////
-/// \brief Show results of test.
-/// \param[in] test_result Result of test (succes or failure).
+/// \brief Show results of tests.
+/// \param[in] test_result Result of tests (succes or failure).
 /// \param[in] program_solution Calculated roots and count point.
-/// \param[in] right_solution Right roots and count from test file.
+/// \param[in] right_solution Right roots and count from tests file.
 /////////////////////////////////////////////////////////////////////////
 static void show_test_results(TestResults test_result, const EquationRoots * program_solution, const EquationRoots * right_solution);
 
@@ -96,7 +95,7 @@ static void show_test_results(TestResults test_result, const EquationRoots * pro
     {
         case TEST_SUCCESS:
             puts("");
-            puts("The test successfully passed.");
+            puts("The tests successfully passed.");
             puts ("");
             break;
 
