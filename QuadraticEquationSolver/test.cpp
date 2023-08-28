@@ -9,6 +9,7 @@
 #include "calculations.h"
 #include "test.h"
 #include "input-output.h"
+#include "my_assert.h"
 
 /////////////////////////////////////////////////////////////////////////
 /// \brief Check is equal calculated and right roog.
@@ -71,7 +72,7 @@ TestResults test_program(const char * test_file)
 
     fclose(fp);
 
-    puts("Test successfully passed.");
+    show_test_results(TEST_SUCCESS, &program_solution, &right_solution);
 
     return TEST_SUCCESS;
 }
@@ -94,27 +95,35 @@ static void show_test_results(TestResults test_result, const EquationRoots * pro
     switch (test_result)
     {
         case TEST_SUCCESS:
+            puts("");
             puts("The test successfully passed.");
+            puts ("");
             break;
 
         case TEST_COUNT_FAILURE:
+            puts ("");
             puts ("Test error: wrong count.");
             printf("Expected count: " GREEN_COLOR "%d" DEFAULT_COLOR "\n", (int) right_solution->count);
             printf("Program count:  " RED_COLOR "%d" DEFAULT_COLOR "\n", (int) program_solution->count);
+            puts ("");
             break;
 
         case TEST_ROOTS_FAILURE:
+            puts ("");
             puts("Test error: wrong roots.");
             printf("Expected roots: " GREEN_COLOR "%+f and %+f" DEFAULT_COLOR "\n", right_solution->first_root, right_solution->second_root);
             printf("Program roots:  " RED_COLOR "%+f and %+f" DEFAULT_COLOR "\n", program_solution->first_root, program_solution->second_root);
+            puts ("");
             break;
 
         case TEST_CANT_OPEN_FILE:
+            puts ("");
             printf("Test error: can't open this file.");
+            puts ("");
             break;
 
         default:
-            assert(0 && "TEST RESULT OUTPUT ERROR");
+            MY_ASSERT(0 && "TEST RESULT OUTPUT ERROR");
             break;
     }
 }

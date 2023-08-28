@@ -44,7 +44,7 @@ int check_cmd_input(int argc, char ** argv)
     {
         if (strcmp(argv[i], test_flag.name) == 0)
         {
-            if (argc >= i + test_flag.num_of_param)
+            if (argc > i + test_flag.num_of_param)
             {
                 MY_ASSERT(test_program(argv[i + test_flag.num_of_param]) == TEST_SUCCESS);
                 input_status == PREMATURE_CMD_INPUT? 0 : input_status = RIGHT_CMD_INPUT;
@@ -57,7 +57,7 @@ int check_cmd_input(int argc, char ** argv)
         }
         else if (strcmp(argv[i], coeffs_flag.name) == 0)
         {
-            if (argc >= i + coeffs_flag.num_of_param)
+            if (argc > i + coeffs_flag.num_of_param)
             {
                 EquationCoefficients coefficients = {(float) atof(argv[i + coeffs_flag.num_of_param -2]),
                                                      (float) atof(argv[i + coeffs_flag.num_of_param -1]),
