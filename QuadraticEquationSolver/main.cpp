@@ -26,7 +26,8 @@ int main(int argc, char * argv[])
 
     if (TESTS.necessity)
     {
-        MY_ASSERT(test_program(argv[TESTS.argc_number + 1]) == TEST_SUCCESS);
+        if (test_program(argv[TESTS.argc_number + 1]) != TEST_SUCCESS)
+            return 1;
     }
 
     if (COEFFS.necessity)
@@ -40,7 +41,7 @@ int main(int argc, char * argv[])
     show_language_menu();
 
     int character = 0;
-    while ((character = get_one_char("regc", strlen("regc")))
+    while ((character = get_one_char(ALLOWED_LANGS, strlen(ALLOWED_LANGS)))
             == WRONG_CHARACTER || character == EXTRA_CHARACTERS)
     {
         puts("Error. Enter language again (\"E\", \"R\", \"G\" or \"C\")");

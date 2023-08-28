@@ -30,6 +30,8 @@ CmdLineArg COEFFS = {
 
 bool check_cmd_input(int argc, char * * argv)
 {
+    MY_ASSERT(argv != nullptr);
+
     CmdLineArg * flags[SUPPORTED_FLAGS_NUMBER] = {&TESTS, &COEFFS};
 
     for (int i = 0; i < SUPPORTED_FLAGS_NUMBER; i++)

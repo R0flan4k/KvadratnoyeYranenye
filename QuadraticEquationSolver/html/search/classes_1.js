@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['equationcoefficients_79',['EquationCoefficients',['../struct_equation_coefficients.html',1,'']]],
-  ['equationroots_80',['EquationRoots',['../struct_equation_roots.html',1,'']]]
+  ['equationcoefficients_81',['EquationCoefficients',['../struct_equation_coefficients.html',1,'']]],
+  ['equationroots_82',['EquationRoots',['../struct_equation_roots.html',1,'']]]
 ];

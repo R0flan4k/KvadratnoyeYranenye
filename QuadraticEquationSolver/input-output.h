@@ -12,6 +12,7 @@
     #define GREEN_COLOR "\x1b[32m"
     #define DEFAULT_COLOR "\x1b[0m"
 
+    #define ALLOWED_LANGS "regc" ///< List of allowed languages (first letters).
 
     /////////////////////////////////////////////////////////////////////////
     /// @brief String with allowed for language input characters.
@@ -30,7 +31,7 @@
     };
 
 
-    const int SUPPORTED_FLAGS_NUMBER = 2;
+    const int SUPPORTED_FLAGS_NUMBER = 2; ///< Number of supported flags.
 
     const int WRONG_CMD_INPUT     = 1;  ///< If user incorrectly using flags.
     const int RIGHT_CMD_INPUT     = 0;  ///< If user correctly using flags.

@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['input_2doutput_2ecpp_16',['input-output.cpp',['../input-output_8cpp.html',1,'']]],
-  ['input_2doutput_2eh_17',['input-output.h',['../input-output_8h.html',1,'']]],
-  ['is_5fequal_5ffloat_18',['is_equal_float',['../calculations_8h.html#a700925380ca8260df0e44152c3a60e9c',1,'is_equal_float(const float num1, const float num2):&#160;calculations.cpp'],['../calculations_8cpp.html#a700925380ca8260df0e44152c3a60e9c',1,'is_equal_float(const float num1, const float num2):&#160;calculations.cpp']]],
-  ['is_5fvalid_5fcoefficients_5finput_19',['is_valid_coefficients_input',['../input-output_8h.html#a2d4df57ae6f72824d786267b374cf038',1,'is_valid_coefficients_input(EquationCoefficients *coefficients):&#160;input-output.cpp'],['../input-output_8cpp.html#a2d4df57ae6f72824d786267b374cf038',1,'is_valid_coefficients_input(EquationCoefficients *coefficients):&#160;input-output.cpp']]],
-  ['is_5fzero_5ffloat_20',['is_zero_float',['../calculations_8h.html#ad64d878479641c0af07c7a7a2580bb8b',1,'is_zero_float(const float num):&#160;calculations.cpp'],['../calculations_8cpp.html#ad64d878479641c0af07c7a7a2580bb8b',1,'is_zero_float(const float num):&#160;calculations.cpp']]],
-  ['isspace_5fextra_5fcharacters_21',['isspace_extra_characters',['../input-output_8h.html#a5dd7a1a048c4e5c7efc1325840795631',1,'isspace_extra_characters(void):&#160;input-output.cpp'],['../input-output_8cpp.html#a5dd7a1a048c4e5c7efc1325840795631',1,'isspace_extra_characters(void):&#160;input-output.cpp']]]
+  ['input_2doutput_2ecpp_17',['input-output.cpp',['../input-output_8cpp.html',1,'']]],
+  ['input_2doutput_2eh_18',['input-output.h',['../input-output_8h.html',1,'']]],
+  ['is_5fequal_5ffloat_19',['is_equal_float',['../calculations_8h.html#a700925380ca8260df0e44152c3a60e9c',1,'is_equal_float(const float num1, const float num2):&#160;calculations.cpp'],['../calculations_8cpp.html#a700925380ca8260df0e44152c3a60e9c',1,'is_equal_float(const float num1, const float num2):&#160;calculations.cpp']]],
+  ['is_5fvalid_5fcoefficients_5finput_20',['is_valid_coefficients_input',['../input-output_8h.html#a2d4df57ae6f72824d786267b374cf038',1,'is_valid_coefficients_input(EquationCoefficients *coefficients):&#160;input-output.cpp'],['../input-output_8cpp.html#a2d4df57ae6f72824d786267b374cf038',1,'is_valid_coefficients_input(EquationCoefficients *coefficients):&#160;input-output.cpp']]],
+  ['is_5fzero_5ffloat_21',['is_zero_float',['../calculations_8h.html#ad64d878479641c0af07c7a7a2580bb8b',1,'is_zero_float(const float num):&#160;calculations.cpp'],['../calculations_8cpp.html#ad64d878479641c0af07c7a7a2580bb8b',1,'is_zero_float(const float num):&#160;calculations.cpp']]],
+  ['isspace_5fextra_5fcharacters_22',['isspace_extra_characters',['../input-output_8h.html#a5dd7a1a048c4e5c7efc1325840795631',1,'isspace_extra_characters(void):&#160;input-output.cpp'],['../input-output_8cpp.html#a5dd7a1a048c4e5c7efc1325840795631',1,'isspace_extra_characters(void):&#160;input-output.cpp']]]
 ];
