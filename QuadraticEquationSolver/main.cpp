@@ -15,6 +15,8 @@
 
 int main(int argc, char * argv[])
 {
+    system("chcp 65001");
+
     EquationRoots solution = {ROOTS_COUNT_ZERO, 0.0, 0.0};
     EquationCoefficients coefficients = {0.0, 0.0, 0.0};
 

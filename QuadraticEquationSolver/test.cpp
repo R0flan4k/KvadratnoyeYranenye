@@ -73,7 +73,8 @@ TestResults test_program(const char * test_file)
 
     fclose(fp);
 
-    show_test_results(TEST_SUCCESS, &program_solution, &right_solution);
+    if (test_result == TEST_SUCCESS)
+        show_test_results(TEST_SUCCESS, &program_solution, &right_solution);
 
     return test_result;
 }
