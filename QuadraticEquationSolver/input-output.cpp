@@ -65,7 +65,7 @@ void show_equation(const EquationCoefficients * coeffs, const OutputLanguage * l
 
 static void show_one_root(const float root)
 {
-    printf(GREEN_COLOR "\x1b[32m%+5.5g" DEFAULT_COLOR "\n", root);
+    printf(GREEN_COLOR "%+5.5g" DEFAULT_COLOR "\n", root);
 }
 
 

@@ -35,8 +35,10 @@ TestResults test_program(const char * test_file)
     EquationCoefficients test_coeffs = {0.0, 0.0, 0.0};
     EquationRoots right_solution = {ROOTS_COUNT_ZERO, 0.0, 0.0};
     EquationRoots program_solution = {ROOTS_COUNT_ZERO, 0.0, 0.0};
+    TestResults test_result = TEST_SUCCESS;
     FILE * fp = 0;
     int test_string_number = 1;
+
 
     if ((fp = fopen(test_file, "r")) == NULL)
     {
@@ -52,12 +54,10 @@ TestResults test_program(const char * test_file)
 
         if (program_solution.count != right_solution.count)
         {
-            fclose(fp);
-
             show_test_results(TEST_COUNT_FAILURE, &program_solution, &right_solution);
             printf("%s: string %d\n", test_file, test_string_number);
 
-            return TEST_COUNT_FAILURE;
+            test_result = TEST_COUNT_FAILURE;
         }
         else if (!is_equal_equation_roots(program_solution.first_root, program_solution.second_root, 
                  right_solution.first_root, right_solution.second_root))
@@ -65,7 +65,7 @@ TestResults test_program(const char * test_file)
             show_test_results(TEST_ROOTS_FAILURE, &program_solution, &right_solution);
             printf("%s: string %d\n", test_file, test_string_number);
 
-            return TEST_ROOTS_FAILURE;
+            test_result = TEST_ROOTS_FAILURE;
         }
 
         test_string_number++;
@@ -75,7 +75,7 @@ TestResults test_program(const char * test_file)
 
     show_test_results(TEST_SUCCESS, &program_solution, &right_solution);
 
-    return TEST_SUCCESS;
+    return test_result;
 }
 
 
@@ -112,8 +112,8 @@ static void show_test_results(TestResults test_result, const EquationRoots * pro
         case TEST_ROOTS_FAILURE:
             puts ("");
             puts("Test error: wrong roots.");
-            printf("Expected roots: " GREEN_COLOR "%+f and %+f" DEFAULT_COLOR "\n", right_solution->first_root, right_solution->second_root);
-            printf("Program roots:  " RED_COLOR "%+f and %+f" DEFAULT_COLOR "\n", program_solution->first_root, program_solution->second_root);
+            printf("Expected roots: " GREEN_COLOR "%+f and %+f" DEFAULT_COLOR "\n", right_solution->first_root,   right_solution->second_root);
+            printf("Program roots:  " RED_COLOR   "%+f and %+f" DEFAULT_COLOR "\n", program_solution->first_root, program_solution->second_root);
             puts ("");
             break;
 

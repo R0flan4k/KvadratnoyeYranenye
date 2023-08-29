@@ -9,7 +9,7 @@
 /////////////////////////////////////////////////////////////////////////
 /// \brief All kind of test results.
 /////////////////////////////////////////////////////////////////////////
-    enum TestResults { //TestResults????
+    enum TestResults { 
         TEST_SUCCESS,        ///< If file successfully tested.
         TEST_CANT_OPEN_FILE, ///< If file not found.
         TEST_COUNT_FAILURE,  ///< If calculated wrong number of roots.
